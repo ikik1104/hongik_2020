@@ -12,8 +12,8 @@ public class Ex0219_06 {
 		Scanner scan = new Scanner(System.in);
 		
 		Student[] stu = new Student[2];
-		String name = "";
-		int kor=0,eng=0,math=0,total=0, select = 0;
+		
+		
 		double avg;
 		
 		while(true) {
@@ -26,22 +26,11 @@ public class Ex0219_06 {
 		System.out.println("   3. 성적삭제           4.성적검색");
 		System.out.println("   5. 등수처리           6.종료");
 		
-		select = scan.nextInt();
+		int select = scan.nextInt();
 		switch (select) {
 		case 1:
-			System.out.println("학생성적 추가를 선택하셨습니다.");
-			for (int i = 0; i < stu.length; i++) {
-				System.out.println("이름을 입력하세요");
-				name = scan.next();
-				System.out.println("국어점수를 입력");
-				kor = scan.nextInt();
-				System.out.println("영어점수를 입력");
-				eng = scan.nextInt();
-				System.out.println("수학점수를 입력");
-				math = scan.nextInt();
-				stu[i] = new Student(name,kor,eng,math);
-				System.out.println(stu[i].name+" "+stu[i].total+"  "+stu[i].avg);
-			}
+			inputArr(stu);
+			
 			break;
 		case 2:
 			
@@ -117,5 +106,25 @@ public class Ex0219_06 {
 //		System.out.println(c1.number);
 		
 		
+	}
+	
+	static void inputArr(Student[] stu) {
+		Scanner scan = new Scanner(System.in);
+		int kor=0,eng=0,math=0,total=0;
+		String name = "";
+		
+		System.out.println("학생성적 추가를 선택하셨습니다.");
+		for (int i = 0; i < stu.length; i++) {
+			System.out.println("이름을 입력하세요");
+			name = scan.next();
+			System.out.println("국어점수를 입력");
+			kor = scan.nextInt();
+			System.out.println("영어점수를 입력");
+			eng = scan.nextInt();
+			System.out.println("수학점수를 입력");
+			math = scan.nextInt();
+			stu[i] = new Student(name,kor,eng,math);
+			System.out.println(stu[i].name+" "+stu[i].total+"  "+stu[i].avg);
+		}
 	}
 }
