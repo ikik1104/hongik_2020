@@ -5,7 +5,7 @@ public class Ex0221_02 {
 		//for kind -  클로버, 하트, 다이아몬드, 스페이스
 		// number - 1~13 총 52
 		String[] kind = {"클로버","하트","다이아몬드","스페이스"};
-		String num = "123456789XJQK";
+		String num = "0123456789XJQK";
 		Card[] c = new Card[52];
 		Card[] c2 = new Card[52];
 		
