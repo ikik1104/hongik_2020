@@ -4,18 +4,22 @@ public class Ex0225_05 {
 		
 		Deck d = new Deck(); //52장의 카드 만들기
 		Card c1 = d.pick(10); //cardArr[10] 이 넘어온다
-		for (int i = 0; i < d.CARD_NUM; i++) {
-			System.out.println(d.pick(i));
-		}
+//		for (int i = 0; i < d.CARD_NUM; i++) {
+//			System.out.println(d.pick(i));
+//		}
+		System.out.println("-----------------------------------------");
+//		d.shuffle();
+//		Card c2 = d.pick(10);
+//		for (int i = 0; i < d.CARD_NUM; i++) {
+//			System.out.println(d.pick(i));
+//		}
+
+		//7장만 출력하기
 		System.out.println("-----------------------------------------");
 		d.shuffle();
-		Card c2 = d.pick(10);
-		for (int i = 0; i < d.CARD_NUM; i++) {
+		for (int i = 0; i < 7; i++) {
 			System.out.println(d.pick(i));
 		}
-
-		
-		
 	}
 }
 
@@ -52,7 +56,6 @@ class Deck{
 			cardArr[temp] = temp2;
 		}
 	}
-	
 	
 	
 }

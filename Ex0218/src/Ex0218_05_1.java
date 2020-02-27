@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Ex2018_05_1 {
+public class Ex0218_05_1 {
 
 	public static void main(String[] args) {
 		//로또번호 배열 생성

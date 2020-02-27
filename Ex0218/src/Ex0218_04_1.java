@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Ex2018_04_1 {
+public class Ex0218_04_1 {
 	
 	static int stu_count = 0;
 	
@@ -89,7 +89,7 @@ public class Ex2018_04_1 {
 			System.out.println();
 			stu[i].total();
 			stu[i].avg();
-			Ex2018_04_1.stu_count++;
+			Ex0218_04_1.stu_count++;
 			System.out.println(stu_count+"번째 학생:"+stu[i].num);
 		}
 	}
