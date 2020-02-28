@@ -9,7 +9,7 @@ public class Ex0213_05 {
 		
 		System.out.println("몇명을 입력할까요?");
 		num = scan.nextInt();
-		
+		 
 		String[] name = new String[num];
 		int[][] score = new int[num][4];
 		double[] avg = new double[num]; 
