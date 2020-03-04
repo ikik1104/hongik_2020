@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.Vector;
 
 import javax.xml.soap.SAAJResult;
 
@@ -92,6 +93,9 @@ class Buyer1{ //구매자
 	Product1[] cart = new Product1[10];  //가능한 구매 제품 수 
 	int cnt = 0;	// 현재 구매 수
 	int bonusPoint; //보너스 포인트
+	
+	Vector cart1 = new Vector<Product>();
+	
 	int sum; //구매 총금액
 	int del_cnt=0; //삭제횟수
 	
