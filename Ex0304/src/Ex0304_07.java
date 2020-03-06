@@ -11,16 +11,28 @@ public class Ex0304_07 {
 //		System.out.println(today.getTime()); //Wed Mar 04 17:18:21 KST 2020
 		String format_time1 = format1.format(today.getTime()); 
 		
+		
+		
+		/*	날짜를 가져올 수 있는 방법
+		 * 1) User 컴퓨터 날짜
+		 * 2) Server 컴퓨터 날짜
+		 * 3) 자바 날짜
+		 * 4) DB 날짜
+		 * 
+		 * */
+		
 //		System.out.println(format1.format(today.getTime()));
 //		System.out.println("현재 년도 : "+today.get(Calendar.YEAR));
 //		System.out.println("현재 년도 : "+today.get(Calendar.MONTH));
 //		System.out.println("현재 년도 : "+today.get(Calendar.DATE));
 		
-		System.out.println(today.getTimeInMillis());
+		
+		//전부 int로 반환된다.
+		System.out.println(today.getTimeInMillis()); //현재 날짜의 시간을 초로 리턴 (디데이 계산할때 사용)
 		System.out.println();
 		System.out.println("현재 일시 : "+format_time1);
 		System.out.println("이 해의 년도 : "+today.get(Calendar.YEAR));
-		System.out.println("월(0~11, 0:1월) : "+today.get(Calendar.MONTH));
+		System.out.println("월(0~11, 0:1월) : "+(today.get(Calendar.MONTH)+1));
 		System.out.println("이 해의 몇 째 주 : "+today.get(Calendar.WEEK_OF_YEAR));
 		System.out.println("이 달의 몇 째 주 : "+today.get(Calendar.WEEK_OF_MONTH));
 		// DATE와 DAY_OF_MONTH는 같다.
