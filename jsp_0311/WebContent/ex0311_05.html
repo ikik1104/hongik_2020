@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<title>네이버 로그인</title>
+	</head>
+	<body>
+		<form name="login" action="http://www.naver.com" method="post" >
+			<fieldset> <!-- 분리할때쓴다. (묶음) -->
+				<legend>로그인 정보</legend>
+				<label for="m_id">주민번호</label>
+				<input type="text" name="member_id" id="m_id" required autofocus placeholder="-는 제외" size="10"><br>
+				<label for="m_pw">패스워드</label>
+				<input type="password" name="member_pw" required id="m_pw"><br>
+				<input type="submit" value="전송">&nbsp;&nbsp;
+				<input type="reset" value="취소">
+			</fieldset>
+		
+		</form>
+	</body>
+</html>

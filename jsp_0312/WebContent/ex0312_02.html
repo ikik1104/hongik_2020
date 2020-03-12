@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	</head>
+	<body>
+		<form action="http://www.naver.com" method="get">
+			<fieldset>
+				<legend>신청과목</legend>
+				<p>이달에 신청할 과목을 선택하세요 (1과목만 가능)</p>
+				<input type="radio" name="sub" value="회화" id="speaking"><label for="speaking">회화</label>
+				<input type="radio" name="sub" value="문법" id="grammer"><label for="grammer">문법</label>
+				<input type="radio" name="sub" value="작문" id="writing"><label for="writing">작문</label>
+			</fieldset>
+			
+			<fieldset>
+				<legend>메일링</legend>
+				<input type="checkbox" name="mail1" id="mailing1" value="news"><label for="mailing1">해외 단신</label>
+				<input type="checkbox" name="mail2" id="mailing2" value="dialog"><label for="mailing2">5분 회화</label>
+				<input type="checkbox" name="mail3" id="mailing3" value="pops"><label for="mailing3">모닝팝스</label>
+			</fieldset>
+			<fieldset>
+				<legend>달력</legend>
+				<input type="date" name="date">
+				<input type="month" name="month">
+				<input type="week" name="week">
+			</fieldset>
+			<fieldset>
+				<legend>시간</legend>
+				<input type="time" name="time" value="09:00">
+			</fieldset>
+			<fieldset>
+				<legend>선택</legend>
+				<label for="major">학과선택</label>
+				<select name="major" id="major">
+					<option value="archi">건충공학과</option>
+					<option value="mechanic">기계공학과</option>
+					<option value="indust">산업공학과</option>
+					<option value="elec">전기전자공학과</option>
+					<option value="computer">컴퓨터공학과</option>
+					<option value="chemical">화학공학과</option>
+				</select>
+				<label>이름 : </label><input type="text" autofocus required placeholder="이름을 입력해주세요.">
+				<label>전화번호 : </label><input type="text" value="010-9999-8888" readonly>
+				
+			</fieldset>
+<!-- 			<input type="submit" value="전송"> -->
+			<button >전송</button>
+		</form>	
+	</body>
+</html>

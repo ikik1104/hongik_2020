@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+    <defs>
+        <style>
+            .cls-1{fill:none}.cls-2{stroke:#000;stroke-width:.2px}
+        </style>
+    </defs>
+    <g id="mypage" transform="translate(-188.152 -139.585)">
+        <path id="사각형_248" d="M0 0h40v40H0z" class="cls-1" data-name="사각형 248" transform="translate(188.152 139.585)"/>
+        <path id="패스_242" d="M263.929 159.218a7.05 7.05 0 1 0-8.615 0 13 13 0 0 0-8.692 12.268 1.1 1.1 0 1 0 2.2 0 10.8 10.8 0 0 1 21.6 0 1.1 1.1 0 1 0 2.2 0 13 13 0 0 0-8.693-12.268zm.544-5.584a4.852 4.852 0 1 1-4.852-4.852 4.857 4.857 0 0 1 4.851 4.852z" class="cls-2" data-name="패스 242" transform="translate(-51.469)"/>
+    </g>
+</svg>

@@ -1,0 +1,25 @@
+@charset "UTF-8";
+h2	{	width: 1120px; 
+		height: 22px;
+		padding: 50px 0 20px;
+		border-bottom: 2px solid black; 
+		font-size: 22px;    
+		margin: 0 auto;
+	}
+
+span{	color: #444; 
+		font-size: 18px; 
+		font-weight: bold;
+		width: 400px; 
+		display: inline-block;
+	}
+
+ul	{	list-style: none; 	
+		width: 800px;
+		padding-top: 30px;		
+		margin: 0 auto; 
+	}
+				
+li	{	height: 50px; 
+		font: 18px;
+	}

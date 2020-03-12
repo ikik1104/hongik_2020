@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<title>구글사이트</title>
+	<style type="text/css">
+		*	{	margin: 0; padding: 0;}
+ 		div	{	width: 300px; height: 300px;  
+ 				margin: 0 auto;	background: #f37320; border-radius:150px; }
+	</style>
+	</head>
+	<body>
+	<div id="div">
+	</div>
+	<form action="http://www.naver.com/" name="join" method="get">
+		<label>아이디</label>
+		<input type="text" name="m_id" ><br>
+		<label>패스워드</label>
+		<input type="password" name="m_pw"><br>
+		<label>레벨</label>
+		<input type= "text" name="level" value="vip회원" readonly="readonly"><br>
+		<label>메일</label>
+		<input type="email" name="m_mail"><br>
+		<input type="hidden" name="ip" value="192.168.0.155">
+		<br>
+		<input type="submit" value="전송">
+		<input type="reset" value="취소"> 
+	</form>
+	
+	</body>
+</html>

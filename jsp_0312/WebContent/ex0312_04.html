@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<style type="text/css">
+			*	{ 	margin: 0; padding: 0;}
+			div {	width: 1000px; margin: 0 auto; }
+			h4	{	font-size: 42px; text-align: center; padding: 30px;
+					margin: 50px 0; }
+			form{	width:650px; margin: 0 auto;}
+			input {	width: 476px; height: 60px;}
+			ul	{	list-style: none;}
+			li	{	height: 90px;}
+			label{	display:inline-block; width: 150px;}
+			.text_import{ color: red; font-weight: bold;}
+			#gender{ color: pink; font-weight: 900; }
+			#div01 { 
+				width: 300px; height: 300px;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id="div01">
+		
+		</div>
+	
+	
+		<div>
+		<h4>회원가입</h4>
+		<form action="">
+		<ul>
+			<li>
+				<label>아이디</label>
+				<input type="text" placeholder="아이디를 입력해주세요.">
+			</li>
+			<li>
+				<label class="text_import">패스워드</label>
+				<input type="text" placeholder="비밀번호를 입력해주세요..">
+			</li>
+			<li>
+				<label class="text_import">패스워드확인</label>
+				<input type="text" placeholder="비밀번호를 한번 더 입력해주세요.">
+			</li>
+			<li>
+				<label>전화번호</label>
+				<input type="text" placeholder="전화번호를 입력해주세요.">
+			</li>
+			<li>
+				<label class="text_import" id="gender">성별</label>
+				<input type="text" placeholder="성별을 입력해주세요.">
+			</li>
+		</ul>
+		</form>
+		</div>
+	</body>
+</html>
