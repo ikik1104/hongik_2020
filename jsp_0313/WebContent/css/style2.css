@@ -1,0 +1,173 @@
+@charset "UTF-8";
+
+*	{
+	font-family: 'Noto Sans KR', sans-serif;
+	margin: 0;
+	padding: 0;
+	}
+ul	{
+	list-style-type: none;	
+	}
+nav	{
+	 width: 100%;
+	 height: 90px;
+	 border-bottom: 1px solid #ddd;
+	}
+nav div{
+	 height:90px;
+	 box-sizing:border-box;
+	 float: left;
+	}
+
+/*	로고	*/
+nav div:nth-child(1) {
+	 width: 150px;
+	 padding-top: 20px;
+	 padding-left: 20px;
+	 float: left;
+	}
+/*	메뉴	*/
+#top_ul{
+	 width: 1360px;
+	 padding-top:30px;
+	 padding-left:30px;
+	}
+
+#top_ul>li{
+	 float: left;
+	 width: 150px;
+	 color: #666;
+	 margin-right: 20px;
+	 font-size: 16.5px;
+	 text-align: center;
+	}
+#top_icon{
+	 width: 340px;
+	 margin-left: 17px;
+	}
+#top_icon div{
+	 float: left;
+	 margin-right: 20px;
+	}	
+#top_icon>div:nth-child(1) { /*예약*/
+	 width: 118px;
+	 height: 53px;
+	 font-size: 16px;
+	 color: white;
+	 background: black;
+	 margin-top: 18px;
+	 padding-left:0;
+	 padding-top:15px;
+	 text-align: center; 
+	}	
+	
+#top_icon>div:nth-child(2) { /*사람*/
+	 width: 70px;
+	 height: 53px;
+	 font-size: 16px;
+	 color: black;
+	 margin-top: 18px;
+	 padding-left:0;
+	 padding-top:13px;
+	 text-align: center; 
+	 border: 1px solid black;
+	 background: url("../images/img/mypage.png")no-repeat scroll center center ;
+	}
+#top_icon>div:nth-child(3) { /*언어*/
+	 width: 90px;
+	 height: 53px;
+	 font-size: 16px;
+	 color: black;
+	 background: white;
+	 margin-top: 18px;
+	 padding-left:0;
+	 padding-top:15px;
+	 text-align: center; 
+	 border: 1px solid black;
+	}	
+/*article*/
+
+article>div{
+	 width: 100%;
+	 height: 150px;
+	}	
+article>div>p{
+	 width: 1000px;
+	 height: 56px;
+	 text-align: center;
+	 padding-top: 60px;
+	 padding-bottom: 30px;
+	 margin: 0 auto;
+	 font-size: 38px;
+	 font-weight: bold;
+	 color: #333;
+	}
+#art_form>div{
+	 width: 478px;
+	 height: 80px;
+	 margin: 15px auto 0;
+	}
+#art_form>div>form>select{
+	 width: 123px;
+	 height: 44px;
+	 border: 1px solid #ccc;
+	 line-height: 42px;
+	 font-size: 15px;
+	 color: #666;
+	 padding: 0 10px;
+	}
+#art_form>div>form>input{
+	 width: 274px;
+	 height: 42px;
+	 border: 1px solid #ccc;
+	 line-height: 42px;
+	 font-size: 15px;
+	 color: #666;
+	 padding: 0 10px;
+	}
+#art_form>div>form>button{
+	 width: 50px;
+     height: 44px;
+     background: #666 url("../images/img/search.png") center center no-repeat;
+     border: none;
+     line-height: 42px;
+	 font-size: 15px;
+	 color: #666;
+	 padding: 16px 10px;
+    }	
+
+#art_table>div{
+	 width:1200px;
+	 margin: 0 auto;
+    }
+#art_table table{
+	 color:#666666;
+	 width:100%;
+	 border-collapse: collapse;
+	 text-align: center;
+    }	
+#art_table table thead{
+	 border-top: 3px solid #26252b;
+	 border-bottom: 1px solid #bdbdbf;
+	 height: 70px;
+    }
+#art_table>div>table tr{
+	height: 65px;
+	}
+#art_table table td:nth-child(2){
+	 text-align: left;
+    }	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

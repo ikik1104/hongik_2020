@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<link rel="stylesheet" type="text/css" href="css/join_view.css">
+		<script type="text/javascript" src="prefixfree.dynamic-dom.min.js"></script>
+	</head>
+	<body>
+		<header>
+			<div id="nav_up">
+				<ul>
+					<li>회원가입</li>
+					<li>로그인</li>
+					<li>고객행복센터</li>
+					<li>배송지역검색</li>
+					<li>기프트카드 등록</li>
+				</ul>
+			</div>
+			
+			<nav>
+				<h1></h1>
+				<ul>
+					<li>COOKIT소개</li>
+					<li>COOKIT메뉴</li>
+					<li>리뷰</li>
+					<li>이벤트</li>
+					<li>MY쿡킷</li>
+				</ul>
+				<ul>
+					<li><a href="#"><span>장바구니</span></a></li>
+					<li><a href="#"><span>메뉴찾기</span></a></li>
+				</ul>
+			</nav>
+		</header>
+<!-- 		<div id="sub_img"></div> -->
+		<section>
+			<div>
+				<div id="top">
+					<ul>
+						<li>HOME</li>
+						<li>회원가입</li>
+						<li>회원입력정보</li>
+					</ul>
+				</div>
+				<div id="title">
+					<h3>회원가입을 완료하였습니다.</h3>
+				</div>
+				<h3 class="title_h3">입력한 정보</h3>
+				
+				<table class="input_user">
+					<tr>
+						<th>이름</th>
+						<td>
+						김홍익
+						</td>
+					</tr>
+					<tr>
+						<th>아이디</th>
+						<td>
+							김홍익123
+						</td>
+					</tr>
+					<tr>
+						<th>이메일</th>
+						<td>
+							김홍익@naver.com
+						</td>
+					</tr>
+					<tr>
+						<th>주소</th>
+						<td id="address">
+							(123-456) 경기도 시흥시 은행동   @@아파트 1108동 1101호
+						</td>
+					</tr>
+					<tr>
+						<th>휴대전화</th>
+						<td id="call">
+							010 - 3038 - 8146
+						</td>
+					</tr>
+					<tr>
+						<th>생년월일</th>
+						<td>
+							1996년 11월 04일
+							<div id="cal">
+							<label><input type="radio" name="양력음력" value="양력" checked disabled>양력</label>
+							<label><input type="radio" name="양력음력" value="음력" disabled>음력</label>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<th>성별</th>
+						<td>
+							<label><input type="radio" name="성별" value="여성" checked disabled>여성</label>
+							<label><input type="radio" name="성별" value="남성" disabled>남성</label>
+						</td>
+					</tr>
+					<tr  id="news_letter">
+						<th>뉴스레터 수신여부</th>
+						<td>
+							<p>이메일을 통한 상품 및 이벤트 정보 수신에 동의합니다.</p>
+							<label><input type="radio" name="news_letter" value="yes" checked disabled>예</label>
+							<label><input type="radio" name="news_letter" value="no" disabled>아니오</label>
+						</td>
+					</tr>
+					<tr id="sms_letter">
+						<th >SMS 수신여부</th>
+						<td>
+							<p>문자를 통한 상품 및 이벤트 정보 수신에 동의합니다.</p>
+							<label><input type="radio" name="sms_letter" value="yes"checked disabled>예</label>
+							<label><input type="radio" name="sms_letter" value="no" disabled>아니오</label>
+						</td>
+					</tr>
+				</table>
+				
+				<h3 class="title_h3">분양회원 정보</h3>
+				
+				<table class="input_user">
+					<tr>
+						<th>회원번호</th>
+						<td>
+							123456
+						</td>
+					</tr>
+					<tr>
+						<th>회원인증번호</th>
+						<td>
+							123456123
+						</td>
+					</tr>
+				</table>
+				
+				<h3 class="title_h3">선택 입력 정보</h3>
+				<table class="input_user">
+					<tr>
+						<th>직업</th>
+						<td>학생</td>
+					</tr>
+					<tr>
+						<th>결혼여부</th>
+						<td>
+							<label><input type="radio" name="me" value="yes" disabled>예</label>
+							<label><input type="radio" name="me" value="no" checked disabled>아니오</label>
+						</td>
+					</tr>
+					<tr>
+						<th>관심사</th>
+						<td id="fav">
+							<ul>
+							<li><label><input type="checkbox" disabled>컴퓨터/인터넷</label></li>
+							<li><label><input type="checkbox" checked disabled>영화/비디오</label></li>
+							<li><label><input type="checkbox" disabled>음악</label></li>
+							<li><label><input type="checkbox" disabled>쇼핑</label></li>
+							<li><label><input type="checkbox" disabled>게임</label></li>
+							<li><label><input type="checkbox" checked disabled>문화/예술</label></li>
+							<li><label><input type="checkbox" checked disabled>육아/아동</label></li>
+							<li><label><input type="checkbox" disabled>요리</label></li>
+							<li><label><input type="checkbox" disabled>인테리어</label></li>
+							<li><label><input type="checkbox" checked disabled>레저/여가</label></li>
+							<li><label><input type="checkbox" disabled>건강/다이어트</label></li>
+							<li><label><input type="checkbox" checked disabled>패션/미용</label></li>
+							</ul>
+						</td>
+					</tr>
+				</table>
+				<div id="join_btn">
+				<button type="button" onclick="location.href='main.html'">메인으로</button>
+				</div>
+			</div>
+		</section>
+		<footer>
+			<div>
+				<div id="left">
+					<div>
+						<a href="#"></a>
+					</div>
+					<p>© COOKIT ALL RIGHTS RESERVED</p>
+				</div>
+				<div id="center">
+					<ul>
+						<li><a href="#">이용약관</a></li>
+						<li><a href="#">개인정보처리 방침</a></li>
+						<li><a href="#">법적고지</a></li>
+						<li><a href="#">사업자 정보 확인</a></li>
+					</ul>
+				<div id="center_1">
+					<p>씨제이제일제당(주)</p>
+					<p>대표이사 : 손경식,강신호,신현재</p>
+					<p>사업자등록번호 : 104-86-09535</p>
+					<p>주소 : 서울 중구 동호로 330 CJ제일제당 센터 (우) 04560</p>
+					<p>통신판매업신고 중구 제 07767호</p>
+					<p>개인정보보호책임자 : 조영민</p>
+					<p>이메일 : cjon@cj.net</p>
+					<p>호스팅제공자 : CJ올리브네트웍스㈜</p>
+					<P>고객님은 안전거래를 위해 현금등으로 결제시 LG U+ 
+					전자 결제의 매매보호(에스크로) 서비스를 이용하실 수 있습니다. <a href="#">가입 사실 확인</a></P>
+				</div>
+				</div>
+				<div id="right">
+					<div>
+						<span>CJ그룹계열사 바로가기 </span>
+						<p>고객행복센터  1668-1920</p>
+						<a href="#">1:1문의</a>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</body>
+</html>

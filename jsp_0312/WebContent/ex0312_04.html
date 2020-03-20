@@ -2,41 +2,76 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<link href="https://fonts.googleapis.com/css?family=Courgette|Yeon+Sung&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Hi+Melody&display=swap" rel="stylesheet">
 		<title>Insert title here</title>
 		<style type="text/css">
-			*	{ 	margin: 0; padding: 0; font-family: 'Yeon Sung', cursive;}
-			div {	width: 1000px; margin: 0 auto; }
-			h4	{	font-size: 42px; text-align: center; padding: 30px;
-					margin: 50px 0; font-family: 'Courgette', cursive;}
-			form{	width:650px; margin: 0 auto;}
-			input {	width: 476px; height: 60px;}
+			*	{ 	margin: 0; 
+					padding: 0; 
+					font-family: 'Hi Melody', cursive; 
+					font-size: 20px;}
+					
+			div {	width: 1000px; 
+					margin: 0 auto; }
+			
+			h4	{	font-size: 42px; 
+					text-align:center; 
+					padding: 30px; 
+					margin: 50px 0; }
+					
+			form{	width:650px; 
+					margin: 0 auto;}
+			
+		  input {	width: 476px; 
+					height: 60px;}
+		  
 			ul	{	list-style: none;}
+			
+			#list01{list-style: url("images/squar_bullet.gif")	}
+			
 			li	{	height: 90px;}
-			label{	display:inline-block; width: 150px;}
+			
+		   label{	display:inline-block; 
+		   			width: 150px; 
+		   			text-shadow: 1px 1px pink; 
+		   			letter-spacing: 2px;}
+		   			
+		 #gender{	font-weight: 900; }
+		 
+		  #div01{	width: 300px; height: 300px; 
+		  			background-color: red;	}
+		  
 	.text_import{ 	color: red; font-weight: bold;}
-		#gender{	color: pink; font-weight: 900; }
-		#div01 {	width: 300px; height: 300px; background-color: red;	}
-			#div01:hover {	 -webkit-transform:rotate(45deg);	
-							 -ms-transform:rotate(45deg);}
+	
+	#div01:hover{	 -webkit-transform:rotate(50deg);	
+					 -ms-transform:rotate(45deg);}
+					 
+		   video{	width: 100%;}
+		   
+			p	{	width: 400px; 
+					height: 200px;
+					border: 1px solid black;
+					overflow: scroll;
+					text-overflow: ellipsis;
+              /*  	text-align: justify;  */
+					}	/* text-align: justify;  끝 라인 맞추기*/
 		</style>
 	</head>
 	<body>
-		<div id="div01">
-			<video src=""></video>
-		</div>
-	
-	
-		<div>
+<!-- 		<video src="images/v01.mp4" controls muted autoplay ></video> -->
+	<div>
+		<ul id="list01">
+			<li>회원의 권리를 보장하기 위하여 회원 본인 확인 후 회원 본인이 아닐 때에는 회원초청 요금이 적용됩니다.</li>
+			<li>규정 숙박정원 초과 시 미리 말씀하여 주시면 추가요금을 할인 받으실 수 있습니다.</li>
+		</ul>
 		<h4>회원가입</h4>
 		<form action="">
 		<ul>
 			<li>
-				<label>아이디</label>
+				<label>아이디(id)</label>
 				<input type="text" placeholder="아이디를 입력해주세요.">
 			</li>
 			<li>
-				<label class="text_import">패스워드</label>
+				<label class="text_import">패스워드(password)</label>
 				<input type="text" placeholder="비밀번호를 입력해주세요..">
 			</li>
 			<li>
@@ -44,7 +79,7 @@
 				<input type="text" placeholder="비밀번호를 한번 더 입력해주세요.">
 			</li>
 			<li>
-				<label>전화번호</label>
+				<label>전화번호(tel)</label>
 				<input type="text" placeholder="전화번호를 입력해주세요.">
 			</li>
 			<li>
@@ -53,6 +88,14 @@
 			</li>
 		</ul>
 		</form>
+		<div>
+			<p>
+			40만 부 판매를 기록하며 많은 독자의 사랑을 받은 백영옥의 에세이 『빨강머리 앤이 하는 말』의 감동을 이어가는 소설 『빨강머리 앤』이 아르테에서 출간되었다. 많은 이들에게 익숙한 TV 애니메이션 속 앤과는 사뭇 다른, 인기 일러스트레이터 이슬아가 그린 새로운 앤과 함께 앤의 무한 긍정 메시지를 전한다.
+			초록지붕 집에 사는 남매 마릴라와 매슈는 일을 도울 남자아이를 입양하기로 하지만 기차역에서 매슈를 기다리는 건 한 여자아이였다. 매슈는 일단 아이를 데리고 함께 집으로 돌아온다. 아이의 이름은 앤 셜리. 진통제를 넣어 케이크를 굽고, 시도 때도 없이 공상에 빠지는 못 말리는 사고뭉치지만, 마릴라와 매슈는 앤이 가진 통통 튀는 상상력과 순수함에 마릴라와 매슈는 점점 마음을 열게 된다. 『빨강머리 앤』은 끊임없이 실수하면서도 또 다시 시도하는 소녀 앤의 성장기이자, 스스로 행복해지는 법과 제 마음을 돌보고 지키는 법, 사랑하는 법을 엿볼 수 있는 동화다. 갈등과 어려움을 극복하고도 세상을 사랑하는 앤의 모습은 여전히 많은 이들에게 잔잔한 감동을 준다.
+『			빨강머리 앤 일러스트 에디션』에 수록된 일러스트는 따뜻하고 감성적인 색채를 자랑하며 많은 사람들의 사랑을 받은 일러스트레이터 이슬아가 그렸다. 많은 이들에게 익숙할 애니메이션 속 앤과 또 다른 느낌의 앤으로, 우리를 위로하고 응원했던 앤의 메시지를 다시 한 번 전한다. 앤이 마주했을 삶의 결정적 순간을 아름다운 그림과 함께 만나는 경험은 우리를 순식간에 프린스에드워드 섬으로 데려간다.
+			</p>
+		
 		</div>
+	</div>
 	</body>
 </html>

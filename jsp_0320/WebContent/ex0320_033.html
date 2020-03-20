@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript">
+		/*
+			//절대값구하기
+			var x = prompt('숫자를 입력해주세요.');
+			var result= (x>-x)?x:-x; //절대값구하기
+			document.write(x+"의 절대값은 "+result+"입니다.<br>");
+		*/
+		
+		/* 실행안된다.
+			var x=prompt('첫번째 데이터 값을 입력하세요.'); //prompt는 String 으로 반환된다.
+			var y=prompt('두번째 데이터 값을 입력하세요.');
+			var z=prompt('세번째 데이터 값을 입력하세요.');
+			document.write(typeof x+"<br>"); //String
+			x = parseInt(x);				 //숫자로 변환
+			document.write(typeof x+"<br>"); //number
+			y = parseInt(y);
+			z = parseInt(z);
+			
+			var max = (x > y && x > z) ? x : (y > z) ? y : z;
+			var min = (x < y && x < z) ? x : (y < z) ? y : z;
+			var result;
+		*/
+// 수지언니의 큰값구하기  result = z>(x>y? x : y)? z: (x>y? x : y); <-- integer로 변환 해줘야한다.
+			
+// 			document.write("큰값 : "+result+"<br>");
+			documnet.write("젤 큰값:"+max+"  젤 작은값:"+min);
+			function check(){
+				if(form.name.value==""){
+					alert('이름을 입력해주세요.');
+					form.name.focus();
+					return false;
+				}
+				
+				if(form.name.value.length<3){
+					alert('이름은 3글자 이상 입력해 주세요.');
+					form.name.focus();
+					return false;
+				}
+				
+				if((form.kor.value>100 )|| (form.eng.value>100)){
+					alert('100점 까지 입력이 가능합니다.');
+					form.this.value="";
+					form.this.focus();
+					return false;
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<form name="form" action="" method="post">
+			<h1>성적입력</h1>
+			<label>학생이름<input type="text" name="name"></label><br>
+			<label>국어점수<input type="text" name="kor"></label><br>
+			<label>영어점수<input type="text" name="eng"></label><br>
+			<label>합계<input type="text" name="total" disabled></label><br>
+			
+			<input type="button" onclick="check()" value="데이터 입력">
+		</form>
+	</body>
+</html>

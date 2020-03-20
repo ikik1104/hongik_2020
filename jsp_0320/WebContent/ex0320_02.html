@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+		
+		var inc_data = 1;
+		var dec_data = 5;
+		var r1=r2=0;
+		r1=15%6; //3
+		document.write("15%6  :  "+r1+"<br>");
+		document.write("inc_data++  :  "+inc_data++ +"<br>"); //보내주고 나서 증가하여 1이 넣어지고 2가된다 = 1
+		document.write("++inc_data  :  " + ++inc_data + "<br>"); //위에서 증가된 2를 +1증가한다음에 넣어준다 = 3
+		document.write("dec_data--  :  "+dec_data-- + "<br>"); // 보내주고나서 ( 5 ) 1감소 --> 4가되었다.  =5
+		document.write("--dec_data  :  "+ --dec_data + "<br>");// 4에서 감소 후 보내준다 (3)
+		r2 = inc_data * dec_data;
+		document.write("inc_date*dec_data  :  "+r2+"<br>");
+		
+		
+		
+		/*
+		//function의 값을 리턴해서 갑을 출력하기
+		
+		function get_grade(a,b) {
+		var total= a+b ;
+		document.write("두 숫자는 "+a+" , "+b+"<br>"+" 두 수의 합 : "+total+"<br>");
+		}
+		*/
+		
+		
+		/*
+		//지역변수, 전역변수 , function사용
+		var g_value1=20;
+		var g_value2=30;
+		
+		
+		function add(a,b){
+			var total = a+b;
+			document.write("합계 값 : "+total+"<br>");
+		}
+		document.write("전역변수 값 : "+g_value1+"<br>");
+		add("홍길동",4);
+		*/
+		
+		/*
+		//변수 재정의
+		stdName="홍길동";
+		com_grade=96;
+		var stdName;
+		var com_grade;
+		document.write("학생의 이름 :"+stdName+"<br>");
+		document.write("컴퓨터 점수:"+com_grade+"<br>")
+		document.write("--------------------------"+"</p>")
+		
+		
+		var num=10;
+		document.write("num의 변수:"+typeof num+"타입</p>");
+		document.write("------------------------------</p>")
+		var num="홍길동";
+		document.write("num의 변수:"+typeof num+"타입</p>")
+		
+		*/
+		
+		/*
+		//타입을 확인해 봅시다.
+		var num; //아직 정의가 안됨
+			var obj=null;
+			
+			document.write(typeof 100+"<br>");
+			document.write(typeof 10.5+"<br>");
+			document.write(typeof "홍길동"+"<br>");
+			document.write(typeof true+"<br>");
+			document.write(typeof [1,2,3]+"<br>");
+			document.write(typeof {name:'홍길동',age:25}+"<br>"); //데이터 값이 2개이상 - Object
+			document.write(typeof num+"<br>");
+			document.write(typeof obj+"<br>");
+		*/
+		</script>
+		<button onclick="get_grade(50,60)">호출버튼</button>
+		
+	</body>
+</html>

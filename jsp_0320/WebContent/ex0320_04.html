@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script type="text/javascript">
+	/*
+			1. 성별 입력창 1개만듬
+			2. 나이 입력창을 만듬.
+			3. 버튼을 클릭하면 if문으로 성별확인
+				alert 남자입니다 여자입니다.
+			4. 나이를 비교해서 19세 미만이면 미성년자 이상이면 성인입니다.
+	
+	*/	
+	
+		function gender_chk(){
+			if(form.gender.value==""){
+				alert('성별을 입력하세요');
+				form.gender.focus();
+				return false;
+			}
+		
+			if(form.gender.value=="여자"){
+				alert('여자입니다.');
+				form.age.focus();
+			}else if(form.gender.value=="남자"){
+				alert('남자입니다.');
+				form.age.focus();
+			}else{
+				alert('잘못된 입력입니다.');
+				form.gender.focus();
+				return false;
+			}
+		}
+	
+		function age_chk(){
+			if(form.age.value==""){
+				alert('나이을 입력하세요');
+				form.age.focus();
+				return false;
+			}
+			
+			if(form.age.value>=19){
+				alert('19세 이상 성인입니다.');
+			}else{
+				alert('19세 미만 미성년자입니다.');
+			}
+		}
+	
+	/*
+		var gender=prompt('남자(M) / 여자(F)를 입력하세요.'); //남자 m 여자 f
+		var age=prompt('나이를 입력하세요.');
+		var result;
+		if(gender == "M"){
+			if(age>=19){
+				result="남자 19세 이상 성인입니다.";
+			}else{
+				result="남자 19세 미만 미성년자입니다.";
+			}
+		}else{
+			if(age>=19){
+				result="여자 19세 이상 성인입니다.";
+			}else{
+				result="여자 19세 미만 미성년자 입니다.";
+			}
+		}
+		document.write("당신은"+result+"<br>");
+	*/
+	</script>
+	</head>
+	<body>
+		<h3>성별 확인</h3>
+		<form name="form" action="" method="post">
+		<label>성별  : <input type="text" name="gender" placeholder="여자, 남자"></label>
+		<button onclick="gender_chk()">성별확인</button> <br>
+		<p>---------------------------------------------</p>
+		<h3>연령 확인</h3>
+		<label>나이  : <input type="text" name="age"></label>
+		<button onclick="age_chk()">나이확인</button> <br>
+		</form>
+	</body>
+</html>

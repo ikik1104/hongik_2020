@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script type="text/javascript" src="prefixfree.dynamic-dom.min.js"></script>
+		<style type="text/css">
+		
+				@import url(https://weloveiconfonts.com/api/?family=entypo);
+				/* entypo */
+				[class*="entypo-"]:before {
+				  font-family: 'entypo', sans-serif;
+				}
+		
+			*	{ margin: 0; 
+				  padding: 0;
+				 }
+			div	{ width: 300px;
+				  height: 300px; 
+				  margin:300px auto;
+				  border: 1px solid black;
+				 }
+			p	{ width: 300px; 
+				  height: 300px; 
+				  font-size:300px;
+				  background:blue;
+				  text-align:center;
+				  animation: aaa 1s alternate/*방향*/ infinite/*몇번*/ ease ;
+				/* 	
+				<<transform>>
+				translateX(50px)  x축으로 50만큼 이동 , 
+				scale(1.5) 1.5초 동안 커짐 ] 
+				opacity: 50%; 불투명도 	
+				rotate(45deg) 기울기 (부모요소에 p어쩌구 쓰면 기울고 안쓰면 빙글 돌아간다.)
+				skew(30deg) 30도 각도로 기울어진다. 위치점도 정할 수 있다.( transform-origin )
+				
+				두가지를 동시에 사용하려면 옆에 나란히 쓰면 된다 (하나씩 쓰면 맨 아래만 실행)
+				 	
+				*/ ; 
+			}
+			@keyframes aaa{
+				0%{ transform: rotate(0deg);}
+				100%{ transform: rotate(360deg);}
+				
+			}
+		
+		</style>
+	</head>
+	<body>
+		<div>
+			<p></p>
+		</div>
+	</body>
+</html>

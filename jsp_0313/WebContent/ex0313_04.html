@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:500&display=swap" rel="stylesheet">
+	<title>메인>AKBeauty</title>
+		<style type="text/css">
+			div {width: 300px; height: 300px;}
+			#d01{position: relative; z-index: 3; background: yellow; }
+			#d02{position: absolute; z-index: 2; background: green;  left:50px; visibility: none;}
+			#d03{position: relative; z-index: 1; background: red; top:-100px; }
+/* 			(relative:현재 위치에서) (absolute: 부모를 기준으로) (fixed:고정)지정해줘서 사용 */
+/* 			visibility:hidden -> 공간은 그대로 차지(보이지만 않음)  display:none -> 아예 없애버림 */
+		</style>
+	</head>
+	<body>
+	 	<div id="d01">div01</div>
+	 	<div id="d02">div02</div>
+	 	<div id="d03">div03</div>
+	</body>
+</html>

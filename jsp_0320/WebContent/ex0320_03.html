@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript">
+		
+			function num(){
+			var x=prompt('첫번째 값을 입력하세요.');
+			var y=prompt('두번째 값을 입력하세요.');
+			
+			var result;
+			result = (x<10 && y>10);
+			document.write("<p>1번째 입력값 : "+x+", 2번째 입력값 : "+y+"</p>")
+			document.write('<p>x<10 && y>10 :'+result+"</p>");
+			result = (x<10 || y>10);
+			document.write('<p>x<10 || y>10 :'+result+"</p>")
+			}
+		
+			function check(){
+				
+				if(form.id.value<=8){
+					alert("8이하 입니다.");
+				}
+				if(form.id.value=="" || form.major.value==""){
+					alert('이름을 입력해주세요.');
+					form.id.focus();
+					return false;
+				}
+			}
+			
+			function check_age(){
+				if(form.age.value>=18){
+					alert('성인입니다.');
+				}else{
+					alert('미성년자입니다.');
+				}
+			}
+			
+		/*
+			var x = prompt('숫자를 입력하세요.');
+// 			var y = "5";
+// 			var result;
+			
+// 			result = (x>y); //x가 더 크냐
+// 			document.write('x>y : '+result+"<br>");
+// 			result = (x==y); // x와 y가 같냐
+// 			document.write("x==y : "+result+"<br>");
+// 			result = (x===y); //x와 y가 타입도 같고, 값도 같냐
+// 			document.write("x===y : "+result+"<br>");
+// 			result = (x!=y); //x와 y가 값이 다르냐
+// 			document.write("x!=y : "+result+"<br>");
+// 			result = (x!==y); //x와 y가 값이다르거나 or 타입이 다른지
+// 			document.write("x!==y :"+result+"<br>")
+			
+			if(x>=0 && x<=10){
+				document.write('0<=x<=10사이의 숫자입니다.');
+			}else{
+				document.write('0보다 작거나 같고 10보다 크거나 같습니다.');
+			}
+			*/
+		</script>
+	</head>
+	<body>
+		<form name="form" action="" method="post">
+			<p>성인/미성년자 확인</p>
+			<h2>[ 나이 입력 ]</h2>
+			<label>나이: <input type="text" name="age"></label>
+			<input type="button" value="나이입력" onclick="check_age()"><br>
+			<p>-------------------------------------------------------------</p>
+			<p>입력이 안된 부분들 alert창 띄우기</p>
+			<h2>[ 성적 입력 ]</h2>
+			<label>이름: <input type="text" name="id"></label><br>
+			<label>학번: <input type="text" name="major"></label><br>
+			<label>국어점수: <input type="text" name="kor"></label><br>
+			<input type="button" value="성적입력" onclick="check()">
+			<p>-------------------------------------------------------------</p>
+			<p>숫자 크기 비교하기</p>
+			<h2>[ 숫자 입력 ]</h2>
+			<input type="button" value="숫자 입력하기" onclick="num()"><br>
+			<div id="number"></div>
+		</form>
+		
+	</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+<!-- 		<script type="text/javascript" src="js/ex0320_05.js"></script> -->
+		<script type="text/javascript">
+			
+			function check(){
+				if(form.id.value==""){
+					alert('아이디를 입력하세요.');
+					form.id.focus();
+					return false;
+				}
+				if(form.pw.value==""){
+					alert('비밀번호를 입력하세요.');
+						form.pw.focus();
+						return false;
+				}
+				
+				if(form.id.value=="admin"){
+					if(form.pw.value=="12345"){
+						alert('로그인이 완료되었습니다.');
+						form.submit();
+					}else{
+						alert('비밀번호를 잘못입력했습니다.');
+						location.href="login_error.html";
+					}
+				}else{
+					alert('아이디를 잘못입력했습니다.');
+					location.href="login_error.html";
+				}
+				
+			}
+		
+		</script>
+	</head>
+	<body>
+		<!--  
+			1. form action="login_ok_html"
+			2. input -> 아이디 입력창
+			3. input -> 패스워드 입력창
+			4. 스크립트에서 체크함수
+			5. 아이디=admin 아이디를 잘못 입력했습니다. 리턴
+			6. 패스워드 12345 비밀번호가 잘못 입력되었습니다. 리턴.
+			7. 리턴 form.submit(); action으로 넘어간다.
+		 -->
+		<h2>로그인</h2>
+		<form name="form" action="login_ok.html" method="get">
+		<label>아이디 : <input type="text" name="id"></label><br>
+		<label>패스워드 : <input type="password" name="pw"></label><br>
+		<button type="button" onclick="check()">로그인</button>
+		</form>
+	</body>
+</html>
