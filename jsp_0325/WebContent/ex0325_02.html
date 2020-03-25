@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript">
+			
+			//k-국문학과 / e-영문학과 / m-수학과 / c-컴퓨터공학
+			//컴퓨터 학과 학생들만 뽑아서 배열을 만들어 보세요.
+			var stu_num = ["k202001","k202002","e202001","e202002","e202003"
+				,"m202001","m202002","c202001","c202002","e202004","k202003","c202003"];
+			
+				
+			function filter(value,index){
+				return value.indexOf("c")!=-1;
+			}
+			
+				
+			function com_stu(){
+			var computer = stu_num.filter(filter);
+			document.write(computer);
+				
+			}
+		
+		/* indexOf() 메소드
+		
+			var data = "54321";
+			if(data.indexOf(5)!=-1){
+				alert('5가 있습니다.')
+			}
+		*/		
+		
+		/* filter() 메소드
+			var data  = [43,12,10,78,60,55,96,45,35,28];
+			
+			function filterArr(value){
+				return value>=18; //18보다 큰수만 리턴
+			}
+			
+			var new_data = data.filter(filterArr);
+			document.write("필터 전 배열 : "+data+"<br>");
+			document.write("필터 후 배열 : "+new_data+"<br>");
+		
+		*/
+		
+		/* forEach() 메소드
+			var kdata = ["서울","부산","청주","대구"];
+			function printcity(item,index) {
+				document.write("배열의 데이터 ["+index+"] : "+item+"<br>")
+			}
+			kdata.forEach(printcity);
+			
+			document.write("----------------------------------<br>")
+			
+			var data = [1,2,3,4,5,6,7,8,8,9,10];
+			var sum = 0;
+			function add_data(value){
+				sum += value;
+			}
+			data.forEach(add_data);
+			document.write("배열의 합 : "+sum+"<br>");
+		*/
+			
+			
+		/* sort() 메소드
+			var ndata1 = [19,38,67,26,55,24,53,12,31];
+			var ndata2 = [132,2,41,123,45,1234,6,29,4567];
+			
+			document.write("수치 정렬1 : "+ndata1.sort()+"<br>");
+			document.write("기존 : "+ndata2+"<br>");
+			document.write("기존 : "+ndata2+"<br>");
+			document.write("ndata2.sort(function(a,b){return a - b;") //자리수가 달라지면 꼭 넣어줘야한다.
+			document.write("수치 정렬2 : "+ndata2.sort()+"<br>"); //자리수가 달라지면 이상하게 출력된다.
+			document.write("수치 정렬3 : "+ndata2.sort(function(a,b){
+					return a - b;
+			})+ "<br>");
+		*/
+		
+		/* reverse
+		 	var data = [9,8,7,6,5,4,3,2,1];
+		 	document.write("배열 : "+data.join()+"<br>");
+		 	var rev_data = data.reverse(); // 반대로 정렬
+		 	document.write("reverse 배열 : "+rev_data+"<br>");
+		 */
+		</script>
+	</head>
+	<body>
+		<button onclick="com_stu()">컴퓨터학과 학생 배열 만들기</button>
+	</body>
+</html>

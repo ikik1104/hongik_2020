@@ -4,7 +4,7 @@
 		<meta charset="UTF-8">
 		<title>Insert title here</title>
 		<link rel="stylesheet" type="text/css" href="css/join.css">
-		<script type="text/javascript" src="prefixfree.dynamic-dom.min.js"></script>
+		<script type="text/javascript" src="js/join.js"></script>
 	</head>
 	<body>
 		<header>
@@ -34,7 +34,7 @@
 			</nav>
 		</header>
 		<div id="sub_img"></div>
-		<form action="join_view.html" method="get">
+		<form name="join" action="" method="get">
 		<section>
 			<div>
 				<div id="top">
@@ -139,7 +139,7 @@
 					<tr>
 						<th><span></span>휴대전화</th>
 						<td id="call">
-							<input type="text" name="phone1"> - <input type="text" name="phone1"> - <input type="text" name="phone1">
+							<input type="text" name="phone1" maxlength="3"> - <input type="text" name="phone1" maxlength="4"> - <input type="text" name="phone1" maxlength="4">
 						</td>
 					</tr>
 					<tr>
@@ -268,7 +268,8 @@
 				</table>
 				<div id="join_btn">
 				<button type="button" onclick="location.href='main.html'">취소</button>
-				<button type="submit" onclick="location.href='join_view.html'">가입하기</button>
+<!-- 				<button type="submit" onclick="location.href='join_view.html'">가입하기</button> -->
+				<button type="button" onclick="check()">가입하기</button>
 				</div>
 			</div>
 		</section>

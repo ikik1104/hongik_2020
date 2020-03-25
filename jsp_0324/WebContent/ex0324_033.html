@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript">
+		//form
+		// 이름 국문만 가능 한자리 이상
+		//숫자1(숫자만 1자리), 숫자2(숫자만 2자리), 숫자3(숫자만 3자리),숫자4(숫자만 4자리) 이하
+		//함수로 add, multi
+		// 4개 숫자 더하기 결과값 : 4개 숫자 곱하기 결과값
+		//화면에 출력허시오
+		function check(){
+			var num1 = form.num1.value;
+			var num2 = form.num2.value;
+			var num3 = form.num3.value;
+			var num4 = form.num4.value;
+			
+			
+			var name_chk = /^[가-힣]{1,}$/;
+			var num_chk = /^[0-9]+$/;
+			
+			if(form.u_name.value==""){
+				alert("이름을 입력하세요.");
+				form.u_name.focus();
+				return false;
+			}
+			
+			if(!(name_chk.test(form.u_name.value))){
+				alert("국문 1자리 이상 입력하세요.");
+				form.u_name.value="";
+				form.u_name.focus();
+				return false;
+			}
+			
+			//숫자 1
+			if(num1==""){
+				alert("숫자1를 입력해주세요.");
+				form.num1.focus();
+				return false;
+			}
+			
+			if(!(num_chk.test(num1)) || (num1.length!=1)){
+				alert("숫자만 1자리 입력 가능합니다.");
+				num1="";
+				form.num1.focus();
+				return false;
+			}
+			
+			//숫자2
+			if(num2==""){
+				alert("숫자2를 입력해주세요.");
+				form.num2.focus();
+				return false;
+			}
+			
+			if(!(num_chk.test(num2)) || !(num2.length<=2)){
+				alert("숫자만 2자리까지 입력 가능합니다.");
+				num2="";
+				form.num2.focus();
+				return false;
+			}
+			
+			//숫자3
+			if(num3==""){
+				alert("숫자3를 입력해주세요.");
+				form.num3.focus();
+				return false;
+			}
+			
+			if(!(num_chk.test(num3)) || !(num3.length<=3)){
+				alert("숫자만 3자리까지 입력 가능합니다.");
+				num3="";
+				form.num3.focus();
+				return false;
+			}
+			
+			//숫자4
+			if(num4 ==""){
+				alert("숫자4를 입력해주세요.");
+				form.num4.focus();
+				return false;
+			}
+			
+			if(!(num_chk.test(num4)) || !(num4.length<=4)){
+				alert("숫자만 4자리까지 입력 가능합니다.");
+				num4="";
+				form.num4.focus();
+				return false;
+			}
+			
+			num1 = parseInt(num1);
+			num2 = parseInt(num2);
+			num3 = parseInt(num3);
+			num4 = parseInt(num4);
+			
+			
+			
+			var result1 = add(num1,num2,num3,num4);
+			var result2 = multi(num1,num2,num3,num4);
+			
+			document.write("더하기 : "+num1+" + "+num2+" + "+num3+" + "+num4+" = "+result1+"<br>");
+			document.write("곱하기 : "+num1+" * "+num2+" * "+num3+" * "+num4+" = "+result2+"<br>");
+			
+		}
+		
+		function add(a,b,c,d){
+			return a+b+c+d;
+		}
+		function multi(a,b,c,d){
+			return a*b*c*d;
+		}
+		
+		</script>
+	</head>
+	<body>
+		<form name="form" action="" method="get">
+			<label>이름	: <input type="text" name="u_name" id="u_id"></label><br>
+			<label>숫자1	: <input type="text" name="num1" id="num1"></label><br>
+			<label>숫자2	: <input type="text" name="num2" id="num2"></label><br>
+			<label>숫자3	: <input type="text" name="num3" id="num3"></label><br>
+			<label>숫자4	: <input type="text" name="num4" id="num4"></label><br>
+		</form>		
+			<button onclick="check()">완료</button>
+	</body>
+</html>

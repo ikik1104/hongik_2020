@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<link rel="stylesheet" type="text/css" href="css/ex0323_01.css">
+		<script type="text/javascript" src="js/ex0323_01.js"></script>
+		
+	</head>
+	<body>
+		<form name="join" action="" method="get">
+			<label>아이디<input type="text" name="j_id" autofocus="autofocus"></label>
+			<span> * 아이디는 문자만 입력가능합니다.</span><br>
+			<label>패스워드<input type="password" name="j_pw"></label><br>
+			<label>국문이름<input type="text" name="j_name"></label><br>
+			<label><input type="radio" name="gender" value="m">남자</label>
+			<label><input type="radio" name="gender" value="f">여자</label>
+			<input type="button" onclick="check()" value="전송">
+			<input type="reset" value="취소">
+		</form>
+	</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript">
+		//1~200
+		//3의 배수를 초기화해서 출력하시오.
+		//합계버튼 5의 배수만 합계를 구해보세요.
+		var num = [];
+		
+		
+		//숫자넣기
+		function insertNum() {
+			for (var i = 0; i <200; i++) {
+				num[i] = i+1;
+			}
+			print();
+		}
+		
+		
+		//3의배수 초기화
+		function delArr(){
+			for (var i = 0; i < num.length; i++) {
+				if(num[i]%3==0){
+					num[i] = "*";
+				}
+			}
+			print();
+		}
+		
+		//전부 초기화
+		function delNum(){
+			for (var i = 0; i < num.length; i++) {
+					num[i] = 0;
+			}
+			print();
+		}
+		
+		//배열  0개로 초기화
+		function delArray(){
+			num.length=0;
+			print();
+		}
+		
+		//배열전체문자열 변환
+		function joinNum(){
+			var j_array = num.join();
+			var j_array2 = num.join("-");
+			var j_array3 = num.join("/");
+			var j_array4 = num.join(" 그리고 ");
+			document.write("조인결과 : "+j_array+"<br>");
+			document.write("조인결과 : "+j_array2+"<br>");
+			document.write("조인결과 : "+j_array3+"<br>");
+			document.write("조인결과 : "+j_array4+"<br>");
+			document.write("<a href='ex0324_044.html'>돌아가기</a><br>");
+		}
+		
+		
+		//출력
+		function print(){
+			for (var i = 0; i < num.length; i++) {
+				document.write(num[i]+"&emsp;");
+				if((i<num.length) && ((i+1)%20==0)){
+					document.write("<br>");
+				}
+			}
+				document.write("<br>");
+				document.write("lotto배열 크기 : "+num.length+"<br>");
+				document.write("<a href='ex0324_044.html'>돌아가기</a><br>");
+		}
+		
+		//5의배수 합계
+		function add(){
+			print();
+			var sum = 0;
+			for (var i = 0; i < num.length; i++) {
+				if(i%5==0){
+					sum += num[i];
+				}
+			}
+			document.write("5의 배수의 합계 : "+sum);
+		}
+		
+		insertNum();
+		
+		</script>
+	</head>
+	<body>
+		<button onclick="delNum()">모든 데이트 0 초기화</button>
+		<button onclick="delArr()">3의 배수 초기화</button>
+		<button onclick="add()">5의 배수 합계</button>
+		<button onclick="delArray()">배열을 0개로 초기화</button>
+		<button onclick="joinNum()">배열전체문자열</button>
+	</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			
+		
+		
+			var lotto = [];
+			
+			//값을 넣는다.
+			function insertNum(){
+				for (var i = 0; i <45; i++) {
+					lotto[i] = i+1; //1~10까지 숫자 입력
+				}
+				printNum();
+			}
+			
+			//홀수 초기화
+			function delArr(){
+				for (var i = 0; i < lotto.length; i++) {
+					if(i%2==0){
+						lotto[i] = 0;
+					}
+					continue;
+				}
+				printNum();
+			}
+		
+			//배열 찍기
+			function printNum(){
+				for (var i = 0; i < lotto.length; i++) {
+					document.write("lotto["+i+"]  "+lotto[i]+"<br>");
+				}
+				addNum();
+			}
+			
+			//배열더하기
+			function addNum(){
+				var sum = 0;
+				for (var i = 0; i < lotto.length; i++) {
+					sum += lotto[i];
+				}
+					document.write("덧셈의 결과 값 : "+sum+"<br>");
+					document.write("<a href='ex0324_04.html'>돌아가기</a><br>");
+			}
+		
+			//초기에 프린트
+			insertNum();
+			
+			
+		/*
+			var city = new Array("Seoul","Busan","Incheon");
+			
+			function printArr(){
+				if(city instanceof Array){
+					document.write("배열이 맞습니다.<br>");
+					for (var i = 0; i < city.length; i++) {
+						document.write("배열 데이터["+i+"]"+city[i]+"<br>");
+					}
+				}else{
+					document.write("배열이 아니니다.<br>");
+					document.write("데이터 값 : "+city+"<br>");
+				}
+			}//f
+			printArr();
+			
+			document.write("city typeof 변수 타입 비교 : "+typeof city+"<br>");
+			document.write("city isArray타입 비교 : "+Array.isArray(city)+"<br>");
+		*/
+		
+		
+		/*
+			var numArr = [1,5,10,20,30,90,110,120,150,200];
+			
+			function add() {
+				var sum = 0;
+				for (var i = 0; i < numArr.length; i++) {
+					document.write((i+1)+"번째  : "+numArr[i]+"<br>");
+					sum += numArr[i];
+				}
+				document.write("------------------------<br>");
+				return sum;
+			}
+			
+			var result = add();
+			document.write("총 합은 : "+result);
+			
+		*/	
+		
+		/*
+			var com = [95,88, ,72,68, ,99,78,87];
+			var getAvg;
+			
+			function printArr(){
+				var sum = 0;
+				var count = 0;
+				for (var i = 0; i < com.length; i++) {
+					if(com[i]===undefined){
+						continue;
+					}
+					sum += com[i];		
+					count++;
+				}
+				getAvg = sum/count;
+			
+				document.write("학생 수 :"+ count+"<br>");
+				document.write("배열 합계 : "+sum+"<br>");
+				document.write("배열 평균 : "+getAvg+"<br>");
+			}
+			
+			printArr();
+		*/	
+		</script>
+		<button onclick="insertNum()">배열과 객체선언/출력/연산</button>
+		<button onclick="delArr()">홀수 초기화</button>
+	</body>
+</html>
