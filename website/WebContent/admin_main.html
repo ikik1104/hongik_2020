@@ -4,12 +4,16 @@
 		<meta charset="UTF-8">
 		<title>Insert title here</title>
 		<link rel="stylesheet" type="text/css" href="css/admin_main.css">
+		<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+        <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="js/prefixfree.dynamic-dom.min.js"></script>
+        <script type="text/javascript" src="js/admin_main.js"></script>
 	</head>
 	<body>
 	<header>
 		<div>
 			<div id="top">
-			<p>LMS <span>STARTUP</span> Type</p>
+			<a href="#"><p>LMS <span>STARTUP</span> Type</p></a>
 			<ul>
 				<li>관리자</li>
 				<li><img src="images/logout.png"></li>
@@ -30,40 +34,42 @@
 				</li>
 			</ul>
 			</div>
-			<div id="menu">
-			<ul>
-				<li><span></span>회원</li>
-				<li><span></span>공지사항</li>
-				<li><span></span>이벤트</li>
-				<li><span></span>상품/결제(신청)</li>
-				<li><span></span>수업/스케줄</li>
-				<li><span></span>프로모션</li>
-				<li><span></span>홈페이지</li>
-			</ul>
+			<div id="menu" class="admin_gnb">
+				<ul>
+		            <li><span></span>커뮤니티</li>
+		            <li><span></span>환경설정</li>
+		            <li><span></span>회원/강사</li>
+		            <li><span></span>상품/결제(신청)</li>
+		            <li><span></span>수업/스케쥴</li>
+		            <li><span></span>프로모션</li>
+		            <li><span></span>홈페이지</li>
+		            <li><span></span>회계관리</li>
+		            <li><span></span>통계 분석</li>
+	          	</ul>
 			</div>
 		</div>
 	</header>
 	<nav>
 		<h2><em></em>회원/강사</h2>
 		<div  id="student" class="user">
-			<a>학생 관리<span>-</span></a>
+			<a href="#">학생 관리<span>-</span></a>
 			<div>
 				<ul>
-					<li><a><img src="images/icon_title_left.png">학생 등록</a></li>
-					<li><a><img src="images/icon_title_left.png">학생 리스트(탈퇴)</a></li>
-					<li><a><img src="images/icon_title_left.png">학생등급 관리</a></li>
-					<li><a><img src="images/icon_title_left.png">학생등급 분류/해택</a></li>
-					<li><a><img src="images/icon_title_left.png">회원 상담 관리</a></li>
+					<li><a href="#"><img src="images/icon_title_left.png">학생 등록</a></li>
+					<li><a href="#"><img src="images/icon_title_left.png">학생 리스트(탈퇴)</a></li>
+					<li><a href="#"><img src="images/icon_title_left.png">학생등급 관리</a></li>
+					<li><a href="#"><img src="images/icon_title_left.png">학생등급 분류/해택</a></li>
+					<li><a href="#"><img src="images/icon_title_left.png">회원 상담 관리</a></li>
 				</ul>
 			</div>
 		</div>
 		<div  id="teacher" class="user">
-			<a>강사 관리<span>-</span></a>
+			<a href="#">강사 관리<span>-</span></a>
 			<div>
 				<ul>
-					<li><a><img src="images/icon_title_left.png">강사 등록</a></li>
-					<li><a><img src="images/icon_title_left.png">강사 리스트</a></li>
-					<li><a><img src="images/icon_title_left.png">강사 리스트(사용중지)</a></li>
+					<li><a href="#"><img src="images/icon_title_left.png">강사 등록</a></li>
+					<li><a href="#"><img src="images/icon_title_left.png">강사 리스트</a></li>
+					<li><a href="#"><img src="images/icon_title_left.png">강사 리스트(사용중지)</a></li>
 				</ul>
 			</div>
 		</div>
@@ -144,7 +150,7 @@
 						</tr>
 					</table>
 					<div class="detail_btn">
-						<a>회원 전체보기</a>
+						<a href="#">회원 전체보기</a>
 					</div>
 				</div>
 			</div>
@@ -196,7 +202,7 @@
 						</tr>
 					</table>
 					<div class="detail_btn">
-						<a>최근게시물 전체보기</a>
+						<a href="#">최근게시물 전체보기</a>
 					</div>
 				</div>
 			</div>
@@ -255,7 +261,7 @@
 						</tr>
 					</table>
 					<div class="detail_btn">
-						<a>포인트내역 전체보기</a>
+						<a href="#">포인트내역 전체보기</a>
 					</div>
 				</div>
 			</div>

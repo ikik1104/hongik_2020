@@ -8,6 +8,12 @@ ul{
 a{
 		text-decoration:none; color:#101010;
 }
+a:hover, a:visited, a:active{
+		text-decoration:none;  color:#101010;
+}
+
+
+
 /* <header>*/
 #nav_up{
 		width:100%; height:35px;
@@ -22,6 +28,9 @@ a{
 		 float:left; margin-right:15px; line-height:37px;
 		 font-size:13px;
 }
+#nav_up ul li a{
+		color:white;
+}
 
 nav{
 		width:100%; height:81px; border-bottom:1px solid black;
@@ -31,6 +40,9 @@ nav>h1{
 		width:110px; height:40px;/* 630 767*/
 		background:url("../images/ico_set - 복사본.png") -318px -382px no-repeat ;
 		position:absolute; left:38px; top:22px;
+}
+nav>h1{
+		cursor:pointer;
 }
 nav>ul:nth-child(2){
 		width:750px; height:40px;
@@ -143,6 +155,9 @@ nav>ul:nth-child(3)>li:nth-child(2)>a>span{
 #list_ul_2>li{
 		float:left; width:380px; height:305px; padding-right:20px;
 }
+#list_ul_2>li p:nth-child(2) a{
+	color:white;
+}
 
 #list_ul_2>li:nth-child(4), #list_ul_2>li:nth-child(5){
 		margin-top:100px; 
@@ -151,8 +166,11 @@ nav>ul:nth-child(3)>li:nth-child(2)>a>span{
 
 
 #list_ul_2>li>img{
+}
+#list_ul_2 li a img{
 		width:380px; height:232px;
 }
+
 
 #list_ul_2>li>p{
 		font-weight:bold;
@@ -187,12 +205,13 @@ nav>ul:nth-child(3)>li:nth-child(2)>a>span{
 #page_num>strong{
 		display:block;
 		width:40px; height:40px;
-		background:#202020; line-height:40px;
+		background:#202020; line-height:35px;
 		color:#fff; text-align:center; 
 		margin:0 auto;
 }
-
-
+#page_num>strong>a{
+	color:white; font-size:14px;
+}
 
 
 
@@ -227,12 +246,18 @@ nav>ul:nth-child(3)>li:nth-child(2)>a>span{
 #foot>div:nth-child(2)>ul:nth-child(1)>li{
 		float:left; font-weight:bold;  
 }
+#foot>div:nth-child(2)>ul:nth-child(1)>li>a{
+	color:#fff;
+}
 
 #foot>div:nth-child(2)>ul:nth-child(1)>li:nth-child(1){
 		margin-right:20px;
 }
 #foot>div:nth-child(2)>ul:nth-child(1)>li:nth-child(3){
 		margin-right:20px; color:#BDD61A
+}
+#foot>div:nth-child(2)>ul:nth-child(1)>li:nth-child(3)>a{
+	color:#BDD61A
 }
 #foot>div:nth-child(2)>ul:nth-child(1)>li:nth-child(5){
 		margin-right:20px;
@@ -315,6 +340,9 @@ nav>ul:nth-child(3)>li:nth-child(2)>a>span{
 #foot>div:nth-child(3){
 		width:200px; height:213px;
 		float:left; 
+}
+#foot>div:nth-child(3) a{
+	color:#fff;
 }
 #foot>div:nth-child(3)>p:nth-child(1){
 		width:100%; height:13px; text-align:right;

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+
+		<style type="text/css">
+			p {
+				width: 400px;
+				height: 200px;
+				border: 1px solid black;
+				margin: 20px;
+				text-align: center; font-size: 20px; color:red;
+				padding: 100px; box-sizing: border-box;
+			}
+		</style>
+	</head>
+	<body>
+<!-- 		<p id="var1"></p> -->
+<!-- 		<p id="var2"></p> -->
+<!-- 		<p id="var3"></p> -->
+
+<!-- 			<p id="carname"></p> -->
+<!-- 			<p id="carcolor"></p> -->
+<!-- 			<p id="carspeed"></p> -->
+			<p>홍길동 차 스펙</p>
+			<p id="carname"></p>
+			<p id="carcolor"></p>
+			<p>강감찬 차 스펙</p>
+			<p id="carname2"></p>
+			<p id="carcolor2"></p>
+		<script type="text/javascript">
+			//함수 선언
+			function Car(name,color,speed){
+				this.name=name;
+				this.color=color;
+				this.speed=speed;
+				this.speed_up = function(){
+					return this.speed+10;
+				};
+				this.speed_down=function(){
+					return this.speed-10;
+				};
+			}
+			
+			var hong = new Car('sonata','blue',100);
+			var kang = new Car('jeep','red',70);
+			
+			var  cname = document.getElementById('carname');
+			cname.textContent = '홍길동 자동차 이름 : '+hong.name;
+			var ccolor = document.getElementById('carcolor');
+			ccolor.textContent = '홍길동 자동차 색상 : '+hong.color;
+			
+			var	kname = document.getElementById('carname2');
+			kname.textContent = '강감찬 자동차 이름 : '+kang.name;
+			var kcolor = document.getElementById('carcolor2');
+			kcolor.textContent = '강감찬 자동차 색상 : '+kang.color;
+			
+		/*
+			var car = new Object();
+			car.name='sonata';
+			car.speed=100;
+			car.color='blue';
+			car.speedup=function(){
+				return this.speed + 10;
+			};
+			
+			var cname = document.getElementById('carname');
+			cname.textContent="자동차 이름 :"+car.name;
+			
+			document.getElementById('carcolor').textContent="자동차 색상:"+car.color;
+		*/
+		
+		/* 객체 사용
+			var car={
+					name: 'sonata',
+					speed: 100,
+					color:'white',
+					m1:function(){
+						return this.name;
+					},
+					m2:function(a){
+						result = this.speed+a;
+						return result;
+					},
+					m3:function(a,b){
+						name = this.m1();
+						result = this.m2(a)+b;
+						return name+"  : "+result;
+					}
+			};
+			
+			document.getElementById("var1").innerHTML=car.m1();
+			document.getElementById("var2").innerHTML=car.m2(50);
+			document.getElementById("var3").innerHTML=car.m3(50,100);
+			
+			
+		*/
+		</script>
+	</body>
+</html>

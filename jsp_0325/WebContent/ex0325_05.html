@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="css/ex0325_05.css">
+</head>
+<body>
+	<table border="1">
+		<tr>
+			<th>학번</th>
+			<th>이름</th>
+			<th>국어</th>
+			<th>영어</th>
+			<th>합계</th>
+			<th>평균</th>
+		</tr>
+		<tr>
+			<td id="td_1_1"></td>
+			<td id="td_1_2"></td>
+			<td id="td_1_3"></td>
+			<td id="td_1_4"></td>
+			<td id="td_1_5"></td>
+			<td id="td_1_6"></td>
+		</tr>
+		<tr>
+			<td id="td_2_1"></td>
+			<td id="td_2_2"></td>
+			<td id="td_2_3"></td>
+			<td id="td_2_4"></td>
+			<td id="td_2_5"></td>
+			<td id="td_2_6"></td>
+		</tr>
+		<tr>
+			<td id="td_3_1"></td>
+			<td id="td_3_2"></td>
+			<td id="td_3_3"></td>
+			<td id="td_3_4"></td>
+			<td id="td_3_5"></td>
+			<td id="td_3_6"></td>
+		</tr>
+	</table>
+	<script type="text/javascript">
+		//함수선언
+		//실습
+		//객체 = 학번,이름,국어,영어,합계-함수구성,평균-함수구성
+		//1 홍길동 100 80
+		//2 강감찬 99 87
+		//3 유관순 100 99
+		//table ->
+		
+		function Score(hak,name,kor,eng) {
+			this.hak = hak;
+			this.name = name;
+			this.kor = kor;
+			this.eng = eng;
+			this.total = this.kor+this.eng;
+			this.avg=this.total/2;	
+		}
+		
+		var hong = new Score(1,'홍길동',100,80);
+		var kong = new Score(2,'강감찬',99,87);
+		var y = new Score(3,'유관순',100,99);
+		
+		document.getElementById('td_1_1').textContent=hong.hak;
+		document.getElementById('td_1_2').textContent=hong.name;
+		document.getElementById('td_1_3').textContent=hong.kor;
+		document.getElementById('td_1_4').textContent=hong.eng;
+		document.getElementById('td_1_5').textContent=hong.total;
+		document.getElementById('td_1_6').textContent=hong.avg;
+		
+		document.getElementById('td_2_1').textContent=kong.hak;
+		document.getElementById('td_2_2').textContent=kong.name;
+		document.getElementById('td_2_3').textContent=kong.kor;
+		document.getElementById('td_2_4').textContent=kong.eng;
+		document.getElementById('td_2_5').textContent=kong.total;
+		document.getElementById('td_2_6').textContent=kong.avg;
+		
+		document.getElementById('td_3_1').textContent=y.hak;
+		document.getElementById('td_3_2').textContent=y.name;
+		document.getElementById('td_3_3').textContent=y.kor;
+		document.getElementById('td_3_4').textContent=y.eng;
+		document.getElementById('td_3_5').textContent=y.total;
+		document.getElementById('td_3_6').textContent=y.avg;
+		
+	</script>
+</body>
+</html>

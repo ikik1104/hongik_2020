@@ -8,6 +8,11 @@ ul{
 a{
 		text-decoration:none; color:#101010;
 }
+a:hover, a:visited, a:active{
+		text-decoration:none;  color:#101010;
+}
+
+
 /* <header>*/
 #nav_up{
 		width:100%; height:35px;
@@ -22,6 +27,9 @@ a{
 		 float:left; margin-right:15px; line-height:37px;
 		 font-size:13px;
 }
+#nav_up ul li a{
+		color:white;
+}
 
 nav{
 		width:100%; height:81px; border-bottom:1px solid black;
@@ -32,6 +40,10 @@ nav>h1{
 		background:url("../images/ico_set - 복사본.png") -318px -382px no-repeat ;
 		position:absolute; left:38px; top:22px;
 }
+nav>h1{
+		cursor:pointer;
+}
+	
 nav>ul:nth-child(2){
 		width:750px; height:40px;
 		margin:0 auto;
@@ -384,12 +396,18 @@ section{
 #foot>div:nth-child(2)>ul:nth-child(1)>li{
 		float:left; font-weight:bold;  
 }
-
+#foot>div:nth-child(2)>ul:nth-child(1)>li>a{
+	color:#fff;
+}
+	
 #foot>div:nth-child(2)>ul:nth-child(1)>li:nth-child(1){
 		margin-right:20px;
 }
 #foot>div:nth-child(2)>ul:nth-child(1)>li:nth-child(3){
 		margin-right:20px; color:#BDD61A
+}
+#foot>div:nth-child(2)>ul:nth-child(1)>li:nth-child(3)>a{
+	color:#BDD61A
 }
 #foot>div:nth-child(2)>ul:nth-child(1)>li:nth-child(5){
 		margin-right:20px;
@@ -466,6 +484,9 @@ section{
 #foot>div:nth-child(3){
 		width:200px; height:213px;
 		float:left; 
+}
+#foot>div:nth-child(3) a{
+	color:#fff;
 }
 #foot>div:nth-child(3)>p:nth-child(1){
 		width:100%; height:13px; text-align:right;

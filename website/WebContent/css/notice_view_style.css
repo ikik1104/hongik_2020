@@ -189,6 +189,8 @@ section>div>div>div:nth-child(1)>div:nth-child(2)>div{
 	padding-top:24px;
 	line-height: 22px;
 	text-align: left;
+	padding-bottom: 20px;
+	border-bottom: 2px solid #202020;
 }
 
 section>div>div>div:nth-child(1)>div:nth-child(2)>div>p{
