@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+		<script type="text/javascript" src="js/prefixfree.dynamic-dom.min.js"></script>
+		<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+		<script type="text/javascript" src="js/ex0327_07.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/ex0327_07.css">
+	</head>
+	<body>
+	<!-- 
+		<div id="slide">오늘의 공지사항</div>
+		<div id="panel">
+			오늘은 jQuery 프로그램을 학습합니다.<br>
+			예제를 작성한 후 실행해 주세요.
+		</div>
+			<div id="flip">toggle slide</div>
+			<br>
+			<button id="stop">stop sliding</button>
+			 -->
+
+	<div id="init">
+		<button onclick="back('#moving img')">초기화 버튼</button>
+		<br>
+	</div>
+	<div id="moving">
+			<img onclick="move(this,6000)" src="images/img01.jpg"><br>
+			<img onclick="move(this,3000)" src="images/img02.jpg"><br>
+		</div>
+	</body>
+</html>

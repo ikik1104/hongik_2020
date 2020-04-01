@@ -1,0 +1,10 @@
+@charset "UTF-8";
+div{
+	float: right;
+}
+
+img{
+	width: 300px;
+	height: 300px;
+	position: relative;
+}

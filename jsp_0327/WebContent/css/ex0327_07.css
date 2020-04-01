@@ -1,0 +1,42 @@
+@charset "UTF-8";
+
+#init{
+	width: 200px;
+	height: 30px;
+	font-size: 20px;
+	display: inline-block;
+}
+
+#moving{
+	border: 1px solid black;
+	margin: 20px auto 0  auto;
+	text-align: right;
+}
+
+#moving img{
+	cursor: pointer;
+	position: relative;
+	width: 300px;
+}
+
+/*
+div	{
+	width:800px; height:30px;
+	padding-top : 10px;
+	text-align:center;
+	margin: 0 auto;
+	background: yellow;
+	border: 1px solid #c3c3c3;
+}
+#slide{
+	cursor: pointer;
+}
+#flip{
+	cursor: pointer;
+}
+#panel{
+	background: #efefef;
+	height: 200px;
+	cursor: pointer;
+}
+*/

@@ -1,0 +1,23 @@
+@charset "UTF-8";
+body	{
+	height: 2000px;	
+	
+}
+
+div	{
+	width: 300px; height: 300px;
+	background: url("../images/img01.jpg") no-repeat;
+	margin: 30px auto;
+	border: 1px solid black;
+}
+
+p	{
+	font-size: 20px;
+	text-align: center;
+	padding-top: 100px;
+}
+
+img{
+	width: 300px;
+	
+}

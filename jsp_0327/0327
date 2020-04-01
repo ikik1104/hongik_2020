@@ -1,0 +1,11 @@
+$(".아이디").eq(숫자) - 아이디클래스 숫자번째
+$(".아이디").eq(숫자).next() - 아이디클래스 숫자번째 다음
+
+resize - 화면크기가 조절되면
+
+document 
+
+$(window).mousemove(function(e){ //e를 넘겨주면 마우스 위치의 값을 function에 넣는다
+		e.pageX;
+		
+	});

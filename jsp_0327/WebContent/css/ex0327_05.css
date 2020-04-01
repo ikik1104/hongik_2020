@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+
+body {
+	height: 2000px;
+}
+
+div {
+	width: 300px;
+	height: 300px;
+	margin: 30px;
+	border: 1px solid black;
+}
+p {
+	font-size: 20px;
+}
