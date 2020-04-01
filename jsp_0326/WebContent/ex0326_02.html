@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<style type="text/css">
+			img{
+				width: 200px;
+			}
+		</style>
+		<script type="text/javascript">
+			function size_up(){
+			document.getElementById("img_01").style.width="600px";
+			document.getElementById("img_01").style.border="1px solid black";
+			}
+			
+			function size_back(){
+			document.getElementById("img_01").style.width="200px";
+			}
+		
+		</script>
+	</head>
+	<body>
+		<img alt="봄" src="images/s01.jpg" id="img_01">
+		<button onclick="size_up()">이미지 확대(600px)</button>
+		<button onclick="size_back()">이미지 원래대로(200px)</button>
+	</body>
+</html>

@@ -1,0 +1,13 @@
+	
+		
+	* 	객체 변수 사용: 객체변수.속성=‘값’;
+		setAttrbute(속성, 값);
+		
+		
+		
+		
+		- 제이쿼리
+		1. https://jquery.com/download/ 
+		https://code.jquery.com/jquery-3.4.1.js or 링크 저장 (js)
+		
+		https://leaverou.github.io/prefixfree/

@@ -1,0 +1,25 @@
+@charset "UTF-8";
+*{
+	margin: 0;
+	padding: 0;
+}
+div{
+	width: 1000px;
+	text-align: center;
+	border: 1px solid red;
+}
+ul{
+	margin: 0 auto;
+	list-style: none;
+	color:#efefef;
+	display: inline-block;
+	border: 1px solid black;
+	
+}
+ul li{
+	margin:50px 5px;
+	float: left;	
+	border: 1px solid black;
+	padding : 50px 70px;
+	text-align: center;
+}

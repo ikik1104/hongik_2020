@@ -1,0 +1,193 @@
+@charset "UTF-8";
+/*
+body{
+	font-size: 20px;
+}
+
+input{
+	margin: 20px;
+}
+
+li{
+	margin: 10px;	
+}
+*/
+*{
+	margin: 0;
+	padding: 0;
+}
+table{
+	margin: 100px auto;
+	font-size: 13px;
+	border-collapse: collapse;
+}
+
+#chk_t{
+	background: #585858 ;
+	color: white;
+	text-align: center;
+	width: 745px;
+	font-size: 12px;
+}
+.bottom{
+	border-bottom: 1px solid white;
+}
+
+
+#chk_t tr th{
+	font-size:13px;
+	width: 224px;
+	background: #2c2b2b ;
+}
+
+#chk_t tr td{
+	
+	box-sizing:border-box;
+	padding:14px 0;
+	padding-left:10px;
+	text-align: left;	
+}
+
+
+
+
+#result_t{
+	border: 1px solid #d5d5d5;
+	border-collapse: collapse;
+	margin-top:100px;
+    width: 669px;
+	border-left: none;
+	border-right: none;
+	text-align: center;
+}
+
+
+thead,tbody,tfoot{
+	border-top: 2px solid #d5d5d5;
+	border-bottom: 2px solid #d5d5d5;
+}
+
+#result_t tr th:nth-child(1),#result_t tr td:nth-child(1){
+	border-left: none;
+}
+
+#result_t tr th:nth-last-child(1),#result_t tr td:nth-last-child(1){
+	border-right: none;
+}
+
+#result_t thead tr th{
+	border: 1px solid #d5d5d5;
+	height:47px;
+	font-size: 13px;
+	font-weight: 650;	
+	background: #ececec;
+}
+
+#result_t tbody tr td{
+	border: 1px solid #d5d5d5;
+	background: white;
+}
+
+#result_t tr td:nth-child(1){
+	text-align: left;
+	padding-left: 10px;
+	}
+
+
+#result_t tr:nth-of-type(1),#result_t tr:nth-of-type(2){
+	background: #f3f3f3;
+}
+
+#result_t tr:nth-of-type(3){
+	background: #FEE2E4;
+	padding :10px;
+}
+
+
+#data{
+	visibility: visible;
+}
+
+
+#data td:nth-child(1){
+	color: #2E2E2E;
+	font-size: 13px;
+	padding: 10px 5px;
+	text-align:left;
+}
+
+.data td {
+	height: 62px;
+}
+
+p{
+	margin:0;
+	font-size: 12px;
+    font-weight: normal;
+    display: block;
+}
+span{
+	color:red;
+}
+
+#left{
+	padding-left:10px;
+	float: left;
+}
+
+.right{
+	padding-right:5px;
+	text-align: right;
+}
+
+.del_bnt{
+	padding: 2px 9px;
+	color: white;
+	background: #666666;
+	font-size: 15px;
+}
+
+
+/* .data{ */
+/* 	display: none; */
+/* } */
+
+.data select{
+	height: 30px;
+}
+
+tfoot{
+	text-align: left;
+	font-weight: bold;
+	
+}
+
+tfoot tr th{
+	width:245px;
+	padding:14px 0 14px 10px;
+	border: 1px solid #d5d5d5;
+}
+
+tfoot tr td{
+	padding-left:10px;
+	color:#404040;
+}
+tfoot tr{
+	border-bottom: 1px solid #d5d5d5;
+}
+
+tfoot tr:nth-of-type(2){
+	font-size:13px;
+	border-bottom: 3px solid #d5d5d5;
+}
+tfoot tr:nth-of-type(2) td>span:nth-of-type(2),tfoot tr:nth-of-type(1) td>span:nth-of-type(1)
+,tfoot tr:nth-of-type(3) td>span:nth-of-type(1){
+	color:#404040;
+	font-size:14px;
+	padding-right:50px;
+	float: right;
+}
+
+
+
+

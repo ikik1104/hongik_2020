@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+div.out{
+	width: 200px;
+	height: 100px;
+	border: 1px solid black;
+	text-align: center;
+	background: yellow;
+
+}
+
+img{
+	width: 200px;
+}
