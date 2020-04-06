@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	table{
+		border-collapse: collapse;
+		font-size: 20px;
+	}
+	
+	table,tr,td{
+		border: 1px solid black;
+	}
+	td:nth-child(1) {
+		width: 200px; height: 16px;
+	}
+	td:nth-child(2) {
+		width: 800px;
+	}
+</style>
+</head>
+<body>
+	<form name="form" action="ex0402_02.jsp" method="post">
+	<table>
+		<tr>
+			<td>이름</td>
+			<td><input type="text" name="name"></td>
+		</tr>
+		<tr>
+			<td>아이디</td>
+			<td><input type="text" name="id"></td>
+		</tr>
+		<tr>
+			<td>비밀번호</td>
+			<td><input type="text" name="pw" id="pw"></td>
+		</tr>
+		<tr>
+			<td>비밀번호 확인</td>
+			<td><input type="text" id="pw2"></td>
+		</tr>
+		<tr>
+			<td>휴대전화</td>
+			<td><input type="text" name="tel"></td>
+		</tr>
+		<tr>
+			<td>직업</td>
+			<td>
+				<select name="job">
+					<option value="j01">학생</option>
+					<option value="j02">회사원</option>
+					<option value="j03">자영업자</option>
+					<option value="j04">전업죽부</option>
+					<option value="j05">기타</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td>결혼여부</td>
+			<td>
+				<label><input type="radio" name="m_chk" value="y">예</label>
+				<label><input type="radio" name="m_chk" value="n">아니오</label>
+			</td>
+		</tr>
+		<tr>
+			<td>관심사</td>
+			<td>
+				<label><input type="checkbox" name="hobby" value="h01">컴퓨터/인터넷</label>
+				<label><input type="checkbox" name="hobby" value="h02">영화/비디오</label>
+				<label><input type="checkbox" name="hobby" value="h03">음악</label>
+				<label><input type="checkbox" name="hobby" value="h04">쇼핑</label>
+				<label><input type="checkbox" name="hobby" value="h05">게임</label>
+				<label><input type="checkbox" name="hobby" value="h06">문화/예술</label><br>
+				<label><input type="checkbox" name="hobby" value="h07">요리</label>
+				<label><input type="checkbox" name="hobby" value="h08">인테리어</label>
+				<label><input type="checkbox" name="hobby" value="h09">레저/여가</label>
+				<label><input type="checkbox" name="hobby" value="h10">건강/다이어트</label>
+			</td>
+		</tr>
+	</table>
+	<input type="submit" value="전송"><input type="reset" value="취소">
+	</form>
+</body>
+</html>

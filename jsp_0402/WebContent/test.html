@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form name="login" action="ex0402_01.jsp" method="Post">
+		<label>
+			아이디<input type="text" name="id">
+		</label> 
+		<input type="button" onclick="" value="유효성검사"><br>
+		
+		<label>
+			패스워드 <input type="text" name="pw">
+		</label><br>
+		
+		<label>
+			이름 <input type="text" name="name">
+		</label><br>
+		<p>취미</p>
+		<label><input type="checkbox" name="hobby" value="read">독서</label>
+		<label><input type="checkbox" name="hobby" value="cook">요리</label>
+		<label><input type="checkbox" name="hobby" value="run">조깅</label>
+		<label><input type="checkbox" name="hobby" value="swim">수영</label>
+		<br>
+		
+		<p>전공</p>
+		<label><input type="radio" name="major" value="kor" >국문학과</label>
+		<label><input type="radio" name="major" value="eng" >영어영문학과</label>
+		<label><input type="radio" name="major" value="math" >수학과</label>
+		<label><input type="radio" name="major" value="design" >디자인학과</label>
+		<br>
+		
+		<p>주소</p>
+		<select name="address">
+			<option value="seoul">서울</option>
+			<option value="gyeonggi">경기</option>
+			<option value="busan">부산</option>
+		</select><br>
+		
+		<input type="submit" value="전송"> <input type="reset" value="취소">
+	</form>
+</body>
+</html>

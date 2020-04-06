@@ -1,0 +1,40 @@
+
+	<< 		20.04.03 10장	 >>
+
+
+	<%-- jsp주석 : html 소스보기에서 나타나지 않음 --%>
+	<!-- html 주석 : html 소스보기에서 나타남 -->
+	
+	
+	
+	request객체 관련 메소드
+	getContextPath() : 웹어플리케이션의컨텍스트패스를얻습니다. (프로젝트의 명을 가져온다.)
+
+	getServerName() : 서버의 이름을 얻습니다.
+	
+	getServerPort() : 포트번호를 얻습니다. 8181
+
+	getMethod() : get방식과post방식을구분할수 있습니다.
+	
+	getSession() : 세션객체를얻습니다.
+	
+	getProtocol() : 해당프로토콜을얻습니다.
+	
+	getRequestURL() : 요청URL를얻습니다.
+	
+	getRequestURI() : 요청URI를 얻습니다. (서버와 포트번호빼고 url)
+	
+	getQueryString() : 쿼리스트링을얻습니다. 
+	
+	getRemoteAddr() : 웹 서버에 연결한 클라이언트 ip주소를 얻습니다.
+	
+	
+	getParameterNames() -> 
+	
+	
+	response객체 관련 메소드
+	getCharacterEncoding() : 응답할때문자의인코딩형태를구합니다.
+
+	addCookie(Cookie) : 쿠키를지정합니다.
+
+	sendRedirect(URL) : 지정한URL로이동합니다.
