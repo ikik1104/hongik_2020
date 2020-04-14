@@ -93,14 +93,16 @@
 <body>
 <!-- 이름, 아아디, 패스워드, 패스워드확인,성별,주소 -->
 <form name="form" action="ex0408_03.jsp" method="post">
-	이름 : <input type="text" name="name"><br>
-	아이디 : <input type="text" name="id"><br> 
-	패스워드 : <input type="password" name="pw"><br>
-	패스워드 확인 : <input type="password" name="pw2"><br>
-	성별 : <input type="radio" name="gender" value="male">남
-		 <input type="radio" name="gender" value="female">여
+	<label>이름 : <input type="text" name="name"></label><br>
+	<label>아이디 : <input type="text" name="id"></label><br> 
+	<label>패스워드 : <input type="password" name="pw"></label><br>
+	<label>패스워드 확인 : <input type="password" name="pw2"></label><br>
+	<p>성별 </p>
+	<label><input type="radio" name="gender" value="male">남</label>
+	<label><input type="radio" name="gender" value="female">여</label>
 	<br>
-	주소 : <select name="addr">
+	<p>주소 </p>
+		<select name="addr">
 			<option value="seoul">서울</option>
 			<option value="kyeonggi">경기</option>
 			<option value="busan">부산</option>

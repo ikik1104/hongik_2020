@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<!-- 이름, 아아디, 패스워드, 패스워드확인,성별,직업, 취미 -->
+<form name="form" action="ex0408_04_joinOk.jsp" method="post">
+	<label>이름 : <input type="text" name="name"></label><br>
+	<label>아이디 : <input type="text" name="id"></label><br> 
+	<label>닉네임 : <input type="text" name="nick_name"></label><br> 
+	<label>패스워드 : <input type="password" name="pw"></label><br>
+	<label>패스워드 확인 : <input type="password" name="pw2"></label><br>
+	<p>성별 </p>
+	<label><input type="radio" name="gender" value="male">남</label>
+	<label><input type="radio" name="gender" value="female">여</label>
+	<br>
+	<p>직업</p>
+	<select name="job">
+		<option value="office">회사원</option>
+		<option value="student">학생</option>
+ 	</select>
+	<br>
+	<p>취미</p>
+	<label><input type="checkbox" name="hobby" value="cook">요리</label>
+	<label><input type="checkbox" name="hobby" value="run">조깅</label>
+	<label><input type="checkbox" name="hobby" value="swim">수영</label>
+	<label><input type="checkbox" name="hobby" value="game">게임</label><br>
+	<input type="submit" value="전송">
+</form>
+</body>
+</html>

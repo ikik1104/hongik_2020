@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function chk(){
+		
+		var name_chk  = /^[a-zA-Z가-힣]+$/;
+		var sal_chk = /^[0-9]+$/;
+		
+		if(form.select.value == "n_search"){
+			
+			if(form.name1.value==""){
+				alert("이름을 입력해주세요.");
+				return false;
+			}
+			
+			if(!(name_chk.test(form.name1.value))){
+				alert("이름 검색은 영문/국문만 가능합니다.");
+				form.name1.value= "";
+				form.name2.value = "";
+				form.name1.focus();
+				return false;
+			}
+		}else{
+			
+			if(form.name1.value=="" || form.name2.value==""){
+				alert("월급의 범위를 입력해주세요.");
+				return false;
+			}
+			
+			if(!(sal_chk.test(form.name1.value)) || !(sal_chk.test(form.name2.value))){
+				alert("월급 검색은 숫자만 가능합니다.");
+				form.name1.value="";
+				form.name2.value="";
+				form.name1.focus();
+				return false;
+			}
+			
+			var num1 = parseInt(form.name1.value);
+			var num2 = parseInt(form.name2.value);
+			
+			if(num1 > num2){
+				alert("시작 숫자가 작아야 합니다.");
+				form.name1.value="";
+				form.name2.value="";
+				form.name.focus();
+				return false;
+			}
+		}
+		
+		if(form.list.value==""){
+			alert("정렬기준을 선택하세요.");
+			return false;
+		}
+		
+		form.submit();
+	}
+	
+	
+	//선택한 select가 바뀔 때마다 
+	function sel(val){
+		if(val=="n_search"){ // 이름검색을 선택하면
+// 			var name = document.getElementsByName("name2")[0]; //name은 id처럼 고유한 값이 아니여서 배열로 인식하기 때문에 0번째 
+			form.name2.setAttribute('type', 'hidden'); //뒤 input박스를 hidden으로 바꿔준다
+		}else{
+// 			var name = document.getElementsByName("name2")[0];
+			form.name2.setAttribute('type', 'text'); //input박스를 text로 바꿔준다.
+		}
+		
+	}
+	
+	
+</script>
+</head>
+<body>
+	<form name="form" action="ex0413_01.jsp" method="post">
+		<h2>찾고자 하는 월급 범위를 입력하세요.</h2>
+		<select name="select" onchange="sel(this.value)"> <!-- 선택이 바뀔 때 마다 value를 가지고 sel()로 간다. -->
+			<option value="n_search">이름으로 검색</option>
+			<option value="s_search">월급으로 검색</option>
+		</select>
+		<br>
+		
+		<input type="text" name="name1">  -  <input type="hidden" name="name2"> <br>
+		<p>정렬 기준</p>
+		<label><input type="radio" name="list" value="emp_l"> 사원번호 낮은 기준</label>
+		<label><input type="radio" name="list" value="emp_h"> 사원번호 높은 기준</label>
+		<label><input type="radio" name="list" value="sal_l"> 월급 낮은 기준</label>
+		<label><input type="radio" name="list" value="sal_h"> 월급 높은 기준</label><br>
+		<input type="button" onclick="chk()" value="전송"> 
+	</form>
+</body>
+
+</html>
