@@ -22,9 +22,11 @@ input{width: 90%;height: 100%; border: none; padding-left: 20px;} button{height:
 	function file_del() {
 		if($('input[name=file]').val()==""){
 			$('input[name=file]').val("<%=bdto.getB_file()%>");
+			$('input[name=del_file]').val("");
 			$('#del_btn').text('파일삭제');
 		}else{
 			$('input[name=file]').val("");
+			$('input[name=del_file]').val("<%=bdto.getB_file()%>");
 			$('#del_btn').text('파일복구');
 		}
 	
@@ -62,7 +64,8 @@ input{width: 90%;height: 100%; border: none; padding-left: 20px;} button{height:
 			</tr>
 			<tr>
 				<td colspan="2"><button type="submit">수정</button> 
-				<input type="hidden" name="b_num" value=<%=bdto.getB_num()%>> 
+				<input type="hidden" name="b_num" value=<%=bdto.getB_num()%>>
+				<input type="hidden" name="del_file" value=<%=bdto.getB_num()%>> 
 				<button type="button" onclick="location.href='javascript:history.back();'">취소</button>
 				</td>
 			</tr>

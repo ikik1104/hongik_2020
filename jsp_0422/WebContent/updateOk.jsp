@@ -10,6 +10,7 @@
 	String b_title="";
 	String b_content="";
 	String b_user="";
+	String del_file="";
 
 	//저장경로 지정
 	String path = request.getRealPath("upload"); // 파일을 저장할 위치를 어디로?!
@@ -22,6 +23,8 @@
 	
 	//외부와 연결은 무조건 try-catch
 	try{
+		BoardDao bdao = BoardDao.getInstance();
+		
 		//request, 파일 저장경로, 용량, 인코딩타입, 중복파일명에 대한 정책 ) 들을 넣어줘야한다.
 		MultipartRequest multi = new MultipartRequest(request,path,size,"utf-8",new DefaultFileRenamePolicy()); 
 		//new DefaultFileRenamePolicy() 똑같은 이름이 있으면 이름 뒤 1,2,3...
@@ -29,6 +32,7 @@
 		b_title = multi.getParameter("b_title");
 		b_content = multi.getParameter("b_content");
 		b_user = multi.getParameter("b_user");
+		del_file = multi.getParameter("del_file");
 		
 		
 		//파일이름 가져오기
@@ -37,11 +41,14 @@
 		file1 = multi.getFilesystemName(name1);//새로 등록한 파일의 이름 가져오고 저장한다.
 		
 		if(file1==null){ //새로 선택한 파일이 있는 경우 
-		file1 = multi.getParameter("file"); //기존 파일 명 가져옴
+			file1 = multi.getParameter("file"); //기존 파일 명 가져옴
+			bdao.delFile(b_num);//기존파일 삭제
+		}
+		if(del_file!=null){
+			bdao.delFile(b_num);
 		}
 		
 		BoardDto bdto = new BoardDto(b_num,b_title,b_content,b_user,file1);
-		BoardDao bdao = BoardDao.getInstance();
 		int check = bdao.updateBoard(bdto);
 		if(check==1){
 %>
