@@ -1,8 +1,10 @@
 <%@page import="com.javalec.ex.MemberDto"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="com.javalec.ex.MemberDao"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%> 
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions"  prefix="fn"%>
 <!DOCTYPE>
 <!-- 세션이 있는지 없는지 확인main.jsp로 보냄 -->
 <% if(session.getAttribute("authUser")==null){  %>
@@ -13,6 +15,7 @@ ArrayList list;
 String id = (String)session.getAttribute("id");
 MemberDao mdao = MemberDao.getInstance();
 list = mdao.all_list();
+request.setAttribute("dtos", list);
 %>
 <html>
 <head>
@@ -31,21 +34,16 @@ list = mdao.all_list();
 		<th>주소</th>
 		<th>가입일자</th>
 	</tr>
-<%
-	for(int i=0;i<list.size();i++){
-	MemberDto mdto = (MemberDto)list.get(i);
-%>	
+<c:forEach var="mdto" items="${dtos}">
 	<tr>
-		<td><a href="modify.jsp?id=<%=mdto.getId()%>"><%=mdto.getId()%></a></td>
-		<td><%=mdto.getPw()%></td>
-		<td><%=mdto.getName()%></td>
-		<td><%=mdto.getEmail()%></td>
-		<td><%=mdto.getAddress()%></td>
-		<td><%=mdto.getB_date()%></td>
+		<td><a href="modify.jsp?id=${mdto.getId()}">${mdto.getId()}</a></td>
+		<td>${mdto.getPw()}</td>
+		<td>${mdto.getName()}</td>
+		<td>${mdto.getEmail()}</td>
+		<td>${mdto.getAddress()}</td>
+		<td>${mdto.getB_date()}</td>
 	</tr>
-<%
-	}
-%>	
+</c:forEach>
 </table>
 </body>
 </html>
