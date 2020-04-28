@@ -11,8 +11,10 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.javalec.ex.BCommand.BCommand;
 import com.javalec.ex.BCommand.BContentCommand;
+import com.javalec.ex.BCommand.BDeleteCommand;
 import com.javalec.ex.BCommand.BInsertCommand;
 import com.javalec.ex.BCommand.BListCommand;
+import com.javalec.ex.BCommand.BUpdateCommand;
 import com.javalec.ex.BCommand.BUpdateFormCommand;
 
 import sun.rmi.server.Dispatcher;
@@ -37,7 +39,7 @@ public class BController extends HttpServlet {
 	}
 	
 	protected void actionDo(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		request.setCharacterEncoding("utf-8");
 		String viewPage = null;
 		BCommand  bcom = null;
 		
@@ -46,24 +48,32 @@ public class BController extends HttpServlet {
 		String com = uri.substring(conPath.length()); //프로젝트의 길이를 잘라서 넘어온 호출이름? 을 가져오나?
 		System.out.println("com = "+com);
 		
-		if(com.equals("/list.do")) { //list.do이면?
+		if(com.equals("/list.do")) { //전체화면출력
 			bcom = new BListCommand();
 			bcom.execute(request, response);
 			viewPage = "list.jsp";
-		}else if(com.equals("/detail.do")) { 
+		}else if(com.equals("/detail.do")) { //게시물 상세보기
 			bcom = new BContentCommand();
 			bcom.execute(request, response);
 			viewPage = "detail.jsp";
-		}else if(com.equals("/update_view.do")) {
+		}else if(com.equals("/update_view.do")) { //수정페이지로 가기?
 			bcom = new BUpdateFormCommand();
 			bcom.execute(request, response);
 			viewPage = "update_view.jsp";
-		}else if(com.equals("/insert_view.do")) { 
+		}else if(com.equals("/update.do")) {  //수정하기
+			bcom = new BUpdateCommand();
+			bcom.execute(request, response);
+			viewPage = "detail.do";
+		}else if(com.equals("/insert_view.do")) {  //입력 페이지로 가기
 			viewPage = "insert.jsp";
-		}else if(com.equals("/insert.do")) { 
+		}else if(com.equals("/insert.do")) {  //입력하기
 			bcom = new BInsertCommand();
 			bcom.execute(request, response);
-			viewPage = "list.jsp";
+			viewPage = "list.do";
+		}else if(com.equals("/delete.do")) {  //입력하기
+			bcom = new BDeleteCommand();
+			bcom.execute(request, response);
+			viewPage = "list.do";
 		}
 		
 		

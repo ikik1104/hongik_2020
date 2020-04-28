@@ -8,6 +8,13 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>공지사항 view</title>
+		<script type="text/javascript">
+	function b_delete(id) {
+		if(confirm("게시글을 삭제하시겠습니까?")){
+			location.href = "delete.do?bid="+id;	
+		}
+	}
+</script>
 		<link type="text/css" rel="stylesheet" href="css/notice_view_style.css">
 		<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:500&display=swap" rel="stylesheet">
 	</head>
@@ -36,8 +43,9 @@
 						<div></div>
 					</div>
 					<div>
-						<a href="update.do?bid=${dto.getBid()}">수정</a>
-						<a href="list.do">목록</a>
+						<a onclick="b_delete('${dto.getBid()}')">삭제</a>
+						<a href="update_view.do?bid=${dto.getBid()}">수정</a>
+						<a href="list.do" style="border: 1px solid black">목록</a>
 					</div>
 				</div>
 			</div>

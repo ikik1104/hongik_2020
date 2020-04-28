@@ -19,7 +19,7 @@
         <div class="container">
           <h1>공지사항 등록</h1>
           
-            <form name="inputform" action="notice_list.html" method="get">
+            <form name="inputform" action="insert.do" method="post">
             
              <div class="input_set">
              	<div class="input_1">
@@ -33,7 +33,7 @@
              	<div class="input_1">
                   <label class="input_label">작성자</label>
                   <div class="just_cont">
-                    <input type="text" name="btitle" style="width: 100%; height: 40px;  border: none;" placeholder="제목을 입력해주세요.">
+                    <input type="text" name="bname" style="width: 100%; height: 40px;  border: none;" placeholder="작성자를 입력헤주세요.">
                   </div>  
                 </div>
                 
@@ -52,7 +52,7 @@
             </div>
 
               <div class="bttn_set">
-                <button onclick="location.href='notice_list.html'">취소</button>
+                <input type="button" onclick="location.href='list.do'" value="취소">
                 <button type="submit">확인</button>
               </div>
               

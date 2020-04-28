@@ -35,33 +35,79 @@ public class BDao {
 		}
 	}
 	
-	//조회수 증가 메소드
-		public int insert(BDto dto) {
+	//insert 메소드
+		public void insert(BDto dto) {
 			int check = 0;
-			sql = "update mvc_board set bhit = bhit+1 where bid = ?";
+			sql = "insert into mvc_board values(MVC_BOARD_SEQ.nextval,?,?,?,sysdate,0,MVC_BOARD_SEQ.currval,0,0)";
 			try {
 				con = ds.getConnection();
 				pstmt = con.prepareStatement(sql);
+				pstmt.setString(1, dto.getBname());
+				pstmt.setString(2, dto.getBtitle());
+				pstmt.setString(3, dto.getBcontent());
 				check =  pstmt.executeUpdate();
 			} catch (Exception e) {
 				e.printStackTrace();
 			}finally {
 				close(con, pstmt, rs);
 			}
-			
 			if(check == 0) {
-				System.out.println("조회수 증가 실패");
+				System.out.println("insert를 실패하였습니다.");
 			}
-			return check;
+			
 		}	
-	
+		
+		
+		//update 메소드
+			public void update(BDto dto) {
+				int check = 0;
+				sql = "update mvc_board set bname = ?,btitle=?, bcontent=? where bid=?";
+				try {
+					con = ds.getConnection();
+					pstmt = con.prepareStatement(sql);
+					pstmt.setString(1, dto.getBname());
+					pstmt.setString(2, dto.getBtitle());
+					pstmt.setString(3, dto.getBcontent());
+					pstmt.setInt(4, dto.getBid());
+					check =  pstmt.executeUpdate();
+				} catch (Exception e) {
+					e.printStackTrace();
+				}finally {
+					close(con, pstmt, rs);
+				}
+				if(check == 0) {
+					System.out.println("수정을 실패하였습니다.");
+				}
+				
+			}
+			
+	//게시글 삭제
+	public int delete(int bid) {
+		int check = 0;
+		sql = "delete mvc_board where bid=?";
+		try {
+			con = ds.getConnection();
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, bid);
+			check =  pstmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			close(con, pstmt, rs);
+		}
+		if(check == 0) {
+			System.out.println("삭제를 실패하였습니다.");
+		}
+		
+		return check;
+	}
 	
 	//리스트를 불러오는 메소드
 	public ArrayList<BDto> list (){
 		String name , title, content;
 		int id,hit,group,indent,step;
 		Timestamp date;
-		sql = "select * from mvc_board";
+		sql = "select * from mvc_board order by bgroup desc, bstep asc";
 		try {
 			con = ds.getConnection();
 			pstmt = con.prepareStatement(sql);
