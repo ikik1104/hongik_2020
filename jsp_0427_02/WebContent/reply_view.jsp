@@ -17,15 +17,15 @@
       <!-- 본문영역 -->
       <section>
         <div class="container">
-          <h1>게시글 수정</h1>
+          <h1>답글 등록</h1>
           
-            <form name="inputform" action="update.do" method="post">
+            <form name="inputform" action="reply.do" method="post">
             
              <div class="input_set">
              	<div class="input_1">
                   <label class="input_label">제목</label>
                   <div class="just_cont">
-                    <input type="text" name="btitle" style="width: 100%; height: 40px;" value="${dto.getBtitle()}" >
+                    <input type="text" name="btitle" style="width: 100%; height: 40px;" placeholder="제목을 입력해주세요." autofocus>
                   </div>  
                 </div>
                 
@@ -33,7 +33,7 @@
              	<div class="input_1">
                   <label class="input_label">작성자</label>
                   <div class="just_cont">
-                    <input type="text" name="bname" style="width: 100%; height: 40px;" value="${dto.getBname()}">
+                    <input type="text" name="bname" style="width: 100%; height: 40px;" placeholder="작성자를 입력헤주세요.">
                   </div>  
                 </div>
                 
@@ -41,7 +41,7 @@
                 <div class="input_1">
                   <label class="input_label">내용</label>
                   <div class="just_cont">
-                    <textarea id="txt_wr" name="bcontent" cols="127" rows="10" maxlength="1000">${dto.getBcontent()}</textarea>
+                    <textarea id="txt_wr" name="bcontent" cols="127" rows="10" maxlength="1000" placeholder="문의 내용을 입력해주세요"></textarea>
                     <div class="txt_wr_cnt">
                       <span>0</span>
                       <span>/1000자</span>
@@ -50,12 +50,11 @@
                 </div>
             </div>
             </div>
-			<input type="hidden" name="bid" value="${dto.getBid()}">
-			<input type="hidden" name="bgroup" value="${dto.getBbroup()}">
+			<input type="hidden" name="bgroup" value="${dto.getBgroup()}">
 			<input type="hidden" name="bstep" value="${dto.getBstep()}">
 			<input type="hidden" name="bindent" value="${dto.getBindent()}">
               <div class="bttn_set">
-                <button type="button" onclick="location.href='detail.do?bid=${dto.getBid()}'">취소</button>
+                <button type="button" onclick="location.href='list.do'" >취소</button>
                 <button type="submit">확인</button>
               </div>
               

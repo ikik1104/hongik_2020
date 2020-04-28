@@ -43,9 +43,10 @@
 						<div></div>
 					</div>
 					<div>
-						<a onclick="b_delete('${dto.getBid()}')">삭제</a>
-						<a href="update_view.do?bid=${dto.getBid()}">수정</a>
-						<a href="list.do" style="border: 1px solid black">목록</a>
+						<a onclick="b_delete('${dto.getBid()}')" style="width: 100px;">삭제</a>
+						<a href="update_view.do?bid=${dto.getBid()}" style="width: 100px;">수정</a>
+						<a href="reply_view.do?bid=${dto.getBid()}" style="width: 100px;">답글달기</a>
+						<a href="list.do" style="border: 1px solid black; width: 100px;">목록</a>
 					</div>
 				</div>
 			</div>

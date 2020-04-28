@@ -2,142 +2,143 @@ package com.javalec.ex.DTO;
 
 import java.sql.Timestamp;
 
-public class BDto {
+public class BoardDto {
 
 	
-	int Bid;
-	String Bname;
-	String Btitle;
-	String Bcontent;
-	Timestamp Bdate;
-	int Bgroup;
-	int Bhit;
-	int Bstep;
-	int Bindent;
-	public BDto() {
+	
+	int bid;
+	String bname;
+	String btitle;
+	String bcontent;
+	Timestamp bdate;
+	int bhit;
+	int bgroup;
+	int bstep;
+	int bindent;
+	public BoardDto() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public BDto(int bid, String bname, String btitle, String bcontent, Timestamp bdate,int bhit,int bgroup, int bstep,
-			int bindent) {
+	public BoardDto(int bid, String bname, String btitle, String bcontent, Timestamp bdate, int bhit, int bgroup,
+			int bstep, int bindent) {
 		super();
-		Bid = bid;
-		Bname = bname;
-		Btitle = btitle;
-		Bcontent = bcontent;
-		Bdate = bdate;
-		Bhit = bhit;
-		Bgroup = bgroup;
-		Bstep = bstep;
-		Bindent = bindent;
+		this.bid = bid;
+		this.bname = bname;
+		this.btitle = btitle;
+		this.bcontent = bcontent;
+		this.bdate = bdate;
+		this.bhit = bhit;
+		this.bgroup = bgroup;
+		this.bstep = bstep;
+		this.bindent = bindent;
 	}
 	/**
 	 * @return the bid
 	 */
 	public int getBid() {
-		return Bid;
+		return bid;
 	}
 	/**
 	 * @param bid the bid to set
 	 */
 	public void setBid(int bid) {
-		Bid = bid;
+		this.bid = bid;
 	}
 	/**
 	 * @return the bname
 	 */
 	public String getBname() {
-		return Bname;
+		return bname;
 	}
 	/**
 	 * @param bname the bname to set
 	 */
 	public void setBname(String bname) {
-		Bname = bname;
+		this.bname = bname;
 	}
 	/**
 	 * @return the btitle
 	 */
 	public String getBtitle() {
-		return Btitle;
+		return btitle;
 	}
 	/**
 	 * @param btitle the btitle to set
 	 */
 	public void setBtitle(String btitle) {
-		Btitle = btitle;
+		this.btitle = btitle;
 	}
 	/**
 	 * @return the bcontent
 	 */
 	public String getBcontent() {
-		return Bcontent;
+		return bcontent;
 	}
 	/**
 	 * @param bcontent the bcontent to set
 	 */
 	public void setBcontent(String bcontent) {
-		Bcontent = bcontent;
+		this.bcontent = bcontent;
 	}
 	/**
 	 * @return the bdate
 	 */
 	public Timestamp getBdate() {
-		return Bdate;
+		return bdate;
 	}
 	/**
 	 * @param bdate the bdate to set
 	 */
 	public void setBdate(Timestamp bdate) {
-		Bdate = bdate;
-	}
-	/**
-	 * @return the bgroup
-	 */
-	public int getBgroup() {
-		return Bgroup;
-	}
-	/**
-	 * @param bgroup the bgroup to set
-	 */
-	public void setBgroup(int bgroup) {
-		Bgroup = bgroup;
+		this.bdate = bdate;
 	}
 	/**
 	 * @return the bhit
 	 */
 	public int getBhit() {
-		return Bhit;
+		return bhit;
 	}
 	/**
 	 * @param bhit the bhit to set
 	 */
 	public void setBhit(int bhit) {
-		Bhit = bhit;
+		this.bhit = bhit;
+	}
+	/**
+	 * @return the bgroup
+	 */
+	public int getBgroup() {
+		return bgroup;
+	}
+	/**
+	 * @param bgroup the bgroup to set
+	 */
+	public void setBgroup(int bgroup) {
+		this.bgroup = bgroup;
 	}
 	/**
 	 * @return the bstep
 	 */
 	public int getBstep() {
-		return Bstep;
+		return bstep;
 	}
 	/**
 	 * @param bstep the bstep to set
 	 */
 	public void setBstep(int bstep) {
-		Bstep = bstep;
+		this.bstep = bstep;
 	}
 	/**
 	 * @return the bindent
 	 */
 	public int getBindent() {
-		return Bindent;
+		return bindent;
 	}
 	/**
 	 * @param bindent the bindent to set
 	 */
 	public void setBindent(int bindent) {
-		Bindent = bindent;
+		this.bindent = bindent;
 	}
 	
 	

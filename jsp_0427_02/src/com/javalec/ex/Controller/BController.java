@@ -14,6 +14,8 @@ import com.javalec.ex.BCommand.BContentCommand;
 import com.javalec.ex.BCommand.BDeleteCommand;
 import com.javalec.ex.BCommand.BInsertCommand;
 import com.javalec.ex.BCommand.BListCommand;
+import com.javalec.ex.BCommand.BReplyCommand;
+import com.javalec.ex.BCommand.BReplyFormCommand;
 import com.javalec.ex.BCommand.BUpdateCommand;
 import com.javalec.ex.BCommand.BUpdateFormCommand;
 
@@ -46,7 +48,6 @@ public class BController extends HttpServlet {
 		String uri = request.getRequestURI(); //주소 가져오기?
 		String conPath = request.getContextPath();// 프로젝트 명?
 		String com = uri.substring(conPath.length()); //프로젝트의 길이를 잘라서 넘어온 호출이름? 을 가져오나?
-		System.out.println("com = "+com);
 		
 		if(com.equals("/list.do")) { //전체화면출력
 			bcom = new BListCommand();
@@ -70,8 +71,16 @@ public class BController extends HttpServlet {
 			bcom = new BInsertCommand();
 			bcom.execute(request, response);
 			viewPage = "list.do";
-		}else if(com.equals("/delete.do")) {  //입력하기
+		}else if(com.equals("/delete.do")) {  //삭제하기
 			bcom = new BDeleteCommand();
+			bcom.execute(request, response);
+			viewPage = "list.do";
+		}else if(com.equals("/reply_view.do")) {  //삭제하기
+			bcom = new BReplyFormCommand();
+			bcom.execute(request, response);
+			viewPage = "reply_view.jsp";
+		}else if(com.equals("/reply.do")) {
+			bcom = new BReplyCommand();
 			bcom.execute(request, response);
 			viewPage = "list.do";
 		}

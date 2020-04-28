@@ -3,25 +3,25 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%> 
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions"  prefix="fn"%>
-<!DOCTYPE html>
+<!DOCTYPE>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<title>공지사항 리스트</title>
-		<link type="text/css" rel="stylesheet" href="css/notice_list_style.css">
-		<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:500&display=swap" rel="stylesheet">
-	</head>
-	<body>
-		<section>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<link type="text/css" rel="stylesheet" href="css/notice_list_style.css">
+</head>
+<body>
+<section>
 			<div>
-				<h1>게시판</h1>
+				<h1>공지사항</h1>
 				<div>
 					<div>
 						<table>
 							<colgroup>
 								<col width="10%">
 								<col width="*">
-								<col width="15%">
+								<col width="10%">
+								<col width="10%">
 								<col width="10%">
 							</colgroup>
 							<thead>
@@ -29,27 +29,30 @@
 									<th>번호</th>
 									<th>제목</th>
 									<th>등록일</th>
+									<th>작성자</th>
 									<th>조회수</th>
 								</tr>
 							</thead>
 							<tbody>
-							<c:forEach var="list" items="${list}" >
+							<c:forEach var="dto" items="${dto}">
 								<tr>
-									<td>${list.getBid()}</td>
+									<td>${dto.bid}</td>
 									<td class="tit">
-									<c:forEach begin="1" end="${list.getBindent()}">▶</c:forEach>
-									<a href="detail.do?bid=${list.getBid()}" class="list_a">${list.getBtitle()}</a></td>
-									<td><fmt:formatDate value="${list.getBdate()}" pattern="yyyy-MM-dd"/></td>
-									<td>${list.getBhit()}</td>
+									<c:forEach begin="1" end="${dto.bindent}">▶</c:forEach>
+									<a href="board_view.do?bid=${dto.bid}" class="list_a">${dto.btitle}</a>
+									</td>
+									<td><fmt:formatDate value="${dto.bdate}" pattern="yyyy-MM-dd"/></td>
+									<td>${dto.bname}</td>
+									<td>${dto.bhit}</td>
 								</tr>
-							</c:forEach>	
+							</c:forEach>
 							</tbody>
 						</table>
 						
 					</div>
 					<div>
 						<span>
-							<a href="insert_view.do">입력</a>
+							<a href="insertForm.do">입력</a>
 						</span>
 					</div>
 						
@@ -64,4 +67,5 @@
 				</div>
 			</div>
 		</section>
-	</body>
+</body>
+</html>

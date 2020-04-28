@@ -61,14 +61,18 @@ public class BDao {
 		//update 메소드
 			public void update(BDto dto) {
 				int check = 0;
-				sql = "update mvc_board set bname = ?,btitle=?, bcontent=? where bid=?";
+				sql = "update mvc_board set bname = ?,btitle=?, bcontent=?,bgroup=?,bindent=?,bstep=?"
+						+ "  where bid=?";
 				try {
 					con = ds.getConnection();
 					pstmt = con.prepareStatement(sql);
 					pstmt.setString(1, dto.getBname());
 					pstmt.setString(2, dto.getBtitle());
 					pstmt.setString(3, dto.getBcontent());
-					pstmt.setInt(4, dto.getBid());
+					pstmt.setInt(4, dto.getBgroup());
+					pstmt.setInt(5, dto.getBstep());
+					pstmt.setInt(6, dto.getBindent());
+					pstmt.setInt(7, dto.getBid());
 					check =  pstmt.executeUpdate();
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -107,7 +111,7 @@ public class BDao {
 		String name , title, content;
 		int id,hit,group,indent,step;
 		Timestamp date;
-		sql = "select * from mvc_board order by bgroup desc, bstep asc";
+		sql = "select * from mvc_board order by bgroup desc,bstep asc";
 		try {
 			con = ds.getConnection();
 			pstmt = con.prepareStatement(sql);
@@ -124,7 +128,7 @@ public class BDao {
 				indent = rs.getInt("bindent");
 				step = rs.getInt("bstep");
 				
-				dtos.add(new BDto(id, name, title, content, date, group, hit, step, indent));
+				dtos.add(new BDto(id, name, title, content, date, hit,group,step, indent));
 			}
 			
 		} catch (Exception e) {
@@ -162,7 +166,7 @@ public class BDao {
 					bindent = rs.getInt("bindent");
 					bstep = rs.getInt("bstep");
 					
-					dto = new BDto(bid, bname, btitle, bcontent, bdate, bgroup, bhit, bstep, bindent);
+					dto = new BDto(bid, bname, btitle, bcontent, bdate, bhit, bgroup,bstep, bindent);
 					
 				}
 				
@@ -196,6 +200,58 @@ public class BDao {
 			}
 		}
 		
+		
+		
+		//답글달기
+		public int reply(BDto dto) {
+			int check = 0;
+			
+			//답글 달려있는 리스트 step1씩 증가
+//			replyshape(dto.getBgroup(), dto.getBstep());
+			sql = "insert into mvc_board values(mvc_board_seq.nextval,?,?,?,sysdate,0,?,?,?)";
+			
+			
+			try {
+				con=ds.getConnection();
+				pstmt = con.prepareStatement(sql);
+				pstmt.setString(1, dto.getBname());
+				pstmt.setString(2, dto.getBtitle());
+				pstmt.setString(3, dto.getBcontent());
+				pstmt.setInt(4, dto.getBgroup());
+				pstmt.setInt(5, (dto.getBstep()+1));
+				pstmt.setInt(6, (dto.getBindent()+1));
+				check = pstmt.executeUpdate();
+			} catch (Exception e) {
+				// TODO: handle exception
+			}finally {
+				close(con, pstmt, rs);
+			}
+			
+			if(check == 1) {
+				System.out.println("답글달기 성공");
+			}else {
+				System.out.println("답글달기 실패");
+			}
+			return check;
+		}
+		
+		
+		public void replyshape(int bgroup , int bstep) {
+			System.out.println("replyshape : "+bgroup);
+			System.out.println("replyshape : "+bstep);
+			sql = "update mvc_board set bstep = bstep+1 where bgroup=? and bstep>?";
+			try {
+				con = ds.getConnection();
+				pstmt = con.prepareStatement(sql);
+				pstmt.setInt(1, bgroup);
+				pstmt.setInt(2, bstep);
+				pstmt.executeUpdate();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}finally {
+				close(con, pstmt, rs);
+			}
+		}
 		
 	
 	//close
