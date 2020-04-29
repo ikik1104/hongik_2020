@@ -63,18 +63,18 @@ public class BoardController extends HttpServlet {
 			
 		}else if(com.equals("/update.do")) {
 			bcom.update(request, response);
-			viewPage = "redirect:board_view.do";
+			viewPage = "board_view.do";
 			
 		}else if(com.equals("/delete.do")) {
 			bcom.delete(request, response);
-			viewPage = "redirect:list.do";
+			viewPage = "list.do";
 			
 		}else if(com.equals("/replyForm.do")) {
 			bcom.replyFrom(request, response);
 			viewPage = "reply_form.jsp";
 		}else if(com.equals("/reply.do")) {
 			bcom.reply(request, response);
-			viewPage = "redirect:list.do";
+			viewPage = "list.do";
 		}
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher(viewPage);

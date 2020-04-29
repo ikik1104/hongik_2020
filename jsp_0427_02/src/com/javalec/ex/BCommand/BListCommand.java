@@ -16,6 +16,14 @@ public class BListCommand implements BCommand {
 		BDao dao = new BDao();
 		ArrayList<BDto> dtos = dao.list();
 		request.setAttribute("list", dtos);
+		
+		if(request.getAttribute("text")!=null) {
+			System.out.println("text는 null이 아니다!!");
+			request.setAttribute("text", request.getAttribute("text"));
+		}else {
+			System.out.println("널 입니다.");
+			request.setAttribute("text", "null");
+		}
 	}
 
 

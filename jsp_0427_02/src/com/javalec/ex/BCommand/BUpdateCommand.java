@@ -1,3 +1,4 @@
+
 package com.javalec.ex.BCommand;
 
 import javax.servlet.http.HttpServletRequest;
@@ -20,7 +21,13 @@ public class BUpdateCommand implements BCommand {
 		int step = Integer.parseInt(request.getParameter("bstep"));
 		BDto dto = new BDto(bid,name,title,content, null, 0, group, step, indent);
 		
-		dao.update(dto); //insert
+		int check = dao.update(dto); //insert
+		if(check == 1) {
+			request.setAttribute("text", "게시물 수정을 완료하였습니다.");
+		}else {
+			request.setAttribute("text", "죄송합니다. 게시물 수정에 실패했습니다.");
+		}
+		
 		request.setAttribute("bid", bid);
 	}
 

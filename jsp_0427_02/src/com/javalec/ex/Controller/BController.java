@@ -50,31 +50,40 @@ public class BController extends HttpServlet {
 		String com = uri.substring(conPath.length()); //프로젝트의 길이를 잘라서 넘어온 호출이름? 을 가져오나?
 		
 		if(com.equals("/list.do")) { //전체화면출력
+			System.out.println("리스트.do");
 			bcom = new BListCommand();
 			bcom.execute(request, response);
 			viewPage = "list.jsp";
+			
 		}else if(com.equals("/detail.do")) { //게시물 상세보기
 			bcom = new BContentCommand();
 			bcom.execute(request, response);
 			viewPage = "detail.jsp";
+			
 		}else if(com.equals("/update_view.do")) { //수정페이지로 가기?
 			bcom = new BUpdateFormCommand();
 			bcom.execute(request, response);
 			viewPage = "update_view.jsp";
+			
 		}else if(com.equals("/update.do")) {  //수정하기
 			bcom = new BUpdateCommand();
 			bcom.execute(request, response);
 			viewPage = "detail.do";
+			
 		}else if(com.equals("/insert_view.do")) {  //입력 페이지로 가기
 			viewPage = "insert.jsp";
+			
 		}else if(com.equals("/insert.do")) {  //입력하기
+			System.out.println("인썰트.do");
 			bcom = new BInsertCommand();
 			bcom.execute(request, response);
 			viewPage = "list.do";
+			
 		}else if(com.equals("/delete.do")) {  //삭제하기
 			bcom = new BDeleteCommand();
 			bcom.execute(request, response);
 			viewPage = "list.do";
+			
 		}else if(com.equals("/reply_view.do")) {  //삭제하기
 			bcom = new BReplyFormCommand();
 			bcom.execute(request, response);

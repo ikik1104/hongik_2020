@@ -8,6 +8,18 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>공지사항 리스트</title>
+		<script type="text/javascript">
+				
+		window.onload = load();
+		
+		function load(){
+			var text1 = "${text}";
+				 if(!(text1===("null"))){
+			 		alert(text1);	
+				 }
+		}
+		
+		</script>
 		<link type="text/css" rel="stylesheet" href="css/notice_list_style.css">
 		<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:500&display=swap" rel="stylesheet">
 	</head>

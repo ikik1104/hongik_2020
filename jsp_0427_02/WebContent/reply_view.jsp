@@ -25,7 +25,7 @@
              	<div class="input_1">
                   <label class="input_label">제목</label>
                   <div class="just_cont">
-                    <input type="text" name="btitle" style="width: 100%; height: 40px;" placeholder="제목을 입력해주세요." autofocus>
+                    <input type="text" name="btitle" style="width: 100%; height: 40px;" required maxlength="20" placeholder="제목을 입력해주세요." autofocus>
                   </div>  
                 </div>
                 
@@ -33,7 +33,7 @@
              	<div class="input_1">
                   <label class="input_label">작성자</label>
                   <div class="just_cont">
-                    <input type="text" name="bname" style="width: 100%; height: 40px;" placeholder="작성자를 입력헤주세요.">
+                    <input type="text" name="bname" style="width: 100%; height: 40px;" maxlength="10" placeholder="작성자를 입력헤주세요.">
                   </div>  
                 </div>
                 
@@ -41,7 +41,7 @@
                 <div class="input_1">
                   <label class="input_label">내용</label>
                   <div class="just_cont">
-                    <textarea id="txt_wr" name="bcontent" cols="127" rows="10" maxlength="1000" placeholder="문의 내용을 입력해주세요"></textarea>
+                    <textarea id="txt_wr" name="bcontent" cols="127" rows="10" maxlength="1000" required  placeholder="문의 내용을 입력해주세요"></textarea>
                     <div class="txt_wr_cnt">
                       <span>0</span>
                       <span>/1000자</span>

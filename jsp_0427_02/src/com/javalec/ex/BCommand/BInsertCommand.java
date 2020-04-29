@@ -16,7 +16,12 @@ public class BInsertCommand implements BCommand {
 		String content = request.getParameter("bcontent");
 		BDto dto = new BDto(0,name,title,content, null, 0, 0, 0, 0);
 		
-		dao.insert(dto); //insert
+		int check = dao.insert(dto); //insert
+		if(check == 1) {
+			request.setAttribute("text", "게시물 등록을 완료하였습니다.");
+		}else {
+			request.setAttribute("text", "죄송합니다. 게시물 등록에 실패했습니다.");
+		}
 	}
 
 }

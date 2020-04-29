@@ -38,7 +38,7 @@ public class BoardDao {
 	//전체목록 가져오기
 	public ArrayList<BoardDto> list(){
 		System.out.println("전체 목록 가져오기 메소드");
-		sql = "select * from mvc_board";
+		sql = "select * from mvc_board order by bgroup desc,bstep asc";
 		String name, title, content;
 		int id, hit, group, indent, step;
 		Timestamp date;

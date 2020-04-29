@@ -36,7 +36,7 @@ public class BDao {
 	}
 	
 	//insert 메소드
-		public void insert(BDto dto) {
+		public int insert(BDto dto) {
 			int check = 0;
 			sql = "insert into mvc_board values(MVC_BOARD_SEQ.nextval,?,?,?,sysdate,0,MVC_BOARD_SEQ.currval,0,0)";
 			try {
@@ -54,12 +54,12 @@ public class BDao {
 			if(check == 0) {
 				System.out.println("insert를 실패하였습니다.");
 			}
-			
+			return check;
 		}	
 		
 		
 		//update 메소드
-			public void update(BDto dto) {
+			public int update(BDto dto) {
 				int check = 0;
 				sql = "update mvc_board set bname = ?,btitle=?, bcontent=?,bgroup=?,bindent=?,bstep=?"
 						+ "  where bid=?";
@@ -82,6 +82,7 @@ public class BDao {
 				if(check == 0) {
 					System.out.println("수정을 실패하였습니다.");
 				}
+				return check ;
 				
 			}
 			

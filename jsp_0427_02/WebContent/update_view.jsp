@@ -25,7 +25,7 @@
              	<div class="input_1">
                   <label class="input_label">제목</label>
                   <div class="just_cont">
-                    <input type="text" name="btitle" style="width: 100%; height: 40px;" value="${dto.getBtitle()}" >
+                    <input type="text" name="btitle" style="width: 100%; height: 40px;"required maxlength="20" value="${dto.getBtitle()}" >
                   </div>  
                 </div>
                 
@@ -33,7 +33,7 @@
              	<div class="input_1">
                   <label class="input_label">작성자</label>
                   <div class="just_cont">
-                    <input type="text" name="bname" style="width: 100%; height: 40px;" value="${dto.getBname()}">
+                    <input type="text" name="bname" style="width: 100%; height: 40px;"required maxlength="10" value="${dto.getBname()}">
                   </div>  
                 </div>
                 
@@ -41,7 +41,7 @@
                 <div class="input_1">
                   <label class="input_label">내용</label>
                   <div class="just_cont">
-                    <textarea id="txt_wr" name="bcontent" cols="127" rows="10" maxlength="1000">${dto.getBcontent()}</textarea>
+                    <textarea id="txt_wr" name="bcontent" cols="127" rows="10" required maxlength="1000">${dto.getBcontent()}</textarea>
                     <div class="txt_wr_cnt">
                       <span>0</span>
                       <span>/1000자</span>

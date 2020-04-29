@@ -23,7 +23,12 @@ public class BReplyCommand implements BCommand {
 		System.out.println("step : "+step);
 		BDto dto = new BDto(0,name,title,content, null, 0, group, step, indent);
 		
-		dao.reply(dto); //insert
+		int check = dao.reply(dto); //insert
+		if(check == 1) {
+			request.setAttribute("text", "답글 등록을 완료하였습니다.");
+		}else {
+			request.setAttribute("text", "죄송합니다. 답글등록에 실패했습니다.");
+		}
 	}
 
 }
