@@ -1,0 +1,57 @@
+@charset "UTF-8";
+
+*{ margin:0; padding:0; font-family: 'Noto Sans KR', sans-serif;}
+
+ul,ol{ list-style-type: none; }
+
+a{ text-decoration: none; color: #101010;}
+
+#nav_up{ width:100%; height: 35px; background: #202020; 
+	text-align: left;}
+
+#nav_up>ul{ float: right;
+	width: 500px; height: 25px; 
+	color: white; }
+	
+#nav_up>ul>li{ float: left; margin-left:15px; line-height: 32px; 
+	font-size: 13px; }
+	
+#nav_up>ul>li>a{font-size: 13px; color: white; }
+
+#nav_up>ul>li>a:visited{font-size: 13px; color: white;}
+	
+nav{ width:100%; height: 81px; border-bottom: 1px solid black; 
+	position: relative;}
+
+nav>h1{ width: 100px; height: 30px; 
+	background: url('../images/team4/ico_set.png')-320px -385px no-repeat;
+	background-size: 800px 800px; position: absolute; 
+	left:40px; top:25px; }
+	
+nav>ul:nth-child(2){ width: 750px; height: 40px; 
+	margin:0 auto; position: relative; top:23px;}
+
+nav>ul:nth-child(2) li{ float:left; margin-right: 60px; color: #101010; font-weight: 700; 
+	font-size: 22px; line-height: 32px; padding-bottom:24px;}
+	
+nav>ul:nth-child(3){ width:130px; height: 52px; position: relative; 
+	float: right; top:-25px;}
+
+nav>ul:nth-child(3) li{ float:left; margin-left: 20px; color: #101010; font-weight: 700; 
+	font-size: 12px; }
+	
+nav>ul:nth-child(3)>li:nth-child(1)>a{ width:32px; height: 32px; display: inline-block;
+	background: url('../images/team4/ico_set.png') -584px -320px no-repeat; 
+	background-size: 800px 800px; letter-spacing: -2px;}
+	
+nav>ul:nth-child(3)>li>a:link{ color:black;}
+
+nav>ul:nth-child(3)>li:nth-child(1)>a>span{ display: block; width: 50px; height: 20px; 
+	 position: relative; top:30px; left:-5px; }
+	 
+nav>ul:nth-child(3)>li:nth-child(2)>a{ width:32px; height: 32px; display: inline-block;
+	background: url('../images/team4/ico_set.png') -628px -320px; no-repeat; 
+	background-size: 800px 800px; letter-spacing: -2px;}
+
+nav>ul:nth-child(3)>li:nth-child(2)>a>span{ display: block; width: 50px; height: 20px; 
+	 position: relative; top:30px; left:-5px; }

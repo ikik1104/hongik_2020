@@ -32,7 +32,7 @@
 	 				<li class="navis"><a href="#">COOKIT소개</a></li>
 	 				<li class="navis"><a href="#">COOKIT메뉴</a></li>
 	 				<li class="navis"><a href="#">리뷰</a></li>
-	 				<li class="navis"><a href="sub_evnt_list">이벤트</a></li>
+	 				<li class="navis"><a href="list.do">공지사항</a></li>
 	 				<li class="navis"><a href="#">MY쿡킷</a></li>
 	 			</ul>
 	 			<ul>

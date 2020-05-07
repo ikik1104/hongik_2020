@@ -20,9 +20,10 @@
 		<meta charset="UTF-8">
 		<title>공지사항 리스트</title>
 		<style type="text/css">
-			#paging{width: 1000px; }
-			ul {list-style: none; margin: 0 auto;}
+			#paging,#search{width: 100%;}
+			ul {list-style: none; margin: 0 auto; width: 700px;}
 			li {float: left; border: 1px solid black; padding: 10px; margin-right: 5px;}
+			form { width: 500px; margin: 0 auto; margin-top: 40px; padding-left: 50px;}
 		</style>
 		<script type="text/javascript">
 				/*
@@ -81,51 +82,71 @@
 							<a href="input_notice.html">입력</a>
 						</span>
 					</div>
-						
+					
+					
 					<div id="paging">	
 					<ul style="list-style: none">
-						<!-- 첫 페이지 -->
-						<a href="list.do?page=1"><li>◀◀</li></a>
-						<!-- 이전 페이지  이동버튼-->
-						<c:if test="${page<=1}">
-							<li>◀</li>
-						</c:if>
-						<c:if test="${page>1}">
-							<a href="list.do?page=${page-1}"><li>◀</li></a>
-						</c:if>
-						<!-- 순차적으로 페이지 출력 -->
-						<c:forEach var="a" begin="${startpage}" end="${endpage}" step="1">
-							<c:choose>
-								<c:when test="${a==page}">
-									<li style="background: fuchsia;"><div>${a}</div></li>
-								</c:when>
-								<c:when test="${a!=page}">
-									<a href="list.do?page=${a}"><li><div>${a}</div></li></a>
-								</c:when>
-							</c:choose>
-						</c:forEach>
-						<!-- 다음페이지로 이동버튼 -->
-						<c:if test="${page>=maxpage}">
-							<li>▶</li>
-						</c:if>
-						<c:if test="${page<maxpage}">
-							<a href="list.do?page=${page+1}"><li>▶</li></a>
-						</c:if>
-						<!-- 마지막 페이지 이동 -->
-						<a href="list.do?page=${maxpage}"><li>▶▶</li></a>
+						<c:choose>
+						<c:when test="${searchFlag != null}">
+							<!-- 첫 페이지 -->
+							<a href="list.do?searchFlag=${searchFlag}&opt=${opt}&search=${search}&page=1"><li>◀◀</li></a>
+							<!-- 이전 페이지  이동버튼-->
+							<c:if test="${page<=1}"> <li>◀</li>	</c:if>
+							<c:if test="${page>1}"> <a href="list.do?searchFlag=${searchFlag}&opt=${opt}&search=${search}&page=${page-1}"><li>◀</li></a>	</c:if>
+							<!-- 순차적으로 페이지 출력 -->
+							<c:forEach var="a" begin="${startpage}" end="${endpage}" step="1">
+								<c:choose>
+									<c:when test="${a==page}">
+										<li style="background: fuchsia;"><div>${a}</div></li>
+									</c:when>
+									<c:when test="${a!=page}">
+										<a href="list.do?searchFlag=${searchFlag}&opt=${opt}&search=${search}&page=${a}"><li><div>${a}</div></li></a>
+									</c:when>
+								</c:choose>
+							</c:forEach>
+							<!-- 다음페이지로 이동버튼 -->
+							<c:if test="${page>=maxpage}"> <li>▶</li> </c:if>
+							<c:if test="${page<maxpage}"> <a href="list.do?searchFlag=${searchFlag}&opt=${opt}&search=${search}&page=${page+1}"><li>▶</li></a> </c:if>
+							<!-- 마지막 페이지 이동 -->
+							<a href="list.do?searchFlag=${searchFlag}&opt=${opt}&search=${search}&page=${maxpage}"><li>▶▶</li></a>
+						</c:when>
+						<c:otherwise>
+							<!-- 첫 페이지 -->
+							<a href="list.do?page=1"><li>◀◀</li></a>
+							<!-- 이전 페이지  이동버튼-->
+							<c:if test="${page<=1}"> <li>◀</li>	</c:if>
+							<c:if test="${page>1}"> <a href="list.do?page=${page-1}"><li>◀</li></a>	</c:if>
+							<!-- 순차적으로 페이지 출력 -->
+							<c:forEach var="a" begin="${startpage}" end="${endpage}" step="1">
+								<c:choose>
+									<c:when test="${a==page}">
+										<li style="background: fuchsia;"><div>${a}</div></li>
+									</c:when>
+									<c:when test="${a!=page}">
+										<a href="list.do?page=${a}"><li><div>${a}</div></li></a>
+									</c:when>
+								</c:choose>
+							</c:forEach>
+							<!-- 다음페이지로 이동버튼 -->
+							<c:if test="${page>=maxpage}"> <li>▶</li> </c:if>
+							<c:if test="${page<maxpage}"> <a href="list.do?page=${page+1}"><li>▶</li></a> </c:if>
+							<!-- 마지막 페이지 이동 -->
+							<a href="list.do?page=${maxpage}"><li>▶▶</li></a>
+						</c:otherwise>
+					</c:choose>
 					</ul>	
 					</div>	
-						
-<!-- 					<div> -->
-<!-- 						<a href="#"></a> -->
-<!-- 						<a href="#"></a> -->
-<!-- 						<span> -->
-<!-- 							<strong>1</strong> -->
-<!-- 							<a href="#">2</a> -->
-<!-- 						</span> -->
-<!-- 						<a href="#"></a> -->
-<!-- 						<a href="#"></a> -->
-<!-- 					</div> -->
+					<div id="search">
+						<form action="list.do" name="form" method="get">
+							<select name="opt" >
+								<option value="all">전체</option>
+								<option value="tit">제목</option>
+								<option value="con">내용</option>
+							</select>
+							<input type="text" name="search">
+							<button type="submit">전송</button>
+						</form>
+					</div>
 				</div>
 			</div>
 		</section>

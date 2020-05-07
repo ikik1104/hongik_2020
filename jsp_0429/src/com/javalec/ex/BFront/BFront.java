@@ -44,6 +44,12 @@ public class BFront extends HttpServlet {
 			//메소드 호출
 			bcom.execute(request, response);
 			pageView = "list.jsp";
+		}else if(com.equals("/search.do")) {
+			bcom = new BListCommand();
+			bcom.execute(request, response);
+			pageView = "list.jsp";
+		}else if(com.equals("/index.do")) {
+			pageView = "index.jsp";
 		}
 		RequestDispatcher dispatcher = request.getRequestDispatcher(pageView);
 		dispatcher.forward(request, response);

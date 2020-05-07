@@ -1,0 +1,22 @@
+*,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+a,
+a:link,
+a:visited,
+a:hover {
+  color: inherit;
+  font-size: inherit;
+  text-decoration: none;
+}
+
+/* Header Section */
+
+li {
+  display: inline-block;
+  padding-right: 5px;
+  font-size: 13px;
+}

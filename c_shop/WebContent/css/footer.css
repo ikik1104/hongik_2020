@@ -1,0 +1,99 @@
+@charset "UTF-8";
+
+
+.foot{
+  min-width: 1260px;
+  height: 213px;
+  background: #202020;
+  margin: 0 auto;
+}
+
+.foot_cont{
+  padding-top:36px;
+  width: 1180px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.foot_logo{
+  display: flex;
+  flex-direction: column;
+  width: 268px;
+}
+
+.ft_lg_ico{
+  width: 160px;
+  height: 48px;
+  background: url('../images/ico_set.png') no-repeat;
+  background-size: 800px 800px;
+  background-position: -320px -320px;
+}
+
+.copyright{
+  padding-top: 45px;
+  color: #808080;
+  font-size: 12px; 
+}
+
+.foot_info>ul>li{
+  display:inline-block;
+  list-style: none;
+  color: #fff;
+  font-size: 13px;
+  padding-right: 42px;
+  margin-bottom: 18px;
+  font-weight: bold;
+}
+
+#important{
+  color: #BDD61A !important;
+}
+
+.foot_info>div>span{
+  padding-right:22px;
+  font-size:12px;
+  color: #808080;
+}
+
+#check{
+  color:white;
+  text-decoration:none;
+  border-bottom:1px solid white;
+}
+
+.foot_etc{
+  display:flex;
+  flex-direction: column;
+  padding-left: 46px;
+  text-align: right;
+  position:relative;
+}
+
+.foot_etc>div{
+  text-align: right;
+  color: white;
+  font-weight: bold;
+}
+
+.foot_etc div:nth-child(1){
+  font-size:13px;
+}
+
+.foot_etc div:nth-child(2){
+  font-size:17px;
+  padding-top: 26px;
+}
+
+.foot_etc div:nth-child(3){
+  width: 88px;
+  height: 32px;
+  font-size:13px;
+  text-align: center;
+  padding-top:5px;
+  border: 1px solid white;
+  position: absolute;
+  right:0;
+  top:86px;
+}

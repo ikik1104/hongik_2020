@@ -38,19 +38,53 @@ public class BDao {
 	}
 	
 	//전체 select 
-	public ArrayList<BDto> list(int page , int limit) {
+	public ArrayList<BDto> list(int page , int limit, String opt, String search) {
 		int startrow = (page-1)*10+1;
 		int endrow = startrow+limit-1;
 		
-		sql = "select * from " + 
-				"(select rownum rnum, bid,bname,btitle,bcontent,bdate,bhit,bgroup,bstep,bindent from " + 
-				"(select * from mvc_board order by bgroup desc,bid asc))" + 
-				"where rnum>=? and rnum <=?";
+		switch (opt) {
+		case "" :
+			sql = "select * from " + 
+					"(select rownum rnum, bid,bname,btitle,bcontent,bdate,bhit,bgroup,bstep,bindent from " + 
+					"(select * from mvc_board order by bgroup desc,bid asc)) " + 
+					"where rnum>=? and rnum <=?";
+			break;
+		case "all":
+			sql = "select * from " + 
+					"(select rownum rnum, bid,bname,btitle,bcontent,bdate,bhit,bgroup,bstep,bindent from " + 
+					"(select * from mvc_board where btitle like ? or bcontent like ? order by bgroup desc,bid asc)) " + 
+					"where rnum>=? and rnum <=?";
+			break;
+		case "tit":
+			sql = "select * from " + 
+					"(select rownum rnum, bid,bname,btitle,bcontent,bdate,bhit,bgroup,bstep,bindent from " + 
+					"(select * from mvc_board where btitle like ? order by bgroup desc,bid asc)) " + 
+					"where rnum>=? and rnum <=?";
+			break;
+		case "con":
+			sql = "select * from " + 
+					"(select rownum rnum, bid,bname,btitle,bcontent,bdate,bhit,bgroup,bstep,bindent from " + 
+					"(select * from mvc_board where bcontent like ?  order by bgroup desc,bid asc)) " + 
+					"where rnum>=? and rnum <=?";
+			break;
+		}
+		
 		try {
 			con = ds.getConnection();
 			pstmt = con.prepareStatement(sql);
-			pstmt.setInt(1, startrow);
-			pstmt.setInt(2, endrow);
+			if(opt.equals("all")) {
+				pstmt.setString(1, "%"+search+"%");
+				pstmt.setString(2, "%"+search+"%");
+				pstmt.setInt(3, startrow);
+				pstmt.setInt(4, endrow);
+			}else if(opt.equals("tit") || opt.equals("con")) {
+				pstmt.setString(1, "%"+search+"%");
+				pstmt.setInt(2, startrow);
+				pstmt.setInt(3, endrow);
+			}else {
+				pstmt.setInt(1, startrow);
+				pstmt.setInt(2, endrow);
+			}
 			rs = pstmt.executeQuery();
 			
 			while(rs.next()) {
@@ -76,12 +110,33 @@ public class BDao {
 	}
 	
 	//게시글 전체 개수
-	public int getlistCount() {
+	public int getlistCount(String opt, String search) {
 		int check = 0;
-		sql = "select count(*) as count from mvc_board";
+		
+		switch (opt) {
+		case "" :
+			sql = "select count(*) as count from mvc_board";
+			break;
+		case "all":
+			sql = "select count(*) as count from mvc_board where bcontent like ? or btitle like ?";
+			break;
+		case "tit":
+			sql = "select count(*) as count from mvc_board where btitle like ?";
+			break;
+		case "con":
+			sql = "select count(*) as count from mvc_board where bcontent like ?";
+			break;
+		}
+		
 		try {
 			con = ds.getConnection();
 			pstmt = con.prepareStatement(sql);
+			if(opt.equals("all")) {
+				pstmt.setString(1, "%"+search+"%");
+				pstmt.setString(2, "%"+search+"%");
+			}else if(opt.equals("tit") || opt.equals("con")) {
+				pstmt.setString(1, "%"+search+"%");
+			}
 			rs = pstmt.executeQuery();
 			
 			while(rs.next()) {

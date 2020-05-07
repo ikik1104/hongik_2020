@@ -74,7 +74,6 @@ public class BController extends HttpServlet {
 			viewPage = "insert.jsp";
 			
 		}else if(com.equals("/insert.do")) {  //입력하기
-			System.out.println("인썰트.do");
 			bcom = new BInsertCommand();
 			bcom.execute(request, response);
 			viewPage = "list.do";
@@ -84,7 +83,7 @@ public class BController extends HttpServlet {
 			bcom.execute(request, response);
 			viewPage = "list.do";
 			
-		}else if(com.equals("/reply_view.do")) {  //삭제하기
+		}else if(com.equals("/reply_view.do")) {  //답글보기
 			bcom = new BReplyFormCommand();
 			bcom.execute(request, response);
 			viewPage = "reply_view.jsp";
