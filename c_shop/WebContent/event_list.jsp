@@ -14,7 +14,7 @@
 				var text1 = "${text}";
 					if(!(text1===null) && !(text1==="")){
 			 			alert(text1);	
-			 			location.href="event_list.do";
+			 			location.href="event_list.Edo";
 				 	}
 				}
 			</script>
@@ -38,24 +38,24 @@
 					<li><a href="#"><span>당첨자 발표</span></a></li>
 				</ul>
 				<ul id="list_ul_2">
-					<c:if test="${not empty dto}">
-					<c:forEach var="dto" items="${dto}">
+					<c:if test="${not empty edto}">
+					<c:forEach var="edto" items="${edto}">
 						<li>
-							<a href="event_view.Edo?num=${dto.num}"><img src="upload/${dto.file1}"></a>
+							<a href="event_view.Edo?num=${edto.num}"><img src="${pageContext.request.contextPath}/upload2/${edto.file1}"></a>
 							<p><a href="sub_event_view1.html">EVENT</a></p>
-							<p><a href="sub_event_view1.html">${dto.start_day}~${dto.end_day}</a></p>
-							<p><a href="sub_event_view1.html">${dto.title}</a></p>
+							<p><a href="sub_event_view1.html">${edto.start_day}~${edto.end_day}</a></p>
+							<p><a href="sub_event_view1.html">${edto.title}</a></p>
 							
 						</li>
 					</c:forEach>
 					</c:if>
-					<c:if test="${empty dto}">
+					<c:if test="${empty edto}">
 						<p>현재 진행중인 이벤트가 없습니다.</p>
 					</c:if>
 				</ul>
 			</div>
 			<div id="paging">	
-			<c:if test="${not empty dto}">
+			<c:if test="${not empty edto}">
 				<ul class="page-num">
 					    <a href="event_list.Edo?page=1"><li class="first"></li></a>
 				      	<c:if test="${page<=1}"><a href="#"><li class="prev"></li></a></c:if>

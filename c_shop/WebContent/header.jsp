@@ -22,7 +22,9 @@
 	 				</c:if>
 	 				<li><a href="#">고객행복센터</a></li>
 	 				<li><a href="#">배송정보검색</a></li>
-	 				<li><a href="#">관리자페이지</a></li>
+	 				<c:if test="${User=='admin'}">
+	 				<li><a href="admin_main.Ado">관리자페이지</a></li>
+	 				</c:if>
 	 			</ul>
 	 		</div>
 	 		<nav>

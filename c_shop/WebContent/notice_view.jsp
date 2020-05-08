@@ -48,7 +48,7 @@
 										
 						<div>
 							<div style="text-align: center;">
-								<img src="upload/${dto.bfile}" style="width:60%; height:500px; margin-bottom: 50px;">
+								<img src="${pageContext.request.contextPath}/upload2/${dto.bfile}" style="width:60%; height:500px; margin:0 auto; margin-bottom: 50px;" >
 								<p style="text-align: center; margin-bottom: 100px;">${dto.bcontent}</p>
 							</div>
 						</div>

@@ -110,6 +110,8 @@ public class BDao {
 		return dtos;
 	}
 	
+	
+	
 	//게시글 전체 개수
 	public int getlistCount(String opt, String search) {
 		int check = 0;

@@ -59,7 +59,7 @@ public class BListCommand implements BCommand {
 			request.setAttribute("search", search);
 		}
 		
-		request.setAttribute("dto", dtos);
+		request.setAttribute("bdto", dtos);
 		request.setAttribute("listcount", listcount);
 		request.setAttribute("page", page);
 		request.setAttribute("maxpage", maxpage);

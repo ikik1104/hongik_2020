@@ -90,7 +90,10 @@ public class EventDao {
 				start_day = rs.getString("start_day");
 				end_day = rs.getString("end_day");
 				hit = rs.getInt("hit");
-				
+				System.out.println("!!!!!!!!--------");
+				System.out.println(start_day);
+				System.out.println(end_day);
+				System.out.println(file1);
 				edtos.add(new EventDto(num, title, content, file1, file2, start_day, end_day, hit));
 			}
 			
@@ -99,7 +102,6 @@ public class EventDao {
 		}finally {
 			close(con, pstmt, rs);
 		}
-		
 		return edtos;
 	}
 	

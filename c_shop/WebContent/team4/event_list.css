@@ -1,5 +1,5 @@
 /* Main Section */
-section {
+section #paging {
   text-align: center;
 }
 
@@ -12,7 +12,6 @@ section {
   width: 36px;
   height: 35px;
   padding: 0;
-
 }
 
 .first {

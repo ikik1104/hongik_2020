@@ -20,7 +20,7 @@ public class BInsertCommand implements BCommand {
 		BDto dto = new BDto();
 		
 		//저장경로 지정
-				String path = "D:/upload";// 파일을 저장할 위치를 어디로?!
+				String path = "D:/upload2";// 파일을 저장할 위치를 어디로?!
 				//파일 사이즈 - 업로드 파일 용량 제한
 				int size = 1024 * 1024 * 10 ; // 10메가 용량 제한
 				//파일 이름 최종 설정

@@ -18,7 +18,7 @@ public class BReplyCommand implements BCommand {
 		BDao dao = new BDao();
 		BDto dto = new BDto();
 		
-		String path = "D:/upload";
+		String path = "D:/upload2";
 //				request.getSession().getServletContext().getRealPath("upload");  파일을 저장할 위치를 어디로?!
 		//파일 사이즈 - 업로드 파일 용량 제한
 		int size = 1024 * 1024 * 10 ; // 10메가 용량 제한

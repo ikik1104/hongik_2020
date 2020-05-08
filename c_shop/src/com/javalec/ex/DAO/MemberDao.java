@@ -208,7 +208,8 @@ public class MemberDao {
 	public ArrayList<MemberDto> allUser() {
 		System.out.println(">> 회원 리스트  메소드");
 
-		sql = "select * from member";
+		sql = "select mnum,id,pw,name,email,postcode,address,address2,address3,phone,to_char(birth,'YYYY-MM-DD')as birth,"+
+				"day2,gender,news,sms,joindate from member";
 		try {
 			con = ds.getConnection();
 			pstmt = con.prepareStatement(sql);

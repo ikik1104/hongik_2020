@@ -25,9 +25,7 @@
       <section>
         <div class="container">
           <h1>이벤트 등록</h1>
-          
             <form name="inputform" action="insert_event.Edo" method="Post" enctype="multipart/form-data">
-            
             <div class="input_set">
                 <div class="input_1">
                   <label class="input_label">제목</label>

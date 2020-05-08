@@ -3,7 +3,6 @@ package com.javalec.ex.DTO;
 import java.sql.Timestamp;
 
 public class EventDto {
-
 	
 	int num;
 	String title;

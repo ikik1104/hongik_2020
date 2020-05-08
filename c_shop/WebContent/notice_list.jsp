@@ -11,7 +11,7 @@
 		<title>공지사항 리스트</title>
 		<style type="text/css">
 			#search{width: 100%;}
-			form { width: 500px; margin: 0 auto; margin-top: 40px; padding-left: 50px;}
+			form { text-align:center; margin: 0 auto; margin-top: 40px;}
 		</style>
 		<script type="text/javascript">
 		window.onload = load();
@@ -35,7 +35,6 @@
 		<section>
 			<div>
 				<h1>공지사항</h1>
-				<c:if test="${not empty dto}">
 					<div id="search">
 						<form action="notice_list.do" name="form" method="get">
 							<select name="opt" >
@@ -47,7 +46,6 @@
 							<button type="submit">전송</button>
 						</form>
 					</div>
-					</c:if>
 				<div>
 					<div>
 						<table>
@@ -69,21 +67,21 @@
 							</thead>
 							<tbody>
 							<!-- 리스트 출력 -->
-							<c:if test="${not empty dto}">
-								<c:forEach var="dto" items="${dto}">
+							<c:if test="${not empty bdto}">
+								<c:forEach var="bdto" items="${bdto}">
 									<tr>
-										<td>${dto.bid}</td>
+										<td>${bdto.bid}</td>
 										<td class="tit">
-										<c:forEach begin="1" end="${dto.bindent}">&nbsp;&nbsp;</c:forEach>
-										<c:forEach begin="1" end="${dto.bindent}">▶</c:forEach>
-										<a href="notice_view.do?bid=${dto.bid}" class="list_a">${dto.btitle}</a></td>
-										<td>${dto.bname}</td>
-										<td><fmt:formatDate value="${dto.bdate}" pattern="yyyy-MM-dd"/></td>
-										<td>${dto.bhit}</td>
+										<c:forEach begin="1" end="${bdto.bindent}">&nbsp;&nbsp;</c:forEach>
+										<c:forEach begin="1" end="${bdto.bindent}">▶</c:forEach>
+										<a href="notice_view.do?bid=${bdto.bid}" class="list_a">${bdto.btitle}</a></td>
+										<td>${bdto.bname}</td>
+										<td><fmt:formatDate value="${bdto.bdate}" pattern="yyyy-MM-dd"/></td>
+										<td>${bdto.bhit}</td>
 									</tr>
 								</c:forEach>	
 							</c:if>
-							<c:if test="${empty dto}">
+							<c:if test="${empty bdto}">
 								<td colspan="5">작성된 공지사항이 없습니다.</td>
 							</c:if>
 							</tbody>
@@ -98,7 +96,7 @@
 					</c:if>
 					</div>
 					
-					<c:if test="${not empty dto}">
+					<c:if test="${not empty bdto}">
 					<div id="paging">	
 					<ul class="page-num">
 				      <c:choose>

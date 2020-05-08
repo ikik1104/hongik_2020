@@ -39,16 +39,12 @@
 												</div>
 												
 												<div><!-- 이벤트 이미지 -->
-														<img src="upload/${dto.file2}" style="width:100%; height:1000px; margin-bottom: 50px;">
+														<img src="${pageContext.request.contextPath}/upload2/${dto.file2}" style="width:100%; height:1000px; margin-bottom: 50px;">
 														<p style="text-align: center; margin-bottom: 100px; font-size: 15px;">${dto.content}</p>
 												</div>
 										</div>
 										<div id="button">
-<%-- 											<c:if test="${User=='admin'}"> --%>
-												<a href="event_updateForm.Edo?num=${dto.num}">수정</a>
-												<a href="javascript:deleteEvent('${dto.num}')">삭제</a>
-<%-- 											</c:if>											 --%>
-												<a href="event_list.Edo">목록</a></div>	
+												<a href="event_list.Edo">목록</a>	
 										</div>
 						</section>
 						<!-- 푸터 -->

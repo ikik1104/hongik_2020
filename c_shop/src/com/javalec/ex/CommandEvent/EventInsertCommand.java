@@ -21,7 +21,7 @@ public class EventInsertCommand implements EventCommand {
 		
 
 		//저장경로 지정
-		String path = "D:/upload";// 파일을 저장할 위치를 어디로?!
+		String path = "D:/upload2";// 파일을 저장할 위치를 어디로?!
 //		String path = request.getSession().getServletContext().getRealPath("upload");파일을 저장할 위치를 어디로?!
 		//파일 사이즈 - 업로드 파일 용량 제한
 		int size = 1024 * 1024 * 10 ; // 10메가 용량 제한
@@ -41,13 +41,9 @@ public class EventInsertCommand implements EventCommand {
 			String start_day= multi.getParameter("start_day");
 			String end_day= multi.getParameter("end_day");
 			//파일이름 가져오기
-			Enumeration files =  multi.getFileNames();//파일들의 이름을 가져온다
-			String name1 = (String) files.nextElement(); //위에서 가져온 이름의 값!!??
-			String name2 = (String) files.nextElement(); //위에서 가져온 이름의 값!!??
-			file1 = multi.getFilesystemName(name1);//똑가튼 이름이 있으면 뒤에 숫자를 1,2,3
-			file2 = multi.getFilesystemName(name2);//똑가튼 이름이 있으면 뒤에 숫자를 1,2,3
-			orifile1= multi.getOriginalFileName(name1);//예전 이름을 여기에 저장 (필수사항 아님)
-			orifile2= multi.getOriginalFileName(name2);//예전 이름을 여기에 저장 (필수사항 아님)
+
+			file1 = multi.getFilesystemName("file1");//똑가튼 이름이 있으면 뒤에 숫자를 1,2,3
+			file2 = multi.getFilesystemName("file2");//똑가튼 이름이 있으면 뒤에 숫자를 1,2,3
 			
 			edto = new EventDto(0, title, content, file1, file2, start_day, end_day, 0);
 			int check = edao.insert_event(edto);
