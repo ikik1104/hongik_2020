@@ -26,14 +26,13 @@ public class A_Notice_UpdateCom implements AdminCommand {
 				int size = 1024 * 1024 * 10 ; // 10메가 용량 제한
 				//파일 이름 최종 설정
 				String file1=""; //썸네일
-				//예전 파일이름
-				String orifile1="";
 				try{
 					//request, 파일 저장경로, 용량, 인코딩타입, 중복파일명에 대한 정책 ) 들을 넣어줘야한다.
 					MultipartRequest multi = new MultipartRequest(request,path,size,"utf-8",new DefaultFileRenamePolicy()); 
 					//new DefaultFileRenamePolicy() 똑같은 이름이 있으면 이름 뒤 1,2,3...
 					
 					int bid = Integer.parseInt(multi.getParameter("bid"));
+					System.out.println("bid : "+bid);
 					String bname = multi.getParameter("bname");
 					String btitle = multi.getParameter("btitle"); 
 					String bcontent = multi.getParameter("bcontent");
@@ -47,7 +46,7 @@ public class A_Notice_UpdateCom implements AdminCommand {
 					}
 					//파일이름 가져오기
 					
-					dto = new BDto(0, bname, btitle, bcontent, null, file1, 0, 0, 0, 0);
+					dto = new BDto(bid, bname, btitle, bcontent, null, file1, 0, 0, 0, 0);
 					int check = dao.update(dto);
 					
 					request.setAttribute("bid", bid);

@@ -40,9 +40,11 @@
 
 			<div>
 				<div>
+					<c:if test="${not empty dto.bfile}">
 					<p style="text-align:center;">
 						<img src="${pageContext.request.contextPath}/upload2/${dto.bfile}" style="width:60%; height:500px;margin-bottom: 50px;" >
 					</p>
+					</c:if>
 					<p style="text-align: center; margin-bottom: 100px;">${dto.bcontent}</p>
 				</div>
 			</div>

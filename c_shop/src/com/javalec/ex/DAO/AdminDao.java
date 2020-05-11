@@ -174,6 +174,11 @@ public class AdminDao {
 			con = ds.getConnection();
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, dto.getBname());
+			System.out.println(dto.getBname());
+			System.out.println(dto.getBtitle());
+			System.out.println(dto.getBcontent());
+			System.out.println(dto.getBfile());
+			System.out.println(dto.getBid());
 			pstmt.setString(2, dto.getBtitle());
 			pstmt.setString(3, dto.getBcontent());
 			pstmt.setString(4, dto.getBfile());

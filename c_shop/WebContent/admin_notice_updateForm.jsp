@@ -62,6 +62,8 @@
                     </div>
                   </div>  
                 </div>
+                
+               	<c:if test="${not empty bdto.bfile}">
                	<div class="input_1" id="file_img">
                   <label class="input_label">현재 첨부된 이미지</label>
                       <img src="${pageContext.request.contextPath}/upload2/${bdto.bfile}" width="150px;" height="80px;">
@@ -70,6 +72,16 @@
                       <button type="button" onclick="del_img()">첨부 이미지삭제</button>
                       </span>
                 </div>
+                </c:if>
+                
+                 <c:if test="${empty bdto.bfile}">
+                 <div class="input_1">
+                  <label class="input_label">수정 이미지</label>
+                      <input type="file" name="file">
+                </div>
+                 </c:if>
+                 
+		<!--    첨부된 이미지 삭제시 나오는 div -->
                 <div class="input_1" id="new_img">
                   <label class="input_label">수정 이미지</label>
                       <input type="file" name="file">
@@ -79,7 +91,7 @@
             </div>
               <input type="hidden" name="del_chk" value="n"> <!-- 초기 n : 삭제 안함 -->
 			  <input type="hidden" name="ori_file" value="${bdto.bfile}">
-              <input type="hidden" value="${bdto.bid}">
+              <input type="hidden" name="bid" value="${bdto.bid}">
               <div class="bttn_set">
                 <button onclick="index.Edo">취소</button>
                 <button type="submit">확인</button>
