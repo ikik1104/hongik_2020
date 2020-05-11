@@ -68,6 +68,9 @@ a{
 }
 
 /* 20.03.31 수정 */
+.admin_gnb>ul{
+	min-width: 1800px;
+}
 
 .admin_gnb>ul>li>a>span{
   display: inline-block;
