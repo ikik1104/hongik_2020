@@ -14,7 +14,7 @@ public class A_Notice_UpdateFormCom implements AdminCommand {
 		int id = Integer.parseInt(request.getParameter("bid"));
 		BDao dao = new BDao();
 		BDto dtos = dao.Bdetail(id); //게시글 정보 가져오기
-		request.setAttribute("dto", dtos);
+		request.setAttribute("bdto", dtos);
 	}
 
 	/*

@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+
+#file_img{
+	
+}
+
+#file_img img{
+	width: 150px;
+	height: 80px;
+}
+
+#file_img span{
+	box-sizing: border-box;
+	padding: 50px 10px 0 10px;
+}
+#file_img button{
+	height: 30px;	
+}
+
+#new_img{
+	display: none;
+}

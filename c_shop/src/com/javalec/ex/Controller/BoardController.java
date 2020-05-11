@@ -11,13 +11,9 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.javalec.ex.CommandBoard.BCommand;
 import com.javalec.ex.CommandBoard.BContentCommand;
-import com.javalec.ex.CommandBoard.BDeleteCommand;
-import com.javalec.ex.CommandBoard.BInsertCommand;
 import com.javalec.ex.CommandBoard.BListCommand;
 import com.javalec.ex.CommandBoard.BReplyCommand;
 import com.javalec.ex.CommandBoard.BReplyFormCommand;
-import com.javalec.ex.CommandBoard.BUpdateCommand;
-import com.javalec.ex.CommandBoard.BUpdateFormCommand;
 
 @WebServlet("*.do")
 public class BoardController extends HttpServlet {
@@ -63,15 +59,6 @@ public class BoardController extends HttpServlet {
 		}else if(com.equals("/no_insertForm.do")) { //공지사항 입력Form
 			pageView = "notice_insert.jsp";
 			
-		}else if(com.equals("/no_insert.do")) { //공지사항 insert
-			bcom = new BInsertCommand();
-			bcom.execute(request, response);
-			pageView = "notice_list.jsp";
-		}else if(com.equals("/delete.do")) {  //공지 삭제하기
-			bcom = new BDeleteCommand();
-			bcom.execute(request, response);
-			pageView = "notice_list.do";
-			
 		}else if(com.equals("/reply_Form.do")) {  //답글 Form
 			bcom = new BReplyFormCommand();
 			bcom.execute(request, response);
@@ -80,16 +67,7 @@ public class BoardController extends HttpServlet {
 			bcom = new BReplyCommand();
 			bcom.execute(request, response);
 			pageView = "notice_list.do";
-		}else if(com.equals("/update_form.do")) { //업데이트 Form
-			bcom = new BUpdateFormCommand();
-			bcom.execute(request, response);
-			pageView = "notice_update.jsp";
-		}else if(com.equals("/notice_update.do")) { //공지사항 update
-			bcom = new BUpdateCommand();
-			bcom.execute(request, response);
-			pageView = "notice_view.do";
 		}
-		
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher(pageView);
 		dispatcher.forward(request, response);

@@ -1,5 +1,6 @@
 package com.javalec.ex.DAO;
 
+import java.io.File;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -167,7 +168,7 @@ public class AdminDao {
 	//update 메소드
 	public int update(BDto dto) {
 		int check = 0;
-		sql = "update mvc_board set bname = ?,btitle=?, bcontent=?,bfile=?,bgroup=?,bindent=?,bstep=?"
+		sql = "update mvc_board set bname = ?,btitle=?, bcontent=?,bfile=?"
 				+ "  where bid=?";
 		try {
 			con = ds.getConnection();
@@ -176,10 +177,7 @@ public class AdminDao {
 			pstmt.setString(2, dto.getBtitle());
 			pstmt.setString(3, dto.getBcontent());
 			pstmt.setString(4, dto.getBfile());
-			pstmt.setInt(5, dto.getBgroup());
-			pstmt.setInt(6, dto.getBstep());
-			pstmt.setInt(7, dto.getBindent());
-			pstmt.setInt(8, dto.getBid());
+			pstmt.setInt(5, dto.getBid());
 			check =  pstmt.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -193,7 +191,29 @@ public class AdminDao {
 		
 	}
 	
-	
+	//파일 삭제 메소드?
+		public int delFile(int num) {
+			System.out.println("파일 삭제 하러 옴");
+			int check =0;
+			//파일명을 가져오기 위해서~~
+			BDto bdto = Bdetail(num);
+			
+			//c:의 주소
+			File file = new File("D:/upload2/"+bdto.getBfile());
+			if( file.exists() ){
+	    		if(file.delete()){
+	    			System.out.println("****** 파일삭제 성공  ******");
+	    			check = 1;
+	    		}else{
+	    			System.out.println("****** 파일삭제 실패 ******");
+	    			check = 0;
+	    		}
+	    	}else{
+	    		System.out.println("파일이 존재하지 않습니다.");
+	    	}
+			
+			return check;
+		}
 	
 	//게시글 삭제하기
 	public int Bdelete(int bid) {

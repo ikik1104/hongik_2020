@@ -25,10 +25,8 @@ public class A_Notice_InsertCom implements AdminCommand {
 				int size = 1024 * 1024 * 10 ; // 10메가 용량 제한
 				//파일 이름 최종 설정
 				String file1=""; //썸네일
-				String file2=""; //그 내용 사진
 				//예전 파일이름
 				String orifile1="";
-				String orifile2="";	
 				try{
 					//request, 파일 저장경로, 용량, 인코딩타입, 중복파일명에 대한 정책 ) 들을 넣어줘야한다.
 					MultipartRequest multi = new MultipartRequest(request,path,size,"utf-8",new DefaultFileRenamePolicy()); 
@@ -40,8 +38,7 @@ public class A_Notice_InsertCom implements AdminCommand {
 					//파일이름 가져오기
 					
 					
-					file1 = multi.getFilesystemName("file1");//똑가튼 이름이 있으면 뒤에 숫자를 1,2,3
-					orifile1= multi.getOriginalFileName("file1");//예전 이름을 여기에 저장 (필수사항 아님)
+					file1 = multi.getFilesystemName("file");//똑가튼 이름이 있으면 뒤에 숫자를 1,2,3
 					
 					dto = new BDto(0, bname, btitle, bcontent, null, file1, 0, 0, 0, 0);
 					int check = dao.Binsert(dto);

@@ -17,7 +17,7 @@
         <div class="container">
           <h1>공지사항 등록</h1>
           
-            <form name="inputform" action="insert_event.Ado" method="Post" enctype="multipart/form-data">
+            <form name="inputform" action="no_insert.Ado" method="Post" enctype="multipart/form-data">
             
             <div class="input_set">
                 <div class="input_1">
@@ -47,7 +47,7 @@
                 
                 <div class="input_1">
                   <label class="input_label">상세내용 이미지</label>
-                      <input type="file" name="file2">
+                      <input type="file" name="file">
                 </div>
               
             </div>

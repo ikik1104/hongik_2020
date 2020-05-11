@@ -9,17 +9,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.javalec.ex.CommandAdmin.A_Notice_ContentCom;
+import com.javalec.ex.CommandAdmin.A_Notice_DeleteCom;
+import com.javalec.ex.CommandAdmin.A_Notice_InsertCom;
 import com.javalec.ex.CommandAdmin.A_Notice_ListCom;
+import com.javalec.ex.CommandAdmin.A_Notice_UpdateCom;
+import com.javalec.ex.CommandAdmin.A_Notice_UpdateFormCom;
 import com.javalec.ex.CommandAdmin.AdminCommand;
 import com.javalec.ex.CommandBoard.BCommand;
-import com.javalec.ex.CommandBoard.BContentCommand;
-import com.javalec.ex.CommandBoard.BDeleteCommand;
-import com.javalec.ex.CommandBoard.BInsertCommand;
 import com.javalec.ex.CommandBoard.BListCommand;
 import com.javalec.ex.CommandBoard.BReplyCommand;
 import com.javalec.ex.CommandBoard.BReplyFormCommand;
-import com.javalec.ex.CommandBoard.BUpdateCommand;
-import com.javalec.ex.CommandBoard.BUpdateFormCommand;
 import com.javalec.ex.CommandEvent.EventCommand;
 import com.javalec.ex.CommandEvent.EventDeleteCommand;
 import com.javalec.ex.CommandEvent.EventDetailCommand;
@@ -72,8 +72,8 @@ public class AdminController extends HttpServlet {
 			pageView = "admin_notice_list.jsp";
 			
 		}else if(com.equals("/notice_view.Ado")) { //공지사항 상세보기
-			bcom = new BContentCommand();
-			bcom.execute(request, response);
+			acom = new A_Notice_ContentCom();
+			acom.execute(request, response);
 			pageView = "admin_notice_view.jsp";
 			
 		}else if(com.equals("/search.Ado")) { //검색기능
@@ -85,12 +85,12 @@ public class AdminController extends HttpServlet {
 			pageView = "admin_notice_insertForm.jsp";
 			
 		}else if(com.equals("/no_insert.Ado")) { //공지사항 insert
-			bcom = new BInsertCommand();
-			bcom.execute(request, response);
+			acom = new A_Notice_InsertCom();
+			acom.execute(request, response);
 			pageView = "admin_notice_list.jsp";
 		}else if(com.equals("/notice_delete.Ado")) {  //공지 삭제하기
-			bcom = new BDeleteCommand();
-			bcom.execute(request, response);
+			acom = new A_Notice_DeleteCom();
+			acom.execute(request, response);
 			pageView = "notice_list.Ado";
 			
 		}else if(com.equals("/reply_Form.Ado")) {  //답글 Form
@@ -101,14 +101,14 @@ public class AdminController extends HttpServlet {
 			bcom = new BReplyCommand();
 			bcom.execute(request, response);
 			pageView = "notice_list.Ado";
-		}else if(com.equals("/update_form.Ado")) { //업데이트 Form
-			bcom = new BUpdateFormCommand();
-			bcom.execute(request, response);
-			pageView = "notice_update.jsp";
+		}else if(com.equals("/notice_update_form.Ado")) { //업데이트 Form
+			acom = new A_Notice_UpdateFormCom();
+			acom.execute(request, response);
+			pageView = "admin_notice_updateForm.jsp";
 		}else if(com.equals("/notice_update.Ado")) { //공지사항 update
-			bcom = new BUpdateCommand();
-			bcom.execute(request, response);
-			pageView = "admin_notice_view.Ado";
+			acom = new A_Notice_UpdateCom();
+			acom.execute(request, response);
+			pageView = "admin_notice_view.jsp";
 		}
 		
 		//이벤트

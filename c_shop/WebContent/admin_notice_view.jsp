@@ -14,7 +14,7 @@
 			var text1 = "${text}";
 			if(!(text1===null) && !(text1==="")){
 			 		alert(text1);	
-			 		location.href="notice_list.Ado";
+			 		location.href="notice_view.Ado?bid=${bid}";
 				 }
 		}
 		
@@ -51,7 +51,7 @@
 			
 			<div>
 				<a onclick="b_delete('${dto.bid}')" style="width: 100px;">삭제</a>
-				<a href="update_form.Ado?bid=${dto.bid}" style="width: 100px;">수정</a>
+				<a href="notice_update_form.Ado?bid=${dto.bid}" style="width: 100px;">수정</a>
 				<a href="notice_list.Ado" style="width: 100px;" >목록</a>
 			</div>
 		</div>
