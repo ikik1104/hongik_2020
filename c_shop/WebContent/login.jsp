@@ -8,14 +8,14 @@
   <head>
     <meta charset="UTF-8">
     <title>cj cookit 마크업</title>
+    <script src="http://code.jquery.com/jquery-1.4.4.min.js"></script>
     <script type="text/javascript">
-		window.onload = load();
-		function load(){
+    $(document).ready(function() { 
 			var text1 = "${text}";
 				 if(!(text1===null) && !(text1==="")){
 			 		alert(text1);	
 				 }
-		}
+    });
 		</script>
     <link href="css/style.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:400,500,700&display=swap" rel="stylesheet">    

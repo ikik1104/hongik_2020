@@ -8,15 +8,15 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Insert title here</title>
+		<script src="http://code.jquery.com/jquery-1.4.4.min.js"></script>
 			<script type="text/javascript">
-				window.onload = load();
-				function load(){
+			$(document).ready(function() { 
 				var text1 = "${text}";
 					if(!(text1===null) && !(text1==="")){
 			 			alert(text1);	
 			 			location.href="event_list.Edo";
 				 	}
-				}
+			});
 			</script>
 			<link href="css/sub_event_list_style.css" rel="stylesheet" type="text/css">
 			<link rel="stylesheet" href="team4/style.css">

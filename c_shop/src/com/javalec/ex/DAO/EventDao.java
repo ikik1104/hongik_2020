@@ -43,7 +43,7 @@ public class EventDao {
 	
 	//이벤트 업로드
 	public int insert_event(EventDto edto) {
-		System.out.println("insert메소드로 들어옴");
+		System.out.println(">> 이벤트 업로드  메소드");
 		int check = 0;
 		sql = "insert into event values(event_seq.nextval,?,?,?,?,?,?,0)";
 		
@@ -60,14 +60,16 @@ public class EventDao {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally {
-			close(con, pstmt);
+			close(con, pstmt,rs);
 		}
-		System.out.println("check : "+ check);
+
+		System.out.println("이벤트 업로드 성공유무 (1:성공, 0: 실패 )>>>>> "+ check);
 		return check;
 	}
 	
 	//이벤트 전체 리스트
 	public ArrayList<EventDto> evnetList (int page, int limit){
+		System.out.println(">> 이벤트 전체 리스트 메소드( 페이징 )");
 		int startrow = (page-1)*10+1;
 		int endrow = startrow+limit-1;
 		
@@ -93,10 +95,6 @@ public class EventDao {
 				start_day = rs.getString("start_day");
 				end_day = rs.getString("end_day");
 				hit = rs.getInt("hit");
-				System.out.println("!!!!!!!!--------");
-				System.out.println(start_day);
-				System.out.println(end_day);
-				System.out.println(file1);
 				edtos.add(new EventDto(num, title, content, file1, file2, start_day, end_day, hit));
 			}
 			
@@ -111,6 +109,7 @@ public class EventDao {
 	
 	//이벤트 조회수 증가
 	public int evnetHit(int num){
+		System.out.println(">> 이벤트 조회수 증가  메소드");
 		int check = 0;
 			sql = "update event set hit=hit+1 where num=?";
 		try {
@@ -121,14 +120,15 @@ public class EventDao {
 		}catch (Exception e) {
 			e.printStackTrace();
 		}finally {
-			close(con, pstmt);
+			close(con, pstmt,rs);
 		}
-		
+		System.out.println("이벤트 조회수 증가 성공유무 (1:성공, 0: 실패 )>>>>> "+ check);
 		return check;
 	}
 	
 	//이벤트 상세보기
 	public EventDto detail(int num) {
+		System.out.println(">> 이벤트 상세정보  메소드");
 		sql = "select num,title,content,file1,file2,to_char(start_day,'YYYY.MM.DD')as start_day"
 				+ ",to_char(end_day,'YYYY.MM.DD')as end_day,hit from event where num = ?";
 		
@@ -162,6 +162,7 @@ public class EventDao {
 	
 	//게시물의 총 개수
 	public int getlistCount () {
+		System.out.println(">> 이벤트 총 게시글 수 메소드");
 		sql = "select count(*)as count from event";
 		int check = 0;
 		try {
@@ -177,13 +178,12 @@ public class EventDao {
 		}finally {
 			close(con, pstmt, rs);
 		}
-		
 		return check;
 	}
 	
 	//해당 이벤트 삭제
 	public int delEvent(int num) {
-		System.out.println("삭제를 위해 넘어온 num 값 : "+num);
+		System.out.println(">> 이벤트 삭제 메소드");
 		sql = "delete from event where num = ?";
 		int check = 0;
 		try {
@@ -194,20 +194,43 @@ public class EventDao {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally {
-			close(con, pstmt);
+			close(con, pstmt,rs);
 		}
-		
+		System.out.println("이벤트 삭제 성공유무 (1:성공, 0: 실패 )>>>>> "+ check);
 		return check;
 	}
 
 	//이벤트 수정
-	
+		public int updateEvent(EventDto dto){
+			System.out.println(">> 이벤트 조회수 증가  메소드");
+			int check = 0;
+				sql = "update event set title=?,content=?,file1=?,file2=?,start_day=?,end_day=?"
+						+ " where num=?";
+			try {
+				con = ds.getConnection();
+				pstmt = con.prepareStatement(sql);
+				pstmt.setString(1, dto.getTitle());
+				pstmt.setString(2, dto.getContent());
+				pstmt.setString(3, dto.getFile1());
+				pstmt.setString(4, dto.getFile2());
+				pstmt.setString(5, dto.getStart_day());
+				pstmt.setString(6, dto.getEnd_day());
+				pstmt.setInt(7, num);
+				check = pstmt.executeUpdate();
+			}catch (Exception e) {
+				e.printStackTrace();
+			}finally {
+				close(con, pstmt,rs);
+			}
+			System.out.println("이벤트 조회수 증가 성공유무 (1:성공, 0: 실패 )>>>>> "+ check);
+			return check;
+		}
+		
+		
 	//파일 삭제
 		public int delFile(String fileName) {
-			System.out.println("파일 삭제 하러 옴");
+			System.out.println(">> 이벤트 파일 삭제 메소드");
 			int check =0;
-			//파일명을 가져오기 위해서~~
-			EventDto edto = detail(num);
 			
 			//c:의 주소
 			File file = new File("D:/upload2/"+fileName);
@@ -226,21 +249,12 @@ public class EventDao {
 		}
 	
 		
-		
+	//커넥션 close
 	private void close(Connection con, PreparedStatement pstmt, ResultSet rs) {
 		try {
 			if(con!=null)con.close();
 			if(pstmt !=null)pstmt.close();
 			if(rs!=null)rs.close();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-	
-	private void close(Connection con, PreparedStatement pstmt) {
-		try {
-			if(con!=null)con.close();
-			if(pstmt !=null)pstmt.close();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

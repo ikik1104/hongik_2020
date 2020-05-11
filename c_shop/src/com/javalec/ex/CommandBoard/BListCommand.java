@@ -45,12 +45,6 @@ public class BListCommand implements BCommand {
 		//마지막 페이지
 		int endpage = maxpage; //1~10까지는 maxpage가 endpage가 됨
 		if(endpage>startpage+10-1) endpage = startpage+10-1;
-		
-		System.out.println("listcount :"+ listcount);
-		System.out.println("page :"+ page);
-		System.out.println("maxpage :"+ maxpage);
-		System.out.println("startpage :"+ startpage);
-		System.out.println("endpage :"+ endpage);
 
 		if(search!="") {
 			searchFlag = "1";

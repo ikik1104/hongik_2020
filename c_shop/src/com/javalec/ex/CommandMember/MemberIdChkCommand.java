@@ -1,9 +1,8 @@
-package com.javalec.ex.Controller;
+package com.javalec.ex.CommandMember;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.javalec.ex.CommandMember.MemberCommand;
 import com.javalec.ex.DAO.MemberDao;
 
 public class MemberIdChkCommand implements MemberCommand {

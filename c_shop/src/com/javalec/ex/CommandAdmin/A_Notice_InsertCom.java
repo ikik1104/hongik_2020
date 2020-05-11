@@ -5,6 +5,7 @@ import java.util.Enumeration;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.javalec.ex.DAO.AdminDao;
 import com.javalec.ex.DAO.BDao;
 import com.javalec.ex.DTO.BDto;
 import com.javalec.ex.DTO.EventDto;
@@ -16,7 +17,7 @@ public class A_Notice_InsertCom implements AdminCommand {
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
 		// TODO Auto-generated method stub
-		BDao dao = new BDao();
+		AdminDao dao = new AdminDao();
 		BDto dto = new BDto();
 		
 		//저장경로 지정

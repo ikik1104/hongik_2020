@@ -36,14 +36,14 @@
 	}
 	
 	//상세보기 이미지 삭제------
-	function del_img() {
+	function del_img2() {
 		$("#file_img2").css("display","none");
 		$("#new_img2").css("display","flex");
 		$("input[name='del_chk2']").val("y"); //삭제
 		
 	}
 	//상세보기 되돌리기 ------	
-	function back_img() {
+	function back_img2() {
 		$("#new_img2").css("display","none");
 		$("#file_img2").css("display","flex");
 		$("input[name='del_chk2']").val("n"); //삭제안함
@@ -58,8 +58,8 @@
  <jsp:include page="admin_header.jsp"/>
   <section>
         <div class="container">
-          <h1>이벤트 등록</h1>
-            <form name="inputform" action="insert_event.Ado" method="Post" enctype="multipart/form-data">
+          <h1>이벤트 수정</h1>
+            <form name="inputform" action="event_update.Ado" method="Post" enctype="multipart/form-data">
             <div class="input_set">
                 <div class="input_1">
                   <label class="input_label">제목</label>
@@ -114,7 +114,7 @@
                   <label class="input_label">현재 내용이미지</label>
                       <img src="${pageContext.request.contextPath}/upload2/${dto.file2}" width="150px;" height="80px;">
                       <span>
-                      <button type="button" onclick="del_img2()">첨부 썸네일삭제</button>
+                      <button type="button" onclick="del_img2()">상세보기 이미지 삭제</button>
                       </span>
                 </div>
                 </c:if>
@@ -128,7 +128,7 @@
                  
                 
                 <div class="input_1" id="new_img2">
-                  <label class="input_label">수정 썸네일</label>
+                  <label class="input_label">수정 내용이미지</label>
                       <input type="file" name="file2" >
                        <button type="button" onclick="back_img2()">기존첨부 이미지복구</button>
                 </div>

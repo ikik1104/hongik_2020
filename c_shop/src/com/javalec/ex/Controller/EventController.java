@@ -32,7 +32,6 @@ public class EventController extends HttpServlet {
 	}
 	
 	protected void actionDo(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("actionDo");
 		//넘어온 request 한글처리 
 		request.setCharacterEncoding("utf-8");
 		String pageView = null;
@@ -43,13 +42,7 @@ public class EventController extends HttpServlet {
 		String com = uri.substring(conPath.length());
 		System.out.println("con : "+com);
 		
-		if(com.equals("/event_insertForm.Edo")) { // 이벤트 입력페이지로 이동
-			pageView = "event_insert.jsp";
-		}else if(com.equals("/insert_event.Edo")) { //이벤트 insert
-			ecom = new EventInsertCommand();
-			ecom.execute(request, response);
-			pageView = "event_list.jsp";
-		}else if(com.equals("/event_list.Edo")) { //이벤트 리스트
+		if(com.equals("/event_list.Edo")) { //이벤트 리스트
 			ecom = new EventListCommand();
 			ecom.execute(request, response);
 			pageView = "event_list.jsp";
@@ -57,14 +50,6 @@ public class EventController extends HttpServlet {
 			ecom = new EventDetailCommand();
 			ecom.execute(request, response);
 			pageView = "event_view.jsp";
-		}else if(com.equals("/event_updateForm.Edo")) { //이벤트 수정 페이지로 이동
-			ecom = new EventDetailCommand(); // 상세보기와 같이 게시물의 데이터를 가져온다
-			ecom.execute(request, response);
-			pageView = "event_update.jsp";
-		}else if(com.equals("/event_delete.Edo")){
-			ecom = new EventDeleteCommand(); // 이벤트 삭제
-			ecom.execute(request, response);
-			pageView = "event_list.jsp";
 		}
 		
 		

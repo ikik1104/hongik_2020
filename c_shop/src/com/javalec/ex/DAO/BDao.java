@@ -154,78 +154,8 @@ public class BDao {
 		return check;
 	}
 	
-	//게시글 입력하기
-	public int Binsert(BDto dto) {
-		int check = 0;
-		
-		sql = "insert into mvc_board values(mvc_board_seq.nextval,?,?,?,sysdate,?,0,mvc_board_seq.currval,0,0)";
-		
-		try {
-			con = ds.getConnection();
-			pstmt = con.prepareStatement(sql);
-			pstmt.setString(1, dto.getBname());
-			pstmt.setString(2, dto.getBtitle());
-			pstmt.setString(3, dto.getBcontent());
-			pstmt.setString(4, dto.getBfile());
-			check = pstmt.executeUpdate();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}finally {
-			close(con, pstmt);
-		}
-		return check;
-	}
-	
-	//update 메소드
-	public int update(BDto dto) {
-		int check = 0;
-		sql = "update mvc_board set bname = ?,btitle=?, bcontent=?,bfile=?,bgroup=?,bindent=?,bstep=?"
-				+ "  where bid=?";
-		try {
-			con = ds.getConnection();
-			pstmt = con.prepareStatement(sql);
-			pstmt.setString(1, dto.getBname());
-			pstmt.setString(2, dto.getBtitle());
-			pstmt.setString(3, dto.getBcontent());
-			pstmt.setString(4, dto.getBfile());
-			pstmt.setInt(5, dto.getBgroup());
-			pstmt.setInt(6, dto.getBstep());
-			pstmt.setInt(7, dto.getBindent());
-			pstmt.setInt(8, dto.getBid());
-			check =  pstmt.executeUpdate();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}finally {
-			close(con, pstmt);
-		}
-		if(check == 0) {
-			System.out.println("수정을 실패하였습니다.");
-		}
-		return check ;
-		
-	}
 	
 	
-	
-	//게시글 삭제하기
-	public int Bdelete(int bid) {
-		int check = 0;
-		
-		sql = "delete from mvc_board where bid=? or bgroup=?";
-		
-		try {
-			con = ds.getConnection();
-			pstmt = con.prepareStatement(sql);
-			pstmt.setInt(1, bid);
-			pstmt.setInt(2, bid);
-			check = pstmt.executeUpdate();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}finally {
-			close(con, pstmt);
-		}
-		return check;
-	}
 	//게시글 상세보기
 	public BDto Bdetail(int bid) {
 		System.out.println("게시글의 정보 가져오기");
@@ -273,7 +203,7 @@ public class BDao {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally {
-			close(con, pstmt);
+			close(con, pstmt,rs);
 		}
 		return check;
 	}
@@ -300,10 +230,11 @@ public class BDao {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally {
-			close(con, pstmt);
+			close(con, pstmt,rs);
 		}
 		return check;
 	}
+	
 	//답글달린 게시물 step증가
 	public int Breply_step(int bgroup, int bstep) {
 		System.out.println("답글달기 :"+bgroup+","+bstep);
@@ -320,7 +251,7 @@ public class BDao {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally {
-			close(con, pstmt);
+			close(con, pstmt,rs);
 		}
 		return check;
 	}
@@ -335,13 +266,6 @@ public class BDao {
 		}
 	}
 	
-	private void close(Connection con, PreparedStatement pstmt) {
-		try {
-			if(con!=null)con.close();
-			if(pstmt !=null)pstmt.close();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
+
 	
 }

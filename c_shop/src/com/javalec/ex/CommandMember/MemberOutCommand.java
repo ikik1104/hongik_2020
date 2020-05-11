@@ -1,10 +1,8 @@
-package com.javalec.ex.Controller;
+package com.javalec.ex.CommandMember;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
-import com.javalec.ex.CommandMember.MemberCommand;
 
 public class MemberOutCommand implements MemberCommand {
 

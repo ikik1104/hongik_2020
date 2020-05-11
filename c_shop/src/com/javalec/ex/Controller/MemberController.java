@@ -9,13 +9,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.javalec.ex.CommandEvent.EventCommand;
-import com.javalec.ex.CommandEvent.EventDetailCommand;
-import com.javalec.ex.CommandEvent.EventInsertCommand;
-import com.javalec.ex.CommandEvent.EventListCommand;
 import com.javalec.ex.CommandMember.MemberCommand;
+import com.javalec.ex.CommandMember.MemberIdChkCommand;
 import com.javalec.ex.CommandMember.MemberInsertCommand;
 import com.javalec.ex.CommandMember.MemberLoginCommand;
+import com.javalec.ex.CommandMember.MemberOutCommand;
 
 @WebServlet("*.Mdo")
 public class MemberController extends HttpServlet {
@@ -33,7 +31,6 @@ public class MemberController extends HttpServlet {
 	}
 
 	protected void actionDo(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("actionDo");
 		//넘어온 request 한글처리 
 		request.setCharacterEncoding("utf-8");
 		String pageView = null;
@@ -46,23 +43,29 @@ public class MemberController extends HttpServlet {
 		
 		if(com.equals("/index.Mdo")) { // 인덱스 페이지 이동
 			pageView = "index.jsp";
+			
 		}else if(com.equals("/joinForm.Mdo")) { // 회원가입페이지로 이동
 			pageView = "join.jsp";
+			
 		}else if(com.equals("/join.Mdo")) { // 회원가입
 			mcom = new MemberInsertCommand();
 			mcom.execute(request, response);
 			pageView = "index.jsp";
+			
 		}else if(com.equals("/idChk.Mdo")) { // 아이디 중복체크
 			mcom = new MemberIdChkCommand();
 			mcom.execute(request, response);
 			pageView = "join_id_pop.jsp";
-		}else if(com.equals("/loginForm.Mdo")) { // 로그인 페이지로
+			
+		}else if(com.equals("/loginForm.Mdo")) { // 로그인 페이지로 이동
 			pageView = "login.jsp";
+			
 		}else if(com.equals("/login.Mdo")) { // 로그인
 			mcom = new MemberLoginCommand();
 			mcom.execute(request, response);
 			pageView = (String) request.getAttribute("page");
-		}else if(com.equals("/loginOut.Mdo")) { // 로그인
+			
+		}else if(com.equals("/loginOut.Mdo")) { // 로그아웃
 			mcom = new MemberOutCommand();
 			mcom.execute(request, response);
 			pageView = "index.jsp";

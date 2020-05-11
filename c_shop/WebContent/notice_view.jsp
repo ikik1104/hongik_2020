@@ -8,20 +8,20 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>공지사항 view</title>
+		<script src="http://code.jquery.com/jquery-1.4.4.min.js"></script>
 		<script type="text/javascript">
-		window.onload = load();
-		function load(){
+		$(document).ready(function() { 
 			var text1 = "${text}";
 			if(!(text1===null) && !(text1==="")){
 			 		alert(text1);	
 			 		location.href="notice_list.do?bid=${bid}";
 				 }
-		}
+		});
 		
 		
 		function b_delete(id) {
 			if(confirm("게시글을 삭제하시겠습니까?")){
-				location.href = "delete.do?bid="+id;	
+				location.href = "notice_delete.Ado?bid="+id;	
 			}
 		}
 </script>
@@ -56,11 +56,11 @@
 						<div></div>
 					</div>
 					<div id="buttons">
-<%-- 						<c:if test="${User=='admin'}"> --%>
+						<c:if test="${User=='admin'}">
 						<a onclick="b_delete('${dto.bid}')" style="width: 100px;">삭제</a>
-						<a href="update_form.do?bid=${dto.bid}" style="width: 100px;">수정</a>
-<%-- 						</c:if> --%>
+						<a href="notice_update_form.Ado?bid=${dto.bid}" style="width: 100px;">수정</a>
 						<a href="reply_Form.do?bid=${dto.bid}" style="width: 100px;">답글달기</a>
+						</c:if>
 						<a href="notice_list.do" style="width: 100px;" >목록</a>
 					</div>
 				</div>

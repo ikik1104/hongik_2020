@@ -43,7 +43,6 @@ public class MemberDao {
 	//로그인
 	public int login(String id,String pw) {
 		System.out.println(">> 로그인 메소드");
-		System.out.println("입력 id : "+id+" |  입력 pw : "+pw);
 		int check = 0;
 		sql = "select * from member where id=? and pw=?";
 		try {
@@ -52,7 +51,6 @@ public class MemberDao {
 			pstmt.setString(1, id);
 			pstmt.setString(2, pw);
 			rs =pstmt.executeQuery();
-			
 			while(rs.next()) {
 				check = 1;
 				System.out.println("일치하는 회원 존재");
@@ -94,7 +92,7 @@ public class MemberDao {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally {
-			close(con, pstmt);
+			close(con, pstmt,rs);
 		}
 		
 		System.out.println("회원가입 성공 여부 (1:성공,0실패) : "+check);
@@ -104,7 +102,6 @@ public class MemberDao {
 	//회원정보 가져오기
 	public MemberDto userInfo(int mnum) {
 		System.out.println(">> 회원정보 메소드");
-		System.out.println("조회할 회원 번호 : "+mnum);
 		sql = "select * from member where mnum = ?";
 		try {
 			con = ds.getConnection();
@@ -113,7 +110,7 @@ public class MemberDao {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally {
-			close(con, pstmt);
+			close(con, pstmt,rs);
 		}
 		
 		return mdto ;
@@ -121,7 +118,6 @@ public class MemberDao {
 	
 	//아이디 중복체크
 	public int idChk(String id) {
-		System.out.println("id : "+id);
 		System.out.println(">> 아이디중복체크 메소드");
 		int check = 0;
 		sql = "select * from member where id=?";
@@ -174,7 +170,7 @@ public class MemberDao {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally {
-			close(con, pstmt);
+			close(con, pstmt,rs);
 		}
 		
 		System.out.println("회원정보수정 성공여부 (1:성공,0:실패) : "+check);
@@ -196,7 +192,7 @@ public class MemberDao {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally {
-			close(con, pstmt);
+			close(con, pstmt,rs);
 		}
 		
 		System.out.println("회원탈퇴 성공여부 (1:성공,0:실패) :"+check);
@@ -257,13 +253,5 @@ public class MemberDao {
 		}
 	}
 	
-	private void close(Connection con, PreparedStatement pstmt) {
-		try {
-			if(con!=null)con.close();
-			if(pstmt !=null)pstmt.close();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
 	
 }

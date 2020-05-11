@@ -13,16 +13,15 @@
 			#search{width: 100%;}
 			form { text-align:center; margin: 0 auto; margin-top: 40px;}
 		</style>
+		<script src="http://code.jquery.com/jquery-1.4.4.min.js"></script>
 		<script type="text/javascript">
-		window.onload = load();
-		
-		function load(){
-			var text1 = "${text}";
+		$(document).ready(function() { 
+		var text1 = "${text}";
 			if(!(text1===null) && !(text1==="")){
 			 		alert(text1);	
 			 		location.href="notice_list.do";
 				 }
-		}
+		});
 		</script>
 		<link type="text/css" rel="stylesheet" href="css/notice_list_style.css">
 		<link rel="stylesheet" href="team4/style.css">
@@ -91,7 +90,7 @@
 					<div>
 					<c:if test="${User=='admin'}">
 						<span>
-							<a href="no_insertForm.do">입력</a>
+							<a href="no_insertForm.Ado">입력</a>
 						</span>
 					</c:if>
 					</div>

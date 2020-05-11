@@ -8,21 +8,25 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Insert title here</title>
+		<script src="http://code.jquery.com/jquery-1.4.4.min.js"></script>
 		<script type="text/javascript">
-		window.onload = load();
-		function load(){
+		
+		$(document).ready(function() { 
+			
 			var text1 = "${text}";
 			if(!(text1===null) && !(text1==="")){
 			 		alert(text1);	
 			 		location.href="notice_view.Ado?bid=${bid}";
 				 }
-		}
+			
+		});
 		
 		
 		function b_delete(id) {
 			if(confirm("게시글을 삭제하시겠습니까?")){
 				location.href = "notice_delete.Ado?bid="+id;	
 			}
+			return false;
 		}
 </script>
 		<link rel="stylesheet" type="text/css" href="css/admin_notice_view.css">

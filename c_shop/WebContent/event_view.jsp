@@ -8,14 +8,6 @@
 			<head>
 						<meta charset="UTF-8">
 						<title>Insert title here</title>
-						<script type="text/javascript">
-							function deleteEvent(num){
-								if(confirm("해당 이벤트를 삭제하시겠습니까?")){
-									location.href='event_delete.Edo?num='+num;
-								}								
-							}
-						
-						</script>
 						<link href="css/sub_event_view_style1.css" rel="stylesheet" type="text/css">
 						<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
 			</head>

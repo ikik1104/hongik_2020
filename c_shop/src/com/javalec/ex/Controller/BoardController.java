@@ -31,7 +31,6 @@ public class BoardController extends HttpServlet {
 	}
 	
 	protected void actionDo(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("actionDo");
 		//넘어온 request 한글처리 
 		request.setCharacterEncoding("utf-8");
 		String pageView = null;
@@ -56,13 +55,11 @@ public class BoardController extends HttpServlet {
 			bcom.execute(request, response);
 			pageView = "notice_list.jsp";
 			
-		}else if(com.equals("/no_insertForm.do")) { //공지사항 입력Form
-			pageView = "notice_insert.jsp";
-			
 		}else if(com.equals("/reply_Form.do")) {  //답글 Form
 			bcom = new BReplyFormCommand();
 			bcom.execute(request, response);
 			pageView = "reply_form.jsp";
+			
 		}else if(com.equals("/reply.do")) { //답글 insert
 			bcom = new BReplyCommand();
 			bcom.execute(request, response);

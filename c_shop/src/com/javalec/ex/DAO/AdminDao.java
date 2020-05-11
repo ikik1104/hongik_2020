@@ -40,7 +40,7 @@ public class AdminDao {
 	
 	//전체 select 
 	public ArrayList<BDto> notice_list(String opt, String search) {
-		
+		System.out.println(">> (admin) 공지사항 리스트 메소드");
 		switch (opt) {
 		case "" :
 			sql = "select * from " + 
@@ -103,6 +103,7 @@ public class AdminDao {
 	
 	//게시글 전체 개수
 	public int getlistCount(String opt, String search) {
+		System.out.println(">> (admin) 공지사항 전체 개수 메소드");
 		int check = 0;
 		
 		switch (opt) {
@@ -145,6 +146,7 @@ public class AdminDao {
 	
 	//게시글 입력하기
 	public int Binsert(BDto dto) {
+		System.out.println(">> (admin) 공지사항 입력 메소드");
 		int check = 0;
 		
 		sql = "insert into mvc_board values(mvc_board_seq.nextval,?,?,?,sysdate,?,0,mvc_board_seq.currval,0,0)";
@@ -160,13 +162,15 @@ public class AdminDao {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally {
-			close(con, pstmt);
+			close(con, pstmt,rs);
 		}
+		System.out.println("공지사항 입력 성공유무 (1:성공, 0: 실패 )>>>>> "+ check);
 		return check;
 	}
 	
 	//update 메소드
 	public int update(BDto dto) {
+		System.out.println(">> (admin) 공지사항 수정 메소드");
 		int check = 0;
 		sql = "update mvc_board set bname = ?,btitle=?, bcontent=?,bfile=?"
 				+ "  where bid=?";
@@ -187,20 +191,20 @@ public class AdminDao {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally {
-			close(con, pstmt);
+			close(con, pstmt,rs);
 		}
-		if(check == 0) {
-			System.out.println("수정을 실패하였습니다.");
-		}
+		
+		System.out.println("공지사항 성공유무 (1:성공, 0: 실패 )>>>>> "+ check);
 		return check ;
 		
 	}
 	
 	//파일 삭제 메소드?
 		public int delFile(int num) {
-			System.out.println("파일 삭제 하러 옴");
+			System.out.println(">> (admin) 공지사항 파일 삭제 메소드");
 			int check =0;
 			//파일명을 가져오기 위해서~~
+			//공지사항은 파일이 1개이니까 걍 num으로 굴려서... 그냥 파일명을 받아와서 지워도 될듯~
 			BDto bdto = Bdetail(num);
 			
 			//c:의 주소
@@ -221,6 +225,7 @@ public class AdminDao {
 	
 	//게시글 삭제하기
 	public int Bdelete(int bid) {
+		System.out.println(">> (admin) 공지사항 게시글 삭제 메소드");
 		int check = 0;
 		
 		sql = "delete from mvc_board where bid=? or bgroup=?";
@@ -234,13 +239,13 @@ public class AdminDao {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally {
-			close(con, pstmt);
+			close(con, pstmt,rs);
 		}
 		return check;
 	}
 	//게시글 상세보기
 	public BDto Bdetail(int bid) {
-		System.out.println("게시글의 정보 가져오기");
+		System.out.println(">> (admin) 공지사항 상세정보 메소드");
 		sql = "select * from mvc_board where bid = ?";
 		
 		try {
@@ -273,6 +278,7 @@ public class AdminDao {
 	
 	//조회수 증가
 	public int Bhit_add(int bid) {
+		System.out.println(">> (admin) 공지사항 조회수 증가 메소드");
 		int check = 0;
 		
 		sql = "update mvc_board set bhit = bhit+1 where bid=?";
@@ -285,13 +291,15 @@ public class AdminDao {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally {
-			close(con, pstmt);
+			close(con, pstmt,rs);
 		}
+		System.out.println("조회수 증가 성공유무 (1:성공, 0: 실패 )>>>>> "+ check);
 		return check;
 	}
 	
 	//답글달기
 	public int Breply(BDto dto) {
+		System.out.println(">> (admin) 공지사항 답글달기 메소드");
 		int check = 0;
 		//그 먼저step올리기
 		Breply_step(dto.getBgroup(),dto.getBstep());
@@ -312,13 +320,14 @@ public class AdminDao {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally {
-			close(con, pstmt);
+			close(con, pstmt,rs);
 		}
+		System.out.println("답글달기 성공유무 (1:성공, 0: 실패 )>>>>> "+ check);
 		return check;
 	}
 	//답글달린 게시물 step증가
 	public int Breply_step(int bgroup, int bstep) {
-		System.out.println("답글달기 :"+bgroup+","+bstep);
+		System.out.println(">> (admin) 공지사항 답글 step증가 메소드");
 		int check = 0;
 		
 		sql = "update mvc_board set bstep=bstep+1 where bgroup=? and bstep>?";
@@ -332,11 +341,13 @@ public class AdminDao {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally {
-			close(con, pstmt);
+			close(con, pstmt,rs);
 		}
+		System.out.println("step증가 성공유무 (1:성공, 0: 실패 )>>>>> "+ check);
 		return check;
 	}
 	
+	//커넥션 닫기
 	private void close(Connection con, PreparedStatement pstmt, ResultSet rs) {
 		try {
 			if(con!=null)con.close();
@@ -347,13 +358,5 @@ public class AdminDao {
 		}
 	}
 	
-	private void close(Connection con, PreparedStatement pstmt) {
-		try {
-			if(con!=null)con.close();
-			if(pstmt !=null)pstmt.close();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
 	
 }
