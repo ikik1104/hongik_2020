@@ -38,13 +38,13 @@ public class A_Notice_UpdateCom implements AdminCommand {
 					String bcontent = multi.getParameter("bcontent");
 					String ori_file = multi.getParameter("ori_file");
 					String del_chk = multi.getParameter("del_chk");
+					
 					if(del_chk.equals("y")) { //파일삭제를 클릭했으면
 						dao.delFile(bid); //파일을 삭제한다.
-						file1 = multi.getFilesystemName("file");//새로 선택한 이미지가 있으면 file1에 담는다.
-					}else if(del_chk.equals("n")){ //파일을 삭제하지 않았으면
-						file1 = null;
+						file1 = multi.getFilesystemName("file2");//새로 선택한 이미지가 있으면 file1에 담는다.
+					}else if(del_chk.equals("n")) { //삭제한 파일이 없으면
+						file1 = multi.getFilesystemName("file1");
 					}
-					//파일이름 가져오기
 					
 					dto = new BDto(bid, bname, btitle, bcontent, null, file1, 0, 0, 0, 0);
 					int check = dao.update(dto);

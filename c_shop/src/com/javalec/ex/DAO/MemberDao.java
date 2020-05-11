@@ -94,7 +94,7 @@ public class MemberDao {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally {
-			close(con, pstmt, rs);
+			close(con, pstmt);
 		}
 		
 		System.out.println("회원가입 성공 여부 (1:성공,0실패) : "+check);
@@ -113,7 +113,7 @@ public class MemberDao {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally {
-			close(con, pstmt, rs);
+			close(con, pstmt);
 		}
 		
 		return mdto ;
@@ -174,7 +174,7 @@ public class MemberDao {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally {
-			close(con, pstmt, rs);
+			close(con, pstmt);
 		}
 		
 		System.out.println("회원정보수정 성공여부 (1:성공,0:실패) : "+check);
@@ -196,7 +196,7 @@ public class MemberDao {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally {
-			close(con, pstmt, rs);
+			close(con, pstmt);
 		}
 		
 		System.out.println("회원탈퇴 성공여부 (1:성공,0:실패) :"+check);
@@ -252,6 +252,15 @@ public class MemberDao {
 			if(con!=null)con.close();
 			if(pstmt !=null)pstmt.close();
 			if(rs!=null)rs.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	private void close(Connection con, PreparedStatement pstmt) {
+		try {
+			if(con!=null)con.close();
+			if(pstmt !=null)pstmt.close();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

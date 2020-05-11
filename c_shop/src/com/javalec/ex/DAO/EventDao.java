@@ -57,7 +57,7 @@ public class EventDao {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally {
-			close(con, pstmt, rs);
+			close(con, pstmt);
 		}
 		System.out.println("check : "+ check);
 		return check;
@@ -118,7 +118,7 @@ public class EventDao {
 		}catch (Exception e) {
 			e.printStackTrace();
 		}finally {
-			close(con, pstmt, rs);
+			close(con, pstmt);
 		}
 		
 		return check;
@@ -190,7 +190,7 @@ public class EventDao {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally {
-			close(con, pstmt, rs);
+			close(con, pstmt);
 		}
 		
 		return check;
@@ -203,6 +203,15 @@ public class EventDao {
 			if(con!=null)con.close();
 			if(pstmt !=null)pstmt.close();
 			if(rs!=null)rs.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	private void close(Connection con, PreparedStatement pstmt) {
+		try {
+			if(con!=null)con.close();
+			if(pstmt !=null)pstmt.close();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

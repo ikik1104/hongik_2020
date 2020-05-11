@@ -34,7 +34,7 @@
 		<div>
 			<div>
 				<h2>
-					${dto.btitle}<span><fmt:formatDate value="${dto.bdate}" pattern="yyyy-MM-dd"/></span>   <span>조회수 : ${dto.bhit}</span>
+					${dto.btitle}<span>작성일 : <fmt:formatDate value="${dto.bdate}" pattern="yyyy-MM-dd"/></span>   <span>조회수 : ${dto.bhit}</span>
 				</h2>
 			</div>
 

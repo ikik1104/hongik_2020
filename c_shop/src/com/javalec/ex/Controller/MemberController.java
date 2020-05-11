@@ -51,7 +51,7 @@ public class MemberController extends HttpServlet {
 		}else if(com.equals("/join.Mdo")) { // 회원가입
 			mcom = new MemberInsertCommand();
 			mcom.execute(request, response);
-			pageView = "index.Mdo";
+			pageView = "index.jsp";
 		}else if(com.equals("/idChk.Mdo")) { // 아이디 중복체크
 			mcom = new MemberIdChkCommand();
 			mcom.execute(request, response);
@@ -65,7 +65,7 @@ public class MemberController extends HttpServlet {
 		}else if(com.equals("/loginOut.Mdo")) { // 로그인
 			mcom = new MemberOutCommand();
 			mcom.execute(request, response);
-			pageView = "index.Mdo";
+			pageView = "index.jsp";
 		}
 		
 		

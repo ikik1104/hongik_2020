@@ -48,7 +48,7 @@ public class EventController extends HttpServlet {
 		}else if(com.equals("/insert_event.Edo")) { //이벤트 insert
 			ecom = new EventInsertCommand();
 			ecom.execute(request, response);
-			pageView = "event_list.Edo";
+			pageView = "event_list.jsp";
 		}else if(com.equals("/event_list.Edo")) { //이벤트 리스트
 			ecom = new EventListCommand();
 			ecom.execute(request, response);
@@ -64,7 +64,7 @@ public class EventController extends HttpServlet {
 		}else if(com.equals("/event_delete.Edo")){
 			ecom = new EventDeleteCommand(); // 이벤트 삭제
 			ecom.execute(request, response);
-			pageView = "event_list.Edo";
+			pageView = "event_list.jsp";
 		}
 		
 		

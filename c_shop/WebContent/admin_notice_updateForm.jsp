@@ -12,15 +12,15 @@
 <script type="text/javascript">
 
  		function del_img() {
-			$("#file_img").hide();
-			$("#new_img").show();
+			$("#file_img").css("display","none");
+			$("#new_img").css("display","flex");
 			$("input[name='del_chk']").val("y"); //삭제
 			
 		}
  		
 		function back_img() {
-			$("#new_img").hide();
-			$("#file_img").show();
+			$("#new_img").css("display","none");
+			$("#file_img").css("display","flex");
 			$("input[name='del_chk']").val("n"); //삭제안함
 		}
 
@@ -77,14 +77,14 @@
                  <c:if test="${empty bdto.bfile}">
                  <div class="input_1">
                   <label class="input_label">수정 이미지</label>
-                      <input type="file" name="file">
+                      <input type="file" name="file1">
                 </div>
                  </c:if>
                  
 		<!--    첨부된 이미지 삭제시 나오는 div -->
                 <div class="input_1" id="new_img">
                   <label class="input_label">수정 이미지</label>
-                      <input type="file" name="file">
+                      <input type="file" name="file2">
                        <button type="button" onclick="back_img()">기존첨부 이미지복구</button>
                 </div>
               

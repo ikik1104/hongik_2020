@@ -171,7 +171,7 @@ public class BDao {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally {
-			close(con, pstmt, rs);
+			close(con, pstmt);
 		}
 		return check;
 	}
@@ -196,7 +196,7 @@ public class BDao {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally {
-			close(con, pstmt, rs);
+			close(con, pstmt);
 		}
 		if(check == 0) {
 			System.out.println("수정을 실패하였습니다.");
@@ -222,7 +222,7 @@ public class BDao {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally {
-			close(con, pstmt, rs);
+			close(con, pstmt);
 		}
 		return check;
 	}
@@ -273,7 +273,7 @@ public class BDao {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally {
-			close(con, pstmt, rs);
+			close(con, pstmt);
 		}
 		return check;
 	}
@@ -300,7 +300,7 @@ public class BDao {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally {
-			close(con, pstmt, rs);
+			close(con, pstmt);
 		}
 		return check;
 	}
@@ -320,7 +320,7 @@ public class BDao {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally {
-			close(con, pstmt, rs);
+			close(con, pstmt);
 		}
 		return check;
 	}
@@ -334,4 +334,14 @@ public class BDao {
 			e.printStackTrace();
 		}
 	}
+	
+	private void close(Connection con, PreparedStatement pstmt) {
+		try {
+			if(con!=null)con.close();
+			if(pstmt !=null)pstmt.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
 }

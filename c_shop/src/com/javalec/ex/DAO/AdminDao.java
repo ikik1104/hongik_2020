@@ -160,7 +160,7 @@ public class AdminDao {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally {
-			close(con, pstmt, rs);
+			close(con, pstmt);
 		}
 		return check;
 	}
@@ -187,7 +187,7 @@ public class AdminDao {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally {
-			close(con, pstmt, rs);
+			close(con, pstmt);
 		}
 		if(check == 0) {
 			System.out.println("수정을 실패하였습니다.");
@@ -216,7 +216,6 @@ public class AdminDao {
 	    	}else{
 	    		System.out.println("파일이 존재하지 않습니다.");
 	    	}
-			
 			return check;
 		}
 	
@@ -235,7 +234,7 @@ public class AdminDao {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally {
-			close(con, pstmt, rs);
+			close(con, pstmt);
 		}
 		return check;
 	}
@@ -286,7 +285,7 @@ public class AdminDao {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally {
-			close(con, pstmt, rs);
+			close(con, pstmt);
 		}
 		return check;
 	}
@@ -313,7 +312,7 @@ public class AdminDao {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally {
-			close(con, pstmt, rs);
+			close(con, pstmt);
 		}
 		return check;
 	}
@@ -333,7 +332,7 @@ public class AdminDao {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally {
-			close(con, pstmt, rs);
+			close(con, pstmt);
 		}
 		return check;
 	}
@@ -347,4 +346,14 @@ public class AdminDao {
 			e.printStackTrace();
 		}
 	}
+	
+	private void close(Connection con, PreparedStatement pstmt) {
+		try {
+			if(con!=null)con.close();
+			if(pstmt !=null)pstmt.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
 }

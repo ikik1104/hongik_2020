@@ -54,7 +54,7 @@ public class BoardController extends HttpServlet {
 		}else if(com.equals("/search.do")) { //검색기능
 			bcom = new BListCommand();
 			bcom.execute(request, response);
-			pageView = "notice_list.do";
+			pageView = "notice_list.jsp";
 			
 		}else if(com.equals("/no_insertForm.do")) { //공지사항 입력Form
 			pageView = "notice_insert.jsp";
@@ -66,7 +66,7 @@ public class BoardController extends HttpServlet {
 		}else if(com.equals("/reply.do")) { //답글 insert
 			bcom = new BReplyCommand();
 			bcom.execute(request, response);
-			pageView = "notice_list.do";
+			pageView = "notice_list.jsp";
 		}
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher(pageView);
