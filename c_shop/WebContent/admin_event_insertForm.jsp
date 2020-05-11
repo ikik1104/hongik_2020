@@ -14,10 +14,12 @@
 	function date_chk2(val){
 		var date1 = new Date();
 		var date2 = new Date(val);
-		if(date2<date1.getTime()){
-			alert("시작일 이후의 날짜를 선택해주세요.");
+		if(date2.getTime()<date1.getTime()){
+			alert("종료일은 오늘 날짜 이후 or 시작일 이후의 날짜를 선택해주세요.");
 			inputform.end_day.value="";
 		}
+		
+		
 	}
 </script>
 <link href="css/admin_input.css" rel="stylesheet">

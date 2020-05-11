@@ -43,7 +43,11 @@ public class A_Notice_UpdateCom implements AdminCommand {
 						dao.delFile(bid); //파일을 삭제한다.
 						file1 = multi.getFilesystemName("file2");//새로 선택한 이미지가 있으면 file1에 담는다.
 					}else if(del_chk.equals("n")) { //삭제한 파일이 없으면
-						file1 = multi.getFilesystemName("file1");
+						if(multi.getFilesystemName("file1")==null){ //새로 선택한 파일이 없으면
+							file1 = ori_file; //기존파일 그대로
+						}else{
+							file1 = multi.getFilesystemName("file1");
+						}
 					}
 					
 					dto = new BDto(bid, bname, btitle, bcontent, null, file1, 0, 0, 0, 0);

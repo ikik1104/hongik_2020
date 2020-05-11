@@ -1,0 +1,39 @@
+@charset "UTF-8";
+
+/* 썸네일 */
+
+#file_img img{
+	width: 150px;
+	height: 80px;
+}
+
+#file_img span{
+	box-sizing: border-box;
+	padding: 50px 10px 0 10px;
+}
+#file_img button{
+	height: 30px;	
+}
+
+#new_img{
+	display: none;
+}
+
+
+/* 상세보기 */
+#file_img2 img{
+	width: 150px;
+	height: 80px;
+}
+
+#file_img2 span{
+	box-sizing: border-box;
+	padding: 50px 10px 0 10px;
+}
+#file_img2 button{
+	height: 30px;	
+}
+
+#new_img2{
+	display: none;
+}

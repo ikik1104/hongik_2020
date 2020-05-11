@@ -1,5 +1,6 @@
 package com.javalec.ex.DAO;
 
+import java.io.File;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -9,6 +10,8 @@ import java.util.ArrayList;
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
+
+import com.javalec.ex.DTO.BDto;
 import com.javalec.ex.DTO.EventDto;
 
 public class EventDao {
@@ -109,7 +112,7 @@ public class EventDao {
 	//이벤트 조회수 증가
 	public int evnetHit(int num){
 		int check = 0;
-			
+			sql = "update event set hit=hit+1 where num=?";
 		try {
 			con = ds.getConnection();
 			pstmt = con.prepareStatement(sql);
@@ -157,6 +160,7 @@ public class EventDao {
 		return dto;
 	}
 	
+	//게시물의 총 개수
 	public int getlistCount () {
 		sql = "select count(*)as count from event";
 		int check = 0;
@@ -196,8 +200,33 @@ public class EventDao {
 		return check;
 	}
 
+	//이벤트 수정
 	
+	//파일 삭제
+		public int delFile(String fileName) {
+			System.out.println("파일 삭제 하러 옴");
+			int check =0;
+			//파일명을 가져오기 위해서~~
+			EventDto edto = detail(num);
+			
+			//c:의 주소
+			File file = new File("D:/upload2/"+fileName);
+			if( file.exists() ){
+	    		if(file.delete()){
+	    			System.out.println("****** 파일삭제 성공  ******");
+	    			check = 1;
+	    		}else{
+	    			System.out.println("****** 파일삭제 실패 ******");
+	    			check = 0;
+	    		}
+	    	}else{
+	    		System.out.println("파일이 존재하지 않습니다.");
+	    	}
+			return check;
+		}
 	
+		
+		
 	private void close(Connection con, PreparedStatement pstmt, ResultSet rs) {
 		try {
 			if(con!=null)con.close();

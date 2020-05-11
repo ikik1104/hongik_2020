@@ -68,7 +68,6 @@
                   <label class="input_label">현재 첨부된 이미지</label>
                       <img src="${pageContext.request.contextPath}/upload2/${bdto.bfile}" width="150px;" height="80px;">
                       <span>
-                      aaa.png
                       <button type="button" onclick="del_img()">첨부 이미지삭제</button>
                       </span>
                 </div>

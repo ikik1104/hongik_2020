@@ -60,7 +60,7 @@
 						<tr>
 							<td>${edto.num}</td>
 							<td><img src="${pageContext.request.contextPath}/upload2/${edto.file1}" style="width: 200px; height: 100px;"></td>
-							<td style="height: 100px;" onclick="location.href='event_view.Ado?num=${edto.num}'">${edto.title}</td>
+							<td style="height: 100px; cursor: pointer;" onclick="location.href='event_view.Ado?num=${edto.num}'">${edto.title}</td>
 							<td>${edto.start_day}~${edto.end_day}</td>
 							<td>${edto.hit}</td>
 						</tr>

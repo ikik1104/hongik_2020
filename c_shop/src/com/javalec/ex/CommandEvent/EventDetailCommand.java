@@ -15,6 +15,7 @@ public class EventDetailCommand implements EventCommand {
 		
 		int num = Integer.parseInt(request.getParameter("num"));
 		
+		dao.evnetHit(num);
 		dto = dao.detail(num);
 		
 		request.setAttribute("dto", dto);

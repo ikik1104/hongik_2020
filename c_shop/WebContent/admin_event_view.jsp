@@ -34,7 +34,7 @@
 		<div>
 			<div>
 				<h2>
-					${dto.title}<span>${dto.start_day}~${dto.end_day}</span> <span>조회수 : ${dto.hit}</span>
+					${dto.title}<span>이벤트 기간 : ${dto.start_day}~${dto.end_day}</span> <span>조회수 : ${dto.hit}</span>
 				</h2>
 			</div>
 
